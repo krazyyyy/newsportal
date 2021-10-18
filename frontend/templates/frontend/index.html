@@ -1,0 +1,90 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %} 
+</section  class="zone--02 big--font zone zone__content no-banner">
+<div class="container">
+    <div class="zone-content"></div>
+</div>
+</section>
+<script>
+    function getNewsByCategory(category, div_name) {
+        fetch(`/rss/bycategory${category}`)
+    .then(response => response.json())
+    .then(data => {
+        info = data['feed']
+        zone = document.querySelector(`${div_name}`)
+        for (var i = 0; i < info.length; i++) {
+            zone.innerHTML += `
+            <div class="card card--splash-normal">
+                <div class="card__content">
+                    <div class="card__splash-wrapper">
+                        <div class="card__image__wrapper"> <a  target="_blank" class="tblank js-hover-intent-image yr-card-image" href="${info[i]['link']}">
+                                <div class="card__image js-card-image"> <img class="card__image__src lazyload loaded" data-src="${info[i]['img']}" src="${info[i]['img']}" data-was-processed="true"> </div>
+                                <div class="card__read__leater sqare js-hover-target-image"><span class="icon"></span></div>
+                            </a>
+                            <div class="card__image__credit js-hover-target-image"><a data-ga-category="UX-links" data-ga-action="Thumbnail" data-ga-label="24sata" href="https://klik.hr/vijesti/24sata">24sata</a>
+                            </div>
+                        </div>
+                        <div class="card__splash-headlines js-splash">
+                            <div class="card__headline card__headline--splash js-splash-title"> <a  target="_blank" class="tblank card__link yr-card-headline" href="${info[i]['link']}">
+                                    <div class="card__headline__text">${info[i]['title']}</div>
+                                </a> </div>
+                            <div class="card__splash-meta"></div>
+                        </div>
+                    </div>
+                    <div class="card__headlines">
+                        <div class="card__splash-meta">
+                            <div class="card__byline">
+                                <div class="author-list author-list--card"> <a class="author-list__link yr-author-name" data-ga-category="UX-links" data-ga-action="Article" data-ga-label="24sata" href=""> <span>${info[i]['source']}</span> </a>
+                                    ${info[i]['pub_date']} <span class="author-card__author-type"></span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `
+        }
+    })
+    } 
+
+    fetch('/rss/news')
+    .then(response => response.json())
+    .then(data => {
+        info = data['feed']
+        zone = document.querySelector(".zone-content")
+        for (var i = 0; i < info.length; i++) {
+            zone.innerHTML += `
+            <div class="card card--splash-normal">
+                <div class="card__content">
+                    <div class="card__splash-wrapper">
+                        <div class="card__image__wrapper"> <a  target="_blank" class="tblank js-hover-intent-image yr-card-image" href="${info[i]['link']}">
+                                <div class="card__image js-card-image"> <img class="card__image__src lazyload loaded" data-src="${info[i]['img']}" src="${info[i]['img']}" data-was-processed="true"> </div>
+                                <div class="card__read__leater sqare js-hover-target-image"><span class="icon"></span></div>
+                            </a>
+                            <div class="card__image__credit js-hover-target-image"><a data-ga-category="UX-links" data-ga-action="Thumbnail" data-ga-label="24sata" href="https://klik.hr/vijesti/24sata">24sata</a>
+                            </div>
+                        </div>
+                        <div class="card__splash-headlines js-splash">
+                            <div class="card__headline card__headline--splash js-splash-title"> <a  target="_blank" class="tblank card__link yr-card-headline" href="${info[i]['link']}">
+                                    <div class="card__headline__text">${info[i]['title']}</div>
+                                </a> </div>
+                            <div class="card__splash-meta"></div>
+                        </div>
+                    </div>
+                    <div class="card__headlines">
+                        <div class="card__splash-meta">
+                            <div class="card__byline">
+                                <div class="author-list author-list--card"> <a class="author-list__link yr-author-name" data-ga-category="UX-links" data-ga-action="Article" data-ga-label="24sata" href=""> <span>${info[i]['source']}</span> </a>
+                                    ${info[i]['pub_date']} <span class="author-card__author-type"></span> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `
+        }
+    })
+</script>
+{% endblock %}
