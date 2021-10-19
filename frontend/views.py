@@ -1,8 +1,13 @@
 from django.shortcuts import render
 
+from rssReader.models import News
+
 # Create your views here.
 def index(request):
-    return render(request, 'frontend/index.html')
+    news = News.objects.all().order_by('?')[:5]
+    return render(request, 'frontend/index.html', {
+        "cars_news" : news
+    })
 
 def categoryPage(request, pk):
     return render(request, 'frontend/category.html', {"main_item" : pk})
