@@ -2,89 +2,591 @@
 
 {% block title %} Home {% endblock %}
 
-{% block body %} 
-</section  class="zone--02 big--font zone zone__content no-banner">
-<div class="container">
-    <div class="zone-content"></div>
-</div>
-</section>
-<script>
-    function getNewsByCategory(category, div_name) {
-        fetch(`/rss/bycategory${category}`)
-    .then(response => response.json())
-    .then(data => {
-        info = data['feed']
-        zone = document.querySelector(`${div_name}`)
-        for (var i = 0; i < info.length; i++) {
-            zone.innerHTML += `
-            <div class="card card--splash-normal">
-                <div class="card__content">
-                    <div class="card__splash-wrapper">
-                        <div class="card__image__wrapper"> <a  target="_blank" class="tblank js-hover-intent-image yr-card-image" href="${info[i]['link']}">
-                                <div class="card__image js-card-image"> <img class="card__image__src lazyload loaded" data-src="${info[i]['img']}" src="${info[i]['img']}" data-was-processed="true"> </div>
-                                <div class="card__read__leater sqare js-hover-target-image"><span class="icon"></span></div>
-                            </a>
-                            <div class="card__image__credit js-hover-target-image"><a data-ga-category="UX-links" data-ga-action="Thumbnail" data-ga-label="24sata" href="https://klik.hr/vijesti/24sata">24sata</a>
-                            </div>
-                        </div>
-                        <div class="card__splash-headlines js-splash">
-                            <div class="card__headline card__headline--splash js-splash-title"> <a  target="_blank" class="tblank card__link yr-card-headline" href="${info[i]['link']}">
-                                    <div class="card__headline__text">${info[i]['title']}</div>
-                                </a> </div>
-                            <div class="card__splash-meta"></div>
-                        </div>
-                    </div>
-                    <div class="card__headlines">
-                        <div class="card__splash-meta">
-                            <div class="card__byline">
-                                <div class="author-list author-list--card"> <a class="author-list__link yr-author-name" data-ga-category="UX-links" data-ga-action="Article" data-ga-label="24sata" href=""> <span>${info[i]['source']}</span> </a>
-                                    ${info[i]['pub_date']} <span class="author-card__author-type"></span> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            `
-        }
-    })
-    } 
+{% load static %}
 
-    fetch('/rss/news')
-    .then(response => response.json())
-    .then(data => {
-        info = data['feed']
-        zone = document.querySelector(".zone-content")
-        for (var i = 0; i < info.length; i++) {
-            zone.innerHTML += `
-            <div class="card card--splash-normal">
-                <div class="card__content">
-                    <div class="card__splash-wrapper">
-                        <div class="card__image__wrapper"> <a  target="_blank" class="tblank js-hover-intent-image yr-card-image" href="${info[i]['link']}">
-                                <div class="card__image js-card-image"> <img class="card__image__src lazyload loaded" data-src="${info[i]['img']}" src="${info[i]['img']}" data-was-processed="true"> </div>
-                                <div class="card__read__leater sqare js-hover-target-image"><span class="icon"></span></div>
-                            </a>
-                            <div class="card__image__credit js-hover-target-image"><a data-ga-category="UX-links" data-ga-action="Thumbnail" data-ga-label="24sata" href="https://klik.hr/vijesti/24sata">24sata</a>
-                            </div>
+{% block static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/bootstrap.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/style.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/owl-slider.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/custombox.min.css' %}"/>
+<link rel="shortcut icon" href="{% static 'frontend/assets/images/favicon.png' %}" />
+
+{% endblock %}
+
+{% block body %} 
+<div class="awe-page-loading">
+    <div class="awe-loading-wrapper">
+       <div class="awe-loading-icon">
+          <img src="{% static 'frontend/assets/images/logo.png' %}" alt="images">
+       </div>
+       <div class="progress">
+          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+       </div>
+    </div>
+ </div>
+ <div id="box-user" style="display:none;">
+    <iframe width="980" src="#"></iframe>
+</div>
+<!-- End pushmenu -->
+<div class="wrappage">
+    
+    
+    <header id="header" class="header-v2">
+        <div class="search ver2 ver3">
+            <form class="form-search" action="#" method="get" accept-charset="utf-8">
+                <input type="text" onblur="if (this.value == '') {this.value = 'Search articles & products...';}" onfocus="if(this.value != '') {this.value = '';}" value="Search articles & products..." class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email"> 
+                <button class="button" title="Subscribe" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+        <div class="header-top">
+                <div class="container">
+                <div class="box float-left">
+                    <p class="icon-menu-mobile"><i class="fa fa-bars" ></i></p>
+                    <div class="logo"><a href="#" title="Uno">
+                    <img src="assets/images/logo2.jpg" alt="images">
+                    </a></div>
+                    <div class="logo-mobile"><a href="#" title="Xanadu"><img src="{% static 'frontend/assets/images/logo.png' %}" alt="Xanadu-Logo"></a></div>
+
+                    <div class="box-right">
+                        <div class="social">
+                            <a href="#" title="title"><i class="fa fa-facebook"></i></a>
+                            <a href="#" title="title"><i class="fa fa-twitter"></i></a>
+                            <a href="#" title="title"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" title="title"><i class="fa fa-rss"></i></a>
                         </div>
-                        <div class="card__splash-headlines js-splash">
-                            <div class="card__headline card__headline--splash js-splash-title"> <a  target="_blank" class="tblank card__link yr-card-headline" href="${info[i]['link']}">
-                                    <div class="card__headline__text">${info[i]['title']}</div>
-                                </a> </div>
-                            <div class="card__splash-meta"></div>
+                        <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg" style="display:none;">
+                            <i class="icon"></i>
                         </div>
                     </div>
-                    <div class="card__headlines">
-                        <div class="card__splash-meta">
-                            <div class="card__byline">
-                                <div class="author-list author-list--card"> <a class="author-list__link yr-author-name" data-ga-category="UX-links" data-ga-action="Article" data-ga-label="24sata" href=""> <span>${info[i]['source']}</span> </a>
-                                    ${info[i]['pub_date']} <span class="author-card__author-type"></span> </div>
-                            </div>
+                </div>                
+                </div>
+                <!-- End container -->
+            </div>
+            <!-- End header-top -->
+            <div class="container">
+            <nav class="mega-menu">
+            <!-- Brand and toggle get grouped for better mobile display -->
+              <ul class="nav navbar-nav" id="navbar">
+                <li class="level1 active hover-menu"><a class="active" href="{% url 'index' %}" title="Home">Home</a>
+        
+                </li>
+                <li class="level1 hover-menu">
+                    <a href="#" title="Social">Social</a>
+                </li>
+                <li class="level1 hover-menu">
+                    <a href="#" title="BUSINESS">BUSINESS</a>
+                </li>
+                <li class="level1 hover-menu">
+                    <a href="#" title="GAMING">GAMING</a>
+                </li>
+                <li class="level1 hover-menu">
+                    <a href="#" title="TRAVEL">TRAVEL</a>
+                </li>
+                <li class="level1 hover-menu">
+                    <a href="#" title="TECHNOLOGY">TECHNOLOGY</a>
+                </li>
+                <li class="level1 hover-menu">
+                    <a href="#" title="SPORTS">SPORTS</a>
+                </li>
+           
+       
+              </ul>
+            </nav>
+            </div>
+            <!-- End megamenu -->
+    </header>
+
+    <div class="home2-head box slide-owl-mobile nav-ver5">
+
+    </div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="title-v1">
+                <h3>TRENDING</h3>
+                <div class="orther-link">
+                    <ul>
+                        <li><a href="#" title="All">All</a></li>
+                        <li><a href="#" title="Social">Social</a></li>
+                        <li><a href="#" title="Business">Business</a></li>
+                        <li><a href="#" title="Gaming">Gaming</a></li>
+                        <li><a href="#" title="Travel">Travel</a></li>
+                        <li><a href="#" title="Technology">Technology</a></li>
+                        <li><a href="#" title="Sports">Sports</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End title -->
+            <div class="trending box space-30">
+                <div id="news_feed_main" class="row">
+                    
+                </div>
+            </div>
+
+            <div class="title-v1">
+                <h3>TECHNOLOGY</h3>
+                <div class="orther-link">
+                    <ul>
+                        <li><a href="#" title="Cars">Cars</a></li>
+                        <li><a href="#" title="Developers">Developers</a></li>
+                        <li><a href="#" title="Gears">Gears</a></li>
+                        <li><a href="#" title="Reviews">Reviews</a></li>
+                        <li><a href="#" title="Softwares">Softwares</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="technnology box space-30">
+               
+            </div>
+
+            <div class="title-v1">
+                <h3>PHOTOS</h3>
+            </div>
+            <div class="box center">
+                <div class="slider-dot-images nav-ver1" style="text-align:left;">
+                    {% for news in cars_news %}
+                    <div class="post-item ver1 overlay">
+                        <a class="images" href="{{ news.link }}" title="images"><img class='img-responsive' src="{{ news.img }}" alt="images"></a>
+                        <div class="text">
+                            <h2><a href="{{ news.link }}" title="title">{{ news.title }}</a></h2>
                         </div>
+                        <img class="thumb hidden" src="{{ news.img }}" alt="images">
+                    </div>
+                    <!-- End item -->
+                    {% endfor %}
+                   
+                </div>
+            </div>
+            
+            <div class="box">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="title-v1">
+                            <h3>Svijet</h3>
+                        </div>
+                        <!-- End tile -->
+                        <div class="box size-18 space-30 Svijet">
+                  
+                            <!-- End item -->
+                        </div>
+                        <!-- End box -->
+                        <div class="row size-16 Svijet_16">
+                         
+                        </div>
+                    </div>
+                    <!-- End col-md-6 -->
+                    <div class="col-md-6">
+                        <div class="title-v1">
+                            <h3>Biznis</h3>
+                        </div>
+                        <!-- End tile -->
+                        <div class="box space-30 size-18 Biznis">
+                           
+                            <!-- End item -->
+                        </div>
+                        <!-- End box -->
+                        <div class="row size-16 Bizniz_16">
+                           
+                        </div>
+                    </div>
+                    <!-- End col-md-6 -->
+                </div>
+            </div>
+           
+            <div class="title-v1">
+                <h3>GAMING</h3>
+                <div class="orther-link">
+                    <ul>
+                        <li><a href="#" title="Mobile">Mobile</a></li>
+                        <li><a href="#" title="PC">PC</a></li>
+                        <li><a href="#" title="Play">Play</a></li>
+                        <li><a href="#" title="Station 4">Station 4</a></li>
+                        <li><a href="#" title="Wii">Wii</a></li>
+                        <li><a href="#" title="Xbox 360">Xbox 360</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End tile -->
+            <div class="gaming box space-30">
+                <div class="row">
+                    <div class="col-md-6 footer_news">
+                       
+                        <!-- End item -->
+                    </div>
+                    <div class="col-md-6 w_100 footer_details">
+                    
+                        <!-- End item -->
                     </div>
                 </div>
             </div>
+
+        </div>
+
+        <div class="col-md-4">
+            <aside class="widget social">
+                <div class="item facebook">
+                    <div class="bg">
+                        <i class="fa fa-facebook"></i>
+                        <p class="count">156,570</p>
+                        <p class="text">Fans</p>
+                    </div>
+                </div>
+                <div class="item twitter">
+                    <div class="bg">
+                        <i class="fa fa-twitter"></i>
+                        <p class="count">3,562</p>
+                        <p class="text">Followers</p>
+                    </div>
+                </div>
+                <div class="item google">
+                    <div class="bg">
+                        <i class="fa fa-google-plus"></i>
+                        <p class="count">29,546</p>
+                        <p class="text">Followers</p>
+                    </div>
+                </div>
+            </aside>
+            <aside class="widget popular">
+                <h3 class="widget-title">MOST POPULAR</h3>
+                <div class="content" id="popular_dynm">
+
+                </div>
+            </aside>
+            </div>
+    </div>
+</div>
+
+
+
+
+<div id="back-to-top">
+    <i class="fa fa-long-arrow-up"></i>
+</div>
+<footer id="footer" class="footer-v1">         
+  <div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <a class="logo-footer space-30" href="#" title="logo"><img src="{% static 'frontend/assets/images/logo-footer.png' %}" alt="Logo-footer"></a>
+            <p class="space-30">Lorem ipsum dolor sit amet, consectetuer adipiscinglit. Aenean commodo ligula eget dolor. Aenean massaore cum sociis natoque penatibus et magnis dis parturient.</p>
+            <!-- End widget -->
+        </div>
+        <div class="col-md-6">
+            <div class="widget footer-info">
+                <h3 class="widget-title">main office</h3>
+                <ul>
+                    <li><i class="fa fa-home"></i> 121 King Street, Melbourne Victoria 3000 Australia</li>
+                    <li><i class="fa fa-phone-square"></i> 070-7782-9137</li>
+                    <li><i class="fa fa-fax"></i> 070-7782-9137</li>
+                    <li><i class="fa fa-envelope"></i> <a href="mailto:" title="link">contact@dailyplus.com</a></li>
+                </ul>
+            </div>
+            <div class="social">
+                 <a href="#" title="title"><i class="fa fa-facebook"></i></a>
+                 <a href="#" title="title"><i class="fa fa-twitter"></i></a>
+                 <a href="#" title="title"><i class="fa fa-google-plus"></i></a>
+                 <a href="#" title="title"><i class="fa fa-rss"></i></a>
+             </div>
+        </div>
+        <div class="col-md-3">
+            <div class="widget categories">
+                <h3 class="widget-title">CATEGORIES</h3>
+                <ul>
+
+                    <li><a href="#" title="social">social</a><span class="count">(325)</span></li>
+                    <li><a href="#" title="Business">Business</a><span class="count">(6566)</span></li>
+                    <li><a href="#" title="Gaming">Gaming</a><span class="count">(890)</span></li>
+                    <li><a href="#" title="Technology">Technology</a><span class="count">(411)</span></li>
+                    <li><a href="#" title="Sports">Sports</a><span class="count">(7841)</span></li>
+                    <li><a href="#" title="fashion">fashion</a><span class="count">(822)</span></li>
+                    <li><a href="#" title="Music">Music</a><span class="count">(1562)</span></li>
+                    <li><a href="#" title="movie">movie</a><span class="count">(325)</span></li>
+                </ul>
+            </div>
+        </div>
+   
+    </div>
+    <!-- End row -->
+  </div>
+  <!-- End container -->
+  <div class="footer-bottom">
+    <div class="container">
+        <p class="float-left">Copyright &copy; 2015 <a href="#" title="EngoTheme">EngoTheme</a> - All rights reserved.</p>
+        <div class="float-right align-right">
+            <ul class="menu-footer">
+                <li><a href="#" title="Term">Term</a></li>
+                <li><a href="#" title="Privacy">Privacy</a></li>
+                <li><a href="#" title="Brand">Brand</a></li>
+                <li><a href="#" title="About">About</a></li>
+                <li><a href="#" title="Contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+
+
+
+</div>
+
+
+<script>
+    fetch(`rss/randomNewsCategory/2/Biznis`)
+    .then(response => response.json())
+    .then(data => {
+        info = data['feed']
+        elm = document.querySelector(".Bizniz_16")
+        for (var i = 0; i < info.length; i ++) {
+            elm.innerHTML += `
+            <div class="col-md-6 col-sm-6">
+                                <div class="post-item ver3 overlay">
+                                    <div class="wrap-images">
+                                        <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                                        <div class="tag">
+                                            <p class="date"><i class="fa fa-clock-o"></i>${info[i]['pub_date']}</p>
+                                        </div>
+                                    </div>
+                                    <div class="text">
+                                        <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                                    </div>
+                                </div>
+                                <!-- End item -->
+                            </div>
             `
         }
     })
+    fetch(`rss/randomNewsCategory/2/Svijet`)
+    .then(response => response.json())
+    .then(data => {
+        info = data['feed']
+        elm = document.querySelector(".Svijet_16")
+        for (var i = 0; i < info.length; i ++) {
+            elm.innerHTML += `
+            <div class="col-md-6 col-sm-6">
+                                <div class="post-item ver3 overlay">
+                                    <div class="wrap-images">
+                                        <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                                        <div class="tag">
+                                            <p class="date"><i class="fa fa-clock-o"></i>${info[i]['pub_date']}</p>
+                                        </div>
+                                    </div>
+                                    <div class="text">
+                                        <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                                    </div>
+                                </div>
+                                <!-- End item -->
+                            </div>
+            `
+        }
+    })
+    fetch(`rss/randomNewsCategory/1/Biznis`)
+    .then(response => response.json())
+    .then(data => {
+        info = data['feed']
+        elm = document.querySelector(".Biznis")
+        for (var i = 0; i < info.length; i ++) {
+        elm.innerHTML += `
+        <div class="post-item ver3 overlay max-width-700">
+                                <div class="wrap-images">
+                                    <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                                    <div class="tag">
+                                        <p class="date"><i class="fa fa-clock-o"></i>${info[i]['pub_date']}</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                                    <a class="read-more" href="${info[i]['link']}" title="read more">read more</a>
+                                </div>
+                            </div>
+        `
+        }
+    })
+    fetch(`rss/randomNewsCategory/1/Nogomet`)
+    .then(response => response.json())
+    .then(data => {
+        info = data['feed']
+        elm = document.querySelector(".footer_news")
+        for (var i = 0; i < info.length; i ++) {
+        elm.innerHTML += `
+        <div class="post-item ver3 overlay max-width-700">
+                                <div class="wrap-images">
+                                    <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                                    <div class="tag">
+                                        <p class="date"><i class="fa fa-clock-o"></i>${info[i]['pub_date']}</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                                    <a class="read-more" href="${info[i]['link']}" title="read more">read more</a>
+                                </div>
+                            </div>
+        `
+        }
+    })
+    fetch(`rss/randomNewsCategory/1/Svijet`)
+    .then(response => response.json())
+    .then(data => {
+        info = data['feed']
+        elm = document.querySelector(".Svijet")
+        for (var i = 0; i < info.length; i ++) {
+        elm.innerHTML += `
+        <div class="post-item ver3 overlay max-width-700">
+                                <div class="wrap-images">
+                                    <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                                    <div class="tag">
+                                        <p class="date"><i class="fa fa-clock-o"></i>${info[i]['pub_date']}</p>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                                    <a class="read-more" href="${info[i]['link']}" title="read more">read more</a>
+                                </div>
+                            </div>
+        `
+        }
+    })
+        fetch(`rss/randomNewsCategory/4/Sport`)
+        .then(response => response.json())
+        .then(data => {
+            info = data['feed']
+            home_head = document.querySelector(".technnology")
+            for ( var i = 0; i < info.length; i ++) { 
+            home_head.innerHTML += `
+            <div class="post-item ver2">
+                    <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                    <div class="text">
+                        <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                        <div class="tag">
+                            <p class="date"><i class="fa fa-clock-o"></i>${info[i]['pub_date']}</p>
+                            <a class="comments" href="#" title="comments"><i class="fa fa-comments"></i>10</a>
+                        </div>
+                        <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
+                    </div>
+                </div>
+            `
+            }
+        })
+        fetch(`rss/randomNewsCategory/4/Nogomet`)
+        .then(response => response.json())
+        .then(data => {
+            info = data['feed']
+            home_head = document.querySelector(".footer_details")
+            for ( var i = 0; i < info.length; i ++) { 
+            home_head.innerHTML += `
+            <div class="post-item ver2">
+                    <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                    <div class="text">
+                        <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                        <div class="tag">
+                            <p class="date"><i class="fa fa-clock-o"></i>${info[i]['pub_date']}</p>
+                            <a class="comments" href="#" title="comments"><i class="fa fa-comments"></i>10</a>
+                        </div>
+                        <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
+                    </div>
+                </div>
+            `
+            }
+        })
+    
+        
+
+
+        fetch(`/rss/randomNews/5`)
+        .then(response => response.json())
+        .then(data => {
+            info = data['feed']
+            home_head = document.querySelector("#popular_dynm")
+            for ( var i = 0; i < info.length; i ++) { 
+            if (i == 0) {
+                cls = "post-item ver1 overlay"
+            }
+            else {
+                cls = "post-item ver1 "
+            }
+                home_head.innerHTML += `
+            <div class="${cls}">
+                                <a class="images" href="${info[i]['link']}" title="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="images"></a>
+                                <div class="text">
+                                    <h2><a href="" title="title">${info[i]['title']}</a></h2>
+                                    <div class="tag">
+                                        <p class="date"><i class="fa fa-clock-o"></i>${info[i]['pub_date']}</p>
+                                    </div>
+                                </div>
+                            </div>
+            ` 
+            
+        }
+        })
+
+        fetch(`/rss/randomNews/4`)
+        .then(response => response.json())
+        .then(data => {
+            info = data['feed']
+            home_head = document.querySelector("#news_feed_main")
+            for ( var i = 0; i < info.length; i ++) { 
+            home_head.innerHTML += `
+            <div class="col-md-6 col-sm-6 space-30">
+                        <div class="post-item ver4 overlay-v2 cat-4">
+                            <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                            <div class="text">
+                                <span class="lable">${info[i]['category']}</span>
+                                <h2><a href="#" title="title">${info[i]['title']}</a></h2>
+                                <div class="tag">
+                                    <p class="date"><i class="fa fa-clock-o"></i>${info[i]['title']}</p>
+                                    <a class="comments" href="#" title="comments"><i class="fa fa-comments"></i>10</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End item -->
+                    </div>
+            `
+                }
+        })
+
+        fetch(`/rss/randomNews/3`)
+        .then(response => response.json())
+        .then(data => {
+            info = data['feed']
+            home_head = document.querySelector(".home2-head")
+            for ( var i = 0; i < info.length; i ++) { 
+            home_head.innerHTML += `
+            <div class="col-md-4 col-sm-4">
+            <div class="post-item ver1 cat-3 overlay">
+                <a class="images" href="#" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                <div class="text">
+                    <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                    <p class="description">Praesent posuere libero eu justo tristique, vitae ultricies justo volutpat elit, sit amet clubber is a wordpress theme ...</p>
+                    <div class="tag">
+                        <span class="lable">${info[i]['category']}</span>
+                        <p class="date"><i class="fa fa-clock-o"></i>${info[i]['pub_date']}</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- End item -->
+        </div>
+            ` 
+    }
+        })
+    
 </script>
+
+
+
+<script type="text/javascript" src="{% static 'frontend/assets/js/jquery-3.1.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/jquery.themepunch.revolution.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/jquery.themepunch.plugins.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/engo-plugins.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/custombox.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/legacy.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/store.js' %}"></script>
+
+
+
 {% endblock %}

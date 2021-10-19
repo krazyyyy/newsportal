@@ -61,3 +61,21 @@ def renderByCategory(request, category):
         li.append(n)
     feed = dict(feed=li)
     return JsonResponse(feed)
+
+def randomNews(request, random_number):
+    news = News.objects.all().order_by('?')[:random_number]
+    li = []
+    for new in news:
+        n = model_to_dict(new)
+        li.append(n)
+    feed = dict(feed=li)
+    return JsonResponse(feed)
+
+def randomNewsCategory(request, random_number, category):
+    news = News.objects.filter(category__iexact=category).order_by('?')[:random_number]
+    li = []
+    for new in news:
+        n = model_to_dict(new)
+        li.append(n)
+    feed = dict(feed=li)
+    return JsonResponse(feed)
