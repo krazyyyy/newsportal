@@ -32,8 +32,9 @@ def getNews(request):
                 category = i.category.text
             except:
                 category = feed.category
+            pub_ = i.pubDate.text.replace("+0000")
             if not chk.exists():
-                insert_list.append(News(title=i.title.text, link=i.link.text, category=category, source=feed.source, pub_date=i.pubDate.text, img=img))
+                insert_list.append(News(title=i.title.text, link=i.link.text, category=category, source=feed.source, pub_date=pub_, img=img))
             data['title'] = i.title.text
             data['link'] = i.link.text
             data['category'] = category
