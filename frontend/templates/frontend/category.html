@@ -1,56 +1,115 @@
 {% extends 'frontend/base.html' %}
 
+{% load static %}
+
 {% block title %} {{ main_item }} {% endblock %}
 
+{% block static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/bootstrap.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/style.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/owl-slider.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/custombox.min.css' %}"/>
+<link rel="shortcut icon" href="{% static 'frontend/assets/images/favicon.png' %}" />
+
+{% endblock %}
+
+
 {% block body %}
-<section class="zone--02 big--font zone zone__content no-banner">
-<div class="container">
-    <div class="zone__content">
+<div class="wrappage">
+    {% include 'frontend/header.html' %}
+    <div class="home2-head box slide-owl-mobile nav-ver5">
 
     </div>
+
+    <div class="container">
+    <div class="row">
+        <div class="technnology box space-30">
+               
+    </div>
+    <div class="mid_button">
+        <button id="more_btn" onclick="getByCategories()">More</button>
+    </div>
 </div>
-</section>
+</div>
+
+    {% include 'frontend/footer.html' %}
+
+</div>
+
 <script>
-    function getNewsByCategory(category, div_name) {
-        fetch(`/rss/bycategory/${category}`)
-    .then(response => response.json())
-    .then(data => {
-        info = data['feed']
-        zone = document.querySelector(`${div_name}`)
-        for (var i = 0; i < info.length; i++) {
-            zone.innerHTML += `
-            <div class="card card--splash-normal">
-                <div class="card__content">
-                    <div class="card__splash-wrapper">
-                        <div class="card__image__wrapper"> <a  target="_blank" class="tblank js-hover-intent-image yr-card-image" href="${info[i]['link']}">
-                                <div class="card__image js-card-image"> <img class="card__image__src lazyload loaded" data-src="${info[i]['img']}" src="${info[i]['img']}" data-was-processed="true"> </div>
-                                <div class="card__read__leater sqare js-hover-target-image"><span class="icon"></span></div>
-                            </a>
-                            <div class="card__image__credit js-hover-target-image"><a data-ga-category="UX-links" data-ga-action="Thumbnail" data-ga-label="24sata" href="https://klik.hr/vijesti/24sata">24sata</a>
-                            </div>
-                        </div>
-                        <div class="card__splash-headlines js-splash">
-                            <div class="card__headline card__headline--splash js-splash-title"> <a  target="_blank" class="tblank card__link yr-card-headline" href="${info[i]['link']}">
-                                    <div class="card__headline__text">${info[i]['title']}</div>
-                                </a> </div>
-                            <div class="card__splash-meta"></div>
-                        </div>
-                    </div>
-                    <div class="card__headlines">
-                        <div class="card__splash-meta">
-                            <div class="card__byline">
-                                <div class="author-list author-list--card"> <a class="author-list__link yr-author-name" data-ga-category="UX-links" data-ga-action="Article" data-ga-label="24sata" href=""> <span>${info[i]['source']}</span> </a>
-                                    ${info[i]['pub_date']} <span class="author-card__author-type"></span> </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            `
-        }
+    page_no = 1
+    category = '{{ main_item }}'
+    function getByCategories() {
+    fetch(`/rss/newsCategory/${category}`, {
+        method : "POST",
+        body : JSON.stringify({
+            "page_no" : page_no
+        })
     })
-    } 
-main = '{{ main_item }}'
-getNewsByCategory(main, ".zone__content")
+        .then(response => response.json())
+        .then(data => {
+            
+            if (!data['next']) {
+                document.querySelector("#more_btn").style.display = 'none';
+            }
+            console.log(page_no)
+            info = data['feed']
+            for ( var i = 0; i < info.length; i ++) { 
+            if (page_no == 1 && i < 3) {
+                
+                home_head = document.querySelector(".home2-head")
+                home_head.innerHTML += `
+                    <div class="col-md-4 col-sm-4">
+                    <div class="post-item ver1 cat-3 overlay">
+                        <a class="images" href="#" title="images"><img style="    height: 339px !important; width: 100%;" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                        <div class="text">
+                            <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                            <p></p>
+                            <div class="tag">
+                                <span class="lable">${info[i]['category']}</span>
+                                <p class="date">${info[i]['source']} prije  ${info[i]['pub_date']}</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End item -->
+                </div>
+            ` 
+            }
+            else { 
+                page_no += 1
+                home_head = document.querySelector(".technnology")
+              
+                home_head.innerHTML += `
+                <div class="post-item ver2">
+                        <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                        <div class="text">
+                            <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                            <div class="tag">
+                                <p class="date"> ${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                                
+                            </div>
+                            <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
+                        </div>
+                    </div>
+                `
+                }
+                }
+                page_no += 1
+        })
+    }
+    getByCategories()
 </script>
+
+<script type="text/javascript" src="{% static 'frontend/assets/js/jquery-3.1.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/jquery.themepunch.revolution.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/jquery.themepunch.plugins.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/engo-plugins.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/custombox.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/legacy.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/store.js' %}"></script>
+
 {% endblock %}

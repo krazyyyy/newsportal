@@ -1,0 +1,65 @@
+{% load static %}
+<header id="header" class="header-v2">
+    <div class="search ver2 ver3">
+        <form class="form-search" action="#" method="get" accept-charset="utf-8">
+            <input type="text" onblur="if (this.value == '') {this.value = 'Search articles & products...';}" onfocus="if(this.value != '') {this.value = '';}" value="Search articles & products..." class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email"> 
+            <button class="button" title="Subscribe" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <div class="header-top">
+            <div class="container">
+            <div class="box float-left">
+                <p class="icon-menu-mobile"><i class="fa fa-bars" ></i></p>
+                <div class="logo"><a href="#" title="Uno">
+                <img src="{% static 'frontend/assets/images/PRVI-preloader.png' %}" alt="images">
+                </a></div>
+                <div class="logo-mobile"><a href="#" title="Xanadu"><img src="{% static 'frontend/assets/images/logo.png' %}" alt="Xanadu-Logo"></a></div>
+
+                <div class="box-right">
+                    <div class="social">
+                        <a href="#" title="title"><i class="fa fa-facebook"></i></a>
+                        <a href="#" title="title"><i class="fa fa-twitter"></i></a>
+                        <a href="#" title="title"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" title="title"><i class="fa fa-rss"></i></a>
+                    </div>
+                    <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg" style="display:none;">
+                        <i class="icon"></i>
+                    </div>
+                </div>
+            </div>                
+            </div>
+            <!-- End container -->
+        </div>
+        <!-- End header-top -->
+        <div class="container">
+        <nav class="mega-menu">
+        <!-- Brand and toggle get grouped for better mobile display -->
+          <ul class="nav navbar-nav" id="navbar">
+            <li class="level1 active hover-menu"><a class="active" href="{% url 'index' %}" title="Home">Home</a>
+    
+            </li>
+            <li class="level1 hover-menu">
+                <a href="{% url 'category' 'test' %}" title="Social">Social</a>
+            </li>
+            <li class="level1 hover-menu">
+                <a href="#" title="BUSINESS">BUSINESS</a>
+            </li>
+            <li class="level1 hover-menu">
+                <a href="#" title="GAMING">GAMING</a>
+            </li>
+            <li class="level1 hover-menu">
+                <a href="#" title="TRAVEL">TRAVEL</a>
+            </li>
+            <li class="level1 hover-menu">
+                <a href="#" title="TECHNOLOGY">TECHNOLOGY</a>
+            </li>
+            <li class="level1 hover-menu">
+                <a href="#" title="SPORTS">SPORTS</a>
+            </li>
+       
+   
+          </ul>
+        </nav>
+        </div>
+        <!-- End megamenu -->
+</header>

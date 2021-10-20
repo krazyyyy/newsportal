@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.forms import model_to_dict
+from django.core.paginator import Paginator
 
+from django.views.decorators.csrf import csrf_exempt
 from bs4 import BeautifulSoup
 import requests
+import json
 
 from .models import Feed, News
 
@@ -79,4 +82,19 @@ def randomNewsCategory(request, random_number, category):
         n = model_to_dict(new)
         li.append(n)
     feed = dict(feed=li)
+    return JsonResponse(feed)
+
+@csrf_exempt
+def newsCategory(request, category):
+    data = json.loads(request.body)
+    news = News.objects.filter(category__iexact=category)
+    li = []
+    paginator = Paginator(news, 20)
+    page_number = data['page_no']
+    news_pag = paginator.get_page(page_number)
+
+    for new in news_pag:
+        n = model_to_dict(new)
+        li.append(n)
+    feed = dict(feed=li, next=news_pag.has_next())
     return JsonResponse(feed)

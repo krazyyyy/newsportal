@@ -1,0 +1,64 @@
+{% load static %}
+
+<footer id="footer" class="footer-v1">         
+    <div class="container">
+      <div class="row">
+          <div class="col-md-3">
+              <a class="logo-footer space-30" href="#" title="logo"><img src="{% static 'frontend/assets/images/PRVI-preloader.png' %}" alt="Logo-footer"></a>
+              <p class="space-30">Lorem ipsum dolor sit amet, consectetuer adipiscinglit. Aenean commodo ligula eget dolor. Aenean massaore cum sociis natoque penatibus et magnis dis parturient.</p>
+              <!-- End widget -->
+          </div>
+          <div class="col-md-6">
+              <div class="widget footer-info">
+                  <h3 class="widget-title">main office</h3>
+                  <ul>
+                      <li><i class="fa fa-home"></i> 121 King Street, Melbourne Victoria 3000 Australia</li>
+                      <li><i class="fa fa-phone-square"></i> 070-7782-9137</li>
+                      <li><i class="fa fa-fax"></i> 070-7782-9137</li>
+                      <li><i class="fa fa-envelope"></i> <a href="mailto:" title="link">contact@dailyplus.com</a></li>
+                  </ul>
+              </div>
+              <div class="social">
+                   <a href="#" title="title"><i class="fa fa-facebook"></i></a>
+                   <a href="#" title="title"><i class="fa fa-twitter"></i></a>
+                   <a href="#" title="title"><i class="fa fa-google-plus"></i></a>
+                   <a href="#" title="title"><i class="fa fa-rss"></i></a>
+               </div>
+          </div>
+          <div class="col-md-3">
+              <div class="widget categories">
+                  <h3 class="widget-title">CATEGORIES</h3>
+                  <ul>
+  
+                      <li><a href="{% url 'category' 'lifestyle' %}" title="social">Lifestyle</a><span class="count">(325)</span></li>
+                      <li><a href="{% url 'category' 'Biznis' %}" title="Business">Business</a><span class="count">(6566)</span></li>
+                      <li><a href="{% url 'category' 'Biznis' %}" title="Gaming">Gaming</a><span class="count">(890)</span></li>
+                      <li><a href="#" title="Technology">Technology</a><span class="count">(411)</span></li>
+                      <li><a href="{% url 'category' 'sport' %}" title="Sports">Sports</a><span class="count">(7841)</span></li>
+                      <li><a href="#" title="fashion">fashion</a><span class="count">(822)</span></li>
+                      <li><a href="#" title="Music">Music</a><span class="count">(1562)</span></li>
+                      <li><a href="#" title="movie">movie</a><span class="count">(325)</span></li>
+                  </ul>
+              </div>
+          </div>
+     
+      </div>
+      <!-- End row -->
+    </div>
+    <!-- End container -->
+    <div class="footer-bottom">
+      <div class="container">
+          <p class="float-left">Copyright &copy; 2015 <a href="#" title="EngoTheme">EngoTheme</a> - All rights reserved.</p>
+          <div class="float-right align-right">
+              <ul class="menu-footer">
+                  <li><a href="#" title="Term">Term</a></li>
+                  <li><a href="#" title="Privacy">Privacy</a></li>
+                  <li><a href="#" title="Brand">Brand</a></li>
+                  <li><a href="#" title="About">About</a></li>
+                  <li><a href="#" title="Contact">Contact</a></li>
+              </ul>
+          </div>
+      </div>
+    </div>
+  </footer>
+  

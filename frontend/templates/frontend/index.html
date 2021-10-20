@@ -15,87 +15,12 @@
 {% endblock %}
 
 {% block body %} 
-<div class="awe-page-loading">
-    <div class="awe-loading-wrapper">
-       <div class="awe-loading-icon">
-          <img src="{% static 'frontend/assets/images/PRVI-preloader.png' %}" alt="images">
-       </div>
-       <div class="progress">
-          <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-       </div>
-    </div>
- </div>
- <div id="box-user" style="display:none;">
-    <iframe width="980" src="#"></iframe>
-</div>
+
 <!-- End pushmenu -->
 <div class="wrappage">
     
     
-    <header id="header" class="header-v2">
-        <div class="search ver2 ver3">
-            <form class="form-search" action="#" method="get" accept-charset="utf-8">
-                <input type="text" onblur="if (this.value == '') {this.value = 'Search articles & products...';}" onfocus="if(this.value != '') {this.value = '';}" value="Search articles & products..." class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email"> 
-                <button class="button" title="Subscribe" type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
-        <div class="header-top">
-                <div class="container">
-                <div class="box float-left">
-                    <p class="icon-menu-mobile"><i class="fa fa-bars" ></i></p>
-                    <div class="logo"><a href="#" title="Uno">
-                    <img src="{% static 'frontend/assets/images/PRVI-preloader.png' %}" alt="images">
-                    </a></div>
-                    <div class="logo-mobile"><a href="#" title="Xanadu"><img src="{% static 'frontend/assets/images/logo.png' %}" alt="Xanadu-Logo"></a></div>
-
-                    <div class="box-right">
-                        <div class="social">
-                            <a href="#" title="title"><i class="fa fa-facebook"></i></a>
-                            <a href="#" title="title"><i class="fa fa-twitter"></i></a>
-                            <a href="#" title="title"><i class="fa fa-google-plus"></i></a>
-                            <a href="#" title="title"><i class="fa fa-rss"></i></a>
-                        </div>
-                        <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg" style="display:none;">
-                            <i class="icon"></i>
-                        </div>
-                    </div>
-                </div>                
-                </div>
-                <!-- End container -->
-            </div>
-            <!-- End header-top -->
-            <div class="container">
-            <nav class="mega-menu">
-            <!-- Brand and toggle get grouped for better mobile display -->
-              <ul class="nav navbar-nav" id="navbar">
-                <li class="level1 active hover-menu"><a class="active" href="{% url 'index' %}" title="Home">Home</a>
-        
-                </li>
-                <li class="level1 hover-menu">
-                    <a href="{% url 'category' 'test' %}" title="Social">Social</a>
-                </li>
-                <li class="level1 hover-menu">
-                    <a href="#" title="BUSINESS">BUSINESS</a>
-                </li>
-                <li class="level1 hover-menu">
-                    <a href="#" title="GAMING">GAMING</a>
-                </li>
-                <li class="level1 hover-menu">
-                    <a href="#" title="TRAVEL">TRAVEL</a>
-                </li>
-                <li class="level1 hover-menu">
-                    <a href="#" title="TECHNOLOGY">TECHNOLOGY</a>
-                </li>
-                <li class="level1 hover-menu">
-                    <a href="#" title="SPORTS">SPORTS</a>
-                </li>
-           
-       
-              </ul>
-            </nav>
-            </div>
-            <!-- End megamenu -->
-    </header>
+    {% include 'frontend/header.html' %}
 
     <div class="home2-head box slide-owl-mobile nav-ver5">
 
@@ -129,11 +54,10 @@
                 <h3>TECHNOLOGY</h3>
                 <div class="orther-link">
                     <ul>
-                        <li><a href="#" title="Cars">Cars</a></li>
-                        <li><a href="#" title="Developers">Developers</a></li>
-                        <li><a href="#" title="Gears">Gears</a></li>
-                        <li><a href="#" title="Reviews">Reviews</a></li>
-                        <li><a href="#" title="Softwares">Softwares</a></li>
+                        <li><a href="#" title="Cars">24Sata</a></li>
+                        <li><a href="#" title="Developers">N1Info</a></li>
+                        <li><a href="#" title="Gears">Novilist</a></li>
+       
                     </ul>
                 </div>
             </div>
@@ -142,24 +66,6 @@
                
             </div>
 
-            <div class="title-v1">
-                <h3>PHOTOS</h3>
-            </div>
-            <div class="box center">
-                <div class="slider-dot-images nav-ver1" style="text-align:left;">
-                    {% for news in cars_news %}
-                    <div class="post-item ver1 overlay">
-                        <a class="images" href="{{ news.link }}" title="images"><img class='img-responsive' src="{{ news.img }}" alt="images"></a>
-                        <div class="text">
-                            <h2><a href="{{ news.link }}" title="title">{{ news.title }}</a></h2>
-                        </div>
-                        <img class="thumb hidden" src="{{ news.img }}" alt="images">
-                    </div>
-                    <!-- End item -->
-                    {% endfor %}
-                   
-                </div>
-            </div>
             
             <div class="box">
                 <div class="row">
@@ -262,72 +168,8 @@
 
 
 
-<div id="back-to-top">
-    <i class="fa fa-long-arrow-up"></i>
-</div>
-<footer id="footer" class="footer-v1">         
-  <div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <a class="logo-footer space-30" href="#" title="logo"><img src="{% static 'frontend/assets/images/PRVI-preloader.png' %}" alt="Logo-footer"></a>
-            <p class="space-30">Lorem ipsum dolor sit amet, consectetuer adipiscinglit. Aenean commodo ligula eget dolor. Aenean massaore cum sociis natoque penatibus et magnis dis parturient.</p>
-            <!-- End widget -->
-        </div>
-        <div class="col-md-6">
-            <div class="widget footer-info">
-                <h3 class="widget-title">main office</h3>
-                <ul>
-                    <li><i class="fa fa-home"></i> 121 King Street, Melbourne Victoria 3000 Australia</li>
-                    <li><i class="fa fa-phone-square"></i> 070-7782-9137</li>
-                    <li><i class="fa fa-fax"></i> 070-7782-9137</li>
-                    <li><i class="fa fa-envelope"></i> <a href="mailto:" title="link">contact@dailyplus.com</a></li>
-                </ul>
-            </div>
-            <div class="social">
-                 <a href="#" title="title"><i class="fa fa-facebook"></i></a>
-                 <a href="#" title="title"><i class="fa fa-twitter"></i></a>
-                 <a href="#" title="title"><i class="fa fa-google-plus"></i></a>
-                 <a href="#" title="title"><i class="fa fa-rss"></i></a>
-             </div>
-        </div>
-        <div class="col-md-3">
-            <div class="widget categories">
-                <h3 class="widget-title">CATEGORIES</h3>
-                <ul>
 
-                    <li><a href="{% url 'category' 'lifestyle' %}" title="social">Lifestyle</a><span class="count">(325)</span></li>
-                    <li><a href="{% url 'category' 'Biznis' %}" title="Business">Business</a><span class="count">(6566)</span></li>
-                    <li><a href="{% url 'category' 'Biznis' %}" title="Gaming">Gaming</a><span class="count">(890)</span></li>
-                    <li><a href="#" title="Technology">Technology</a><span class="count">(411)</span></li>
-                    <li><a href="{% url 'category' 'sport' %}" title="Sports">Sports</a><span class="count">(7841)</span></li>
-                    <li><a href="#" title="fashion">fashion</a><span class="count">(822)</span></li>
-                    <li><a href="#" title="Music">Music</a><span class="count">(1562)</span></li>
-                    <li><a href="#" title="movie">movie</a><span class="count">(325)</span></li>
-                </ul>
-            </div>
-        </div>
-   
-    </div>
-    <!-- End row -->
-  </div>
-  <!-- End container -->
-  <div class="footer-bottom">
-    <div class="container">
-        <p class="float-left">Copyright &copy; 2015 <a href="#" title="EngoTheme">EngoTheme</a> - All rights reserved.</p>
-        <div class="float-right align-right">
-            <ul class="menu-footer">
-                <li><a href="#" title="Term">Term</a></li>
-                <li><a href="#" title="Privacy">Privacy</a></li>
-                <li><a href="#" title="Brand">Brand</a></li>
-                <li><a href="#" title="About">About</a></li>
-                <li><a href="#" title="Contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
-  </div>
-</footer>
-
-
+{% include 'frontend/footer.html' %}
 
 </div>
 
