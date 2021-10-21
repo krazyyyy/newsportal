@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/style.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/owl-slider.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/custombox.min.css' %}"/>
+
 <link rel="shortcut icon" href="{% static 'frontend/assets/images/favicon.png' %}" />
 
 {% endblock %}
@@ -22,14 +23,25 @@
 
     </div>
 
-    <div class="container">
+
+
+    <div class="container-fluid">
     <div class="row">
+        <div class="col-md-8">
         <div class="technnology box space-30">
                
     </div>
     <div class="mid_button">
         <button id="more_btn" onclick="getByCategories()">More</button>
     </div>
+</div>
+<div class="col-md-4">
+    <aside class="widget">
+        <div class="banner">
+            <img class="img-responsive" src="{% static 'frontend/assets/images/widget-banner.jpg' %}" alt="banner">
+        </div>
+    </aside>
+</div>
 </div>
 </div>
 
@@ -82,7 +94,7 @@
                 home_head = document.querySelector(".technnology")
               
                 home_head.innerHTML += `
-                <div class="post-item ver2">
+                <div class="post-item ver2" style="height:200px; overflow : hidden;">
                         <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                         <div class="text">
                             <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>

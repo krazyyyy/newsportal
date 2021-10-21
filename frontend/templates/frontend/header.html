@@ -1,5 +1,5 @@
 {% load static %}
-<header id="header" class="header-v2">
+<header style="z-index: 55;" id="header" class="header-v2">
     <div class="search ver2 ver3">
         <form class="form-search" action="#" method="get" accept-charset="utf-8">
             <input type="text" onblur="if (this.value == '') {this.value = 'Search articles & products...';}" onfocus="if(this.value != '') {this.value = '';}" value="Search articles & products..." class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email"> 
@@ -10,10 +10,10 @@
             <div class="container">
             <div class="box float-left">
                 <p class="icon-menu-mobile"><i class="fa fa-bars" ></i></p>
-                <div class="logo"><a href="#" title="Uno">
+                <div class="logo"><a href="{% url 'index' %}" title="Uno">
                 <img src="{% static 'frontend/assets/images/PRVI-preloader.png' %}" alt="images">
                 </a></div>
-                <div class="logo-mobile"><a href="#" title="Xanadu"><img src="{% static 'frontend/assets/images/logo.png' %}" alt="Xanadu-Logo"></a></div>
+                <div class="logo-mobile"><a href="{% url 'index' %}" title="Xanadu"><img src="{% static 'frontend/assets/images/PRVI-preloader.png' %}" alt="Xanadu-Logo"></a></div>
 
                 <div class="box-right">
                     <div class="social">
@@ -39,22 +39,22 @@
     
             </li>
             <li class="level1 hover-menu">
-                <a href="{% url 'category' 'test' %}" title="Social">Social</a>
+                <a href="{% url 'category' 'social' %}" title="Social">Social</a>
             </li>
             <li class="level1 hover-menu">
-                <a href="#" title="BUSINESS">BUSINESS</a>
+                <a href="{% url 'category' 'Biznis' %}" title="BUSINESS">BUSINESS</a>
             </li>
             <li class="level1 hover-menu">
                 <a href="#" title="GAMING">GAMING</a>
             </li>
             <li class="level1 hover-menu">
-                <a href="#" title="TRAVEL">TRAVEL</a>
+                <a href="{% url 'category' 'Hrvatska' %}" title="TRAVEL">TRAVEL</a>
             </li>
             <li class="level1 hover-menu">
                 <a href="#" title="TECHNOLOGY">TECHNOLOGY</a>
             </li>
             <li class="level1 hover-menu">
-                <a href="#" title="SPORTS">SPORTS</a>
+                <a href="{% url 'category' 'Nogomet' %}" title="SPORTS">SPORTS</a>
             </li>
        
    

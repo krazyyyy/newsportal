@@ -13,6 +13,9 @@ class Feed(models.Model):
     source = models.CharField(max_length=228, null=True, blank=True)
     category = models.CharField(max_length=228, null=True, blank=True)
 
+    def __str__(self):
+        return f"{self.source}"
+
 class News(models.Model):
     title = models.CharField(max_length=228)
     link = models.CharField(max_length=228)
