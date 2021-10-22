@@ -51,7 +51,7 @@
             </div>
 
             <div class="title-v1">
-                <h3>TECHNOLOGY</h3>
+                <h3>Vijesti</h3>
                 <div class="orther-link">
                     <ul>
                         <li><a href="#" title="Cars">24Sata</a></li>
@@ -62,9 +62,45 @@
                 </div>
             </div>
 
-            <div class="technnology box space-30">
+            <div class="vijesti technnology box space-30">
                
             </div>
+
+            <div class="title-v1">
+                <h3>Nogomet</h3>
+                <div class="orther-link">
+                    <ul>
+                        <li><a href="#" title="Cars">24Sata</a></li>
+                        <li><a href="#" title="Developers">N1Info</a></li>
+                        <li><a href="#" title="Gears">Novilist</a></li>
+       
+                    </ul>
+                </div>
+            </div>
+
+            <div id="Nogomet" class="technnology box space-30">
+               
+            </div>
+
+
+          
+            <div class="title-v1">
+                <h3>Show</h3>
+                <div class="orther-link">
+                    <ul>
+                        <li><a href="#" title="Cars">24Sata</a></li>
+                        <li><a href="#" title="Developers">N1Info</a></li>
+                        <li><a href="#" title="Gears">Novilist</a></li>
+       
+                    </ul>
+                </div>
+            </div>
+
+            <div id="tech_box" class="technnology box space-30">
+               
+            </div>
+
+           
 
             
             <div class="box">
@@ -74,10 +110,7 @@
                             <h3>Svijet</h3>
                         </div>
                         <!-- End tile -->
-                        <div class="box size-18 space-30 Svijet">
-                  
-                            <!-- End item -->
-                        </div>
+         
                         <!-- End box -->
                         <div class="row size-16 Svijet_16">
                          
@@ -89,10 +122,7 @@
                             <h3>Biznis</h3>
                         </div>
                         <!-- End tile -->
-                        <div class="box space-30 size-18 Biznis">
-                           
-                            <!-- End item -->
-                        </div>
+                     
                         <!-- End box -->
                         <div class="row size-16 Bizniz_16">
                            
@@ -102,32 +132,7 @@
                 </div>
             </div>
            
-            <div class="title-v1">
-                <h3>GAMING</h3>
-                <div class="orther-link">
-                    <ul>
-                        <li><a href="#" title="Mobile">Mobile</a></li>
-                        <li><a href="#" title="PC">PC</a></li>
-                        <li><a href="#" title="Play">Play</a></li>
-                        <li><a href="#" title="Station 4">Station 4</a></li>
-                        <li><a href="#" title="Wii">Wii</a></li>
-                        <li><a href="#" title="Xbox 360">Xbox 360</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- End tile -->
-            <div class="gaming box space-30">
-                <div class="row">
-                    <div class="col-md-6 footer_news">
-                       
-                        <!-- End item -->
-                    </div>
-                    <div class="col-md-6 w_100 footer_details">
-                    
-                        <!-- End item -->
-                    </div>
-                </div>
-            </div>
+        
 
         </div>
 
@@ -297,7 +302,49 @@
         .then(response => response.json())
         .then(data => {
             info = data['feed']
-            home_head = document.querySelector(".technnology")
+            home_head = document.querySelector("#tech_box")
+            for ( var i = 0; i < info.length; i ++) { 
+            home_head.innerHTML += `
+            <div class="post-item ver2">
+                    <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                    <div class="text">
+                        <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                        <div class="tag">
+                            <p class="date"> ${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                             
+                        </div>
+                        <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
+                    </div>
+                </div>
+            `
+            }
+        })
+        fetch(`rss/randomNewsCategory/4/Nogomet`)
+        .then(response => response.json())
+        .then(data => {
+            info = data['feed']
+            home_head = document.querySelector("#Nogomet")
+            for ( var i = 0; i < info.length; i ++) { 
+            home_head.innerHTML += `
+            <div class="post-item ver2">
+                    <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                    <div class="text">
+                        <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                        <div class="tag">
+                            <p class="date"> ${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                             
+                        </div>
+                        <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
+                    </div>
+                </div>
+            `
+            }
+        })
+        fetch(`rss/randomNewsCategory/4/vijesti`)
+        .then(response => response.json())
+        .then(data => {
+            info = data['feed']
+            home_head = document.querySelector(".vijesti")
             for ( var i = 0; i < info.length; i ++) { 
             home_head.innerHTML += `
             <div class="post-item ver2">
@@ -376,7 +423,7 @@
             for ( var i = 0; i < info.length; i ++) { 
             home_head.innerHTML += `
             <div class="col-md-6 col-sm-6 space-30">
-                        <div class="post-item ver4 overlay-v2 cat-4">
+                        <div class="post-item ver4 overlay-v2 cat-4" style="height: 210px; overflow: hidden;">
                             <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                             <div class="text">
                                 <span class="lable">${info[i]['category']}</span>
@@ -402,7 +449,7 @@
             home_head.innerHTML += `
             <div class="col-md-4 col-sm-4">
             <div class="post-item ver1 cat-3 overlay">
-                <a class="images" href="#" title="images"><img style="    height: 339px !important; width: 100%;" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                <a class="images" href="#" title="images"><img style="    height:310px !important; width: 100%;" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                 <div class="text">
                     <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
                     <p></p>
@@ -429,7 +476,7 @@ function getByCategory(cat) {
             for ( var i = 0; i < info.length; i ++) { 
             home_head.innerHTML += `
             <div class="col-md-6 col-sm-6 space-30">
-                        <div class="post-item ver4 overlay-v2 cat-4">
+                        <div class="post-item ver4 overlay-v2 cat-4" style="height: 210px; overflow: hidden;">
                             <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                             <div class="text">
                                 <span class="lable">${info[i]['category']}</span>
@@ -460,7 +507,7 @@ function randomCategory() {
             for ( var i = 0; i < info.length; i ++) { 
             home_head.innerHTML += `
             <div class="col-md-6 col-sm-6 space-30">
-                        <div class="post-item ver4 overlay-v2 cat-4">
+                        <div class="post-item ver4 overlay-v2 cat-4" style="height: 210px; overflow: hidden;">
                             <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                             <div class="text">
                                 <span class="lable">${info[i]['category']}</span>
