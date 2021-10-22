@@ -22,9 +22,13 @@
     
     {% include 'frontend/header.html' %}
 
-    <div class="home2-head box slide-owl-mobile nav-ver5">
+    <div class="row" style="    display: flex;
+    justify-content: center;">
+    <div class="home2-head box slide-owl-mobile nav-ver5" style="max-width: 2000px;">
 
     </div>
+</div>
+
 
 
 
@@ -447,7 +451,7 @@
             home_head = document.querySelector(".home2-head")
             for ( var i = 0; i < info.length; i ++) { 
             home_head.innerHTML += `
-            <div class="col-md-4 col-sm-4">
+            <div class="col-md-4 col-sm-4"  style="z-index:55;">
             <div class="post-item ver1 cat-3 overlay">
                 <a class="images" href="#" title="images"><img style="    height:310px !important; width: 100%;" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                 <div class="text">

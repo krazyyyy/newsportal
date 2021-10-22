@@ -13070,7 +13070,7 @@ nav.pagination a.next i {
 
 /** 6.2.3. Header version 2 **/
 #header.header-v2 {
-  background: #1c1c1c;
+  background: #fff;
   border-bottom: 3px solid #db2e1c;
   position: relative;
 }
@@ -13118,7 +13118,7 @@ nav.pagination a.next i {
 }
 
 #header.header-v2 .header-top {
-  background: #222;
+  background: #fff;
   border-bottom: none;
 }
 
@@ -13129,9 +13129,9 @@ nav.pagination a.next i {
   }
 }
 
-#header.header-v2 .header-top .social a {
+/* #header.header-v2 .header-top .social a {
   border-color: #1b1b1b;
-}
+} */
 
 #header.header-v2 .header-top .social a:hover i {
   color: #db2e1c;
@@ -13139,7 +13139,7 @@ nav.pagination a.next i {
 
 #header.header-v2 .header-top .social a i {
   line-height: 50px;
-  color: #fff;
+  color: #333;
 }
 
 @media (max-width: 1200px) {
@@ -13165,7 +13165,7 @@ nav.pagination a.next i {
 }
 
 #header.header-v2 .mega-menu li a {
-  color: #fff;
+  color: #333;
 }
 
 @media (max-width: 1200px) {
