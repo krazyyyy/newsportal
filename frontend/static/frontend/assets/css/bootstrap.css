@@ -901,7 +901,7 @@ pre code {
   }
 }
 
-@media (min-width: 1400px) {
+/* @media (min-width: 1400px) {
   .container {
     width: 1400px;
   }
@@ -923,7 +923,7 @@ pre code {
   .container {
     width: 2000px;
   }
-}
+} */
 
 .container-fluid {
   margin-right: auto;

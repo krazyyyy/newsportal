@@ -89,6 +89,25 @@
 /** 1.2. Bootstrap **/
 /** 1.3. Animation **/
 /* effect-v1 */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+@media (min-width:1200px)  {
+  .home2-head {
+    max-width: 1200px;
+
+  }
+  
+}
+
+@media (max-width:900px) {
+  #head-img {
+    width: 70px;
+  }
+}
+
 .effect-v1 {
   background-color: #000;
   overflow: hidden;
@@ -17907,6 +17926,20 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   }
   #header {
     padding-bottom: 5px;
+  }
+}
+
+.img-head-news {
+  height:310px !important;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .logo-mobile img {
+    width: 100px;
+  }
+  .img-head-news {
+    height: auto;
   }
 }
 
