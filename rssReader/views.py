@@ -24,7 +24,7 @@ def getNews(request):
         for i in entries:
             try:
                 data = dict()
-                chk = News.objects.filter(link=i.link.text)
+                chk = News.objects.filter(link__iexact=i.link.text)
                 try:
                     img = i.enclosure['url'] 
                 except:
