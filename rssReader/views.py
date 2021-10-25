@@ -22,27 +22,30 @@ def getNews(request):
         soup = BeautifulSoup(url.content, 'xml')
         entries = soup.find_all('item')
         for i in entries:
-            data = dict()
-            chk = News.objects.filter(link=i.link.text)
             try:
-                img = i.enclosure['url'] 
-            except:
+                data = dict()
+                chk = News.objects.filter(link=i.link.text)
                 try:
-                    img = i.find("media:content")['url']
+                    img = i.enclosure['url'] 
                 except:
-                    img = i.img.text
-            try:
-                category = i.category.text
+                    try:
+                        img = i.find("media:content")['url']
+                    except:
+                        img = i.img.text
+                try:
+                    category = i.category.text
+                except:
+                    category = feed.category
+                pub_ = i.pubDate.text.replace("+0000", "")
+                if not chk.exists():
+                    insert_list.append(News(title=i.title.text, link=i.link.text, category=category, source=feed.source, pub_date=pub_, img=img))
+                data['title'] = i.title.text
+                data['link'] = i.link.text
+                data['category'] = category
+                data['img'] = img
+                li.append(data)
             except:
-                category = feed.category
-            pub_ = i.pubDate.text.replace("+0000", "")
-            if not chk.exists():
-                insert_list.append(News(title=i.title.text, link=i.link.text, category=category, source=feed.source, pub_date=pub_, img=img))
-            data['title'] = i.title.text
-            data['link'] = i.link.text
-            data['category'] = category
-            data['img'] = img
-            li.append(data)
+                pass
     News.objects.bulk_create(insert_list)
     # feed = dict(feed=li)
     return JsonResponse({"message" : "success"})

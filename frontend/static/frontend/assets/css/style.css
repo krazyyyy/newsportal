@@ -17929,8 +17929,8 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   }
 }
 
-.img-head-news {
-  height:310px !important;
+#img-head-news {
+  height:230px !important;
   width: 100%;
 }
 
@@ -17938,7 +17938,7 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   .logo-mobile img {
     width: 100px;
   }
-  .img-head-news {
+  #img-head-news {
     height: auto;
   }
 }
