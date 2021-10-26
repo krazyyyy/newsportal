@@ -19,8 +19,11 @@
 {% block body %}
 <div class="wrappage">
     {% include 'frontend/header.html' %}
+    <div class="row" style="    display: flex;
+    justify-content: center;">
     <div class="home2-head box slide-owl-mobile nav-ver5">
 
+    </div>
     </div>
 
 
@@ -72,21 +75,17 @@
                 
                 home_head = document.querySelector(".home2-head")
                 home_head.innerHTML += `
-                    <div class="col-md-4 col-sm-4">
-                    <div class="post-item ver1 cat-3 overlay">
-                        <a class="images" href="#" title="images"><img style="    height: 310px !important; width: 100%;" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                        <div class="text">
-                            <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
-                            <p></p>
-                            <div class="tag">
-                                <span class="lable">${info[i]['category']}</span>
-                                <p class="date">${info[i]['source']} prije  ${info[i]['pub_date']}</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End item -->
-                </div>
+                <div class="col-md-4 col-sm-4"  style="z-index:55;">
+            <div class="post-item ver1 cat-3 overlay">
+                <a class="images" href="#" title="images"><img id="img-head-news" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                
+            </div>
+
+                <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
+                <small class="wrap" class="date">${info[i]['source']} prije ${info[i]['pub_date']}</small>
+            </div>
+<!-- End item -->
+        </div>
             ` 
             }
             else { 

@@ -17934,6 +17934,35 @@ nav.megamenu-v2 ul.main-menu li:last-child {
   width: 100%;
 }
 
+.wrap{
+  text-overflow: ellipsis;
+white-space: pre-wrap;
+overflow: hidden;
+width: 340px;
+height: 50px;
+padding: 0 2px 0 10px;
+}
+.dsg {
+color: #333;
+font-size: 16px;
+line-height: 20px;
+}
+
+.dsg::after {
+position: absolute;
+content: '';
+left: 0px;
+top: 2px;
+background: #db2e1c;
+width: 3px;
+height: 17px;
+}
+
+.dsg h4 {
+font-weight: bold;
+}
+
+
 @media (max-width: 900px) {
   .logo-mobile img {
     width: 100px;

@@ -193,14 +193,7 @@
 </div>
 
 <style>
-    .wrap{
-        text-overflow: ellipsis;
-    white-space: pre-wrap;
-    overflow: hidden;
-    width: 330px;
-    height: 45px;
-}
-
+ 
 </style>
 <script>
     fetch(`rss/randomNewsCategory/2/Biznis`)
@@ -417,7 +410,7 @@
             home_head = document.querySelector("#popular_dynm")
             for ( var i = 0; i < info.length; i ++) { 
             if (i == 0) {
-                cls = "post-item ver1 overlay"
+                cls = "post-item ver2"
             }
             else {
                 cls = "post-item ver2 "
@@ -452,7 +445,7 @@
                         
                         </div>
                         <div>
-                            <a class="wrap" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
+                            <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
                             <small class="wrap" class="date">${info[i]['source']} prije ${info[i]['pub_date']}</small>
                         </div>
                         <!-- End item -->
@@ -473,8 +466,8 @@
                 <a class="images" href="#" title="images"><img id="img-head-news" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                 
             </div>
-             <div>
-                <a class="wrap" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
+
+                <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
                 <small class="wrap" class="date">${info[i]['source']} prije ${info[i]['pub_date']}</small>
             </div>
 <!-- End item -->
@@ -529,7 +522,7 @@ function randomCategory() {
                          
                         </div>
                         <div>
-                            <a class="wrap" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
+                            <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
                             <small class="wrap" class="date">${info[i]['source']} prije ${info[i]['pub_date']}</small>
                         </div>
                         <!-- End item -->
