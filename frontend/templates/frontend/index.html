@@ -192,7 +192,16 @@
 
 </div>
 
+<style>
+    .wrap{
+        text-overflow: ellipsis;
+    white-space: pre-wrap;
+    overflow: hidden;
+    width: 330px;
+    height: 45px;
+}
 
+</style>
 <script>
     fetch(`rss/randomNewsCategory/2/Biznis`)
     .then(response => response.json())
@@ -236,7 +245,7 @@
                                     </div>
                                     <div class="text">
                                         <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
-                                        <p>${info[i]['source']}</p>
+        
                                     </div>
                                 </div>
                                 <!-- End item -->
@@ -411,7 +420,7 @@
                 cls = "post-item ver1 overlay"
             }
             else {
-                cls = "post-item ver1 "
+                cls = "post-item ver2 "
             }
                 home_head.innerHTML += `
             <div class="${cls}">
@@ -439,14 +448,12 @@
             <div class="col-md-6 col-sm-6 space-30">
                         <div class="post-item ver4 overlay-v2 cat-4" style="height: 210px; overflow: hidden;">
                             <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                            <div class="text">
-                                <span class="lable">${info[i]['category']}</span>
-                                <h2><a href="#" title="title">${info[i]['title']}</a></h2>
-                                <div class="tag">
-                                    <p class="date">${info[i]['source']} prije ${info[i]['pub_date']}</p>
-                                     
-                                </div>
-                            </div>
+                          
+                        
+                        </div>
+                        <div>
+                            <a class="wrap" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
+                            <small class="wrap" class="date">${info[i]['source']} prije ${info[i]['pub_date']}</small>
                         </div>
                         <!-- End item -->
                     </div>
@@ -464,17 +471,13 @@
             <div class="col-md-4 col-sm-4"  style="z-index:55;">
             <div class="post-item ver1 cat-3 overlay">
                 <a class="images" href="#" title="images"><img id="img-head-news" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                <div class="text">
-                    <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
-                    <p></p>
-                    <div class="tag">
-                        <span class="lable">${info[i]['category']}</span>
-                        <p class="date">${info[i]['source']} prije  ${info[i]['pub_date']}</p>
-                        
-                    </div>
-                </div>
+                
             </div>
-            <!-- End item -->
+             <div>
+                <a class="wrap" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
+                <small class="wrap" class="date">${info[i]['source']} prije ${info[i]['pub_date']}</small>
+            </div>
+<!-- End item -->
         </div>
             ` 
     }
@@ -523,15 +526,11 @@ function randomCategory() {
             <div class="col-md-6 col-sm-6 space-30">
                         <div class="post-item ver4 overlay-v2 cat-4" style="height: 210px; overflow: hidden;">
                             <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                            <div class="text">
-                                <span class="lable">${info[i]['category']}</span>
-                                <h2><a href="#" title="title">${info[i]['title']}</a></h2>
-                                <p>${info[i]['source']}</p>
-                                <div class="tag">
-                                    <p class="date">${info[i]['source']} prije ${info[i]['pub_date']}</p>
-                                     
-                                </div>
-                            </div>
+                         
+                        </div>
+                        <div>
+                            <a class="wrap" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
+                            <small class="wrap" class="date">${info[i]['source']} prije ${info[i]['pub_date']}</small>
                         </div>
                         <!-- End item -->
                     </div>
