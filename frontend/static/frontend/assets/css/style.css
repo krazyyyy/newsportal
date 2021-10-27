@@ -17945,6 +17945,7 @@ padding: 0 2px 0 10px;
 color: #333;
 font-size: 16px;
 line-height: 20px;
+font-family: "Oswald";
 }
 
 .dsg::after {
@@ -17958,6 +17959,7 @@ height: 17px;
 }
 
 .dsg h4 {
+  font-family: 'Oswald';
 font-weight: bold;
 }
 

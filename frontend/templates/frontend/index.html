@@ -220,7 +220,33 @@
        elem = elem.replace("Oct", "10") 
        elem = elem.replace("Nov", "11") 
        elem = elem.replace("Dec", "12") 
-       elem = elem.split("prije") 
+       elem = elem.replaceAll(" ", "/") 
+       elem = elem.replace("/01:", " 01:") 
+       elem = elem.replace("/02:", " 02:") 
+       elem = elem.replace("/03:", " 03:") 
+       elem = elem.replace("/04:", " 04:") 
+       elem = elem.replace("/05:", " 05:") 
+       elem = elem.replace("/06:", " 06:") 
+       elem = elem.replace("/07:", " 07:") 
+       elem = elem.replace("/08:", " 08:") 
+       elem = elem.replace("/09:", " 09:") 
+       elem = elem.replace("/10:", " 10:") 
+       elem = elem.replace("/11:", " 11:") 
+       elem = elem.replace("/12:", " 12:") 
+       elem = elem.replace("/13:", " 13:") 
+       elem = elem.replace("/14:", " 14:") 
+       elem = elem.replace("/15:", " 15:") 
+       elem = elem.replace("/16:", " 16:") 
+       elem = elem.replace("/17:", " 17:") 
+       elem = elem.replace("/18:", " 18:") 
+       elem = elem.replace("/19:", " 19:") 
+       elem = elem.replace("/20:", " 20:") 
+       elem = elem.replace("/21:", " 21:") 
+       elem = elem.replace("/22:", " 22:") 
+       elem = elem.replace("/23:", " 23:") 
+       elem = elem.replace("/24:", " 24:") 
+       elem = elem.slice(3, -1) 
+       
        return elem
     }
 
@@ -237,7 +263,7 @@
                                     <div class="wrap-images">
                                         <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                         <div class="tag">
-                                            <p class="date">${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
+                                            <p class="date">${info[i]['source']} | ${info[i]['category']} | ${updateDate(info[i]['pub_date'])}</p>
                                         </div>
                                     </div>
                                     <div class="text">
@@ -262,7 +288,7 @@
                                     <div class="wrap-images">
                                         <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                         <div class="tag">
-                                            <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
+                                            <p class="date"> ${info[i]['source']} | ${info[i]['category']} | ${updateDate(info[i]['pub_date'])}</p>
                                         </div>
                                     </div>
                                     <div class="text">
@@ -286,7 +312,7 @@
                                 <div class="wrap-images">
                                     <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                     <div class="tag">
-                                        <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
+                                        <p class="date"> ${info[i]['source']}  |  ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
                                     </div>
                                 </div>
                                 <div class="text">
@@ -309,7 +335,7 @@
                                 <div class="wrap-images">
                                     <a class="images" href="${info[i]['link']}" title="images"><img style="width:100%; height:230px !important" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                     <div class="tag">
-                                        <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
+                                        <p class="date"> ${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
                                     </div>
                                 </div>
                                 <div class="text">
@@ -332,7 +358,7 @@
                                 <div class="wrap-images">
                                     <a class="images" href="${info[i]['link']}" title="images"><img style="width:100%; height:230px !important" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                     <div class="tag">
-                                        <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
+                                        <p class="date"> ${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
                                     </div>
                                 </div>
                                 <div class="text">
@@ -355,7 +381,7 @@
                     <div class="text">
                         <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
                         <div class="tag">
-                            <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
+                            <p class="date"> ${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
                              
                         </div>
                         <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
@@ -376,7 +402,7 @@
                     <div class="text">
                         <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
                         <div class="tag">
-                            <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
+                            <p class="date"> ${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
                              
                         </div>
                         <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
@@ -397,7 +423,7 @@
                     <div class="text">
                         <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
                         <div class="tag">
-                            <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
+                            <p class="date"> ${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
                              
                         </div>
                         <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
@@ -419,7 +445,7 @@
                         <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
                         
                         <div class="tag">
-                            <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
+                            <p class="date"> ${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
                              
                         </div>
                         <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
@@ -451,7 +477,7 @@
                                     <h2><a href="" title="title">${info[i]['title']}</a></h2>
                                     
                                     <div class="tag">
-                                        <p class="date">${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
+                                        <p class="date">${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
                                     </div>
                                 </div>
                             </div>
@@ -475,7 +501,7 @@
                         </div>
                         <div>
                             <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
-                            <small class="wrap" class="date">${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</small>
+                            <small class="wrap" class="date">${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</small>
                         </div>
                         <!-- End item -->
                     </div>
@@ -497,7 +523,7 @@
             </div>
 
                 <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
-                <small class="wrap" class="date">${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</small>
+                <small class="wrap" class="date">${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</small>
             </div>
 <!-- End item -->
         </div>
@@ -524,7 +550,7 @@ function getByCategory(cat) {
                                     </h2>
                                 <p>${info[i]['source']}</p>
                                 <div class="tag">
-                                    <p class="date">${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
+                                    <p class="date">${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
                                      
                                 </div>
                             </div>
@@ -552,7 +578,7 @@ function randomCategory() {
                         </div>
                         <div>
                             <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
-                            <small class="wrap" class="date">${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</small>
+                            <small class="wrap" class="date">${info[i]['source']} | ${info[i]['category']} | ${updateDate(info[i]['pub_date'])}</small>
                         </div>
                         <!-- End item -->
                     </div>
