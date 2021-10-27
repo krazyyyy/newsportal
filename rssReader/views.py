@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.forms import model_to_dict
 from django.core.paginator import Paginator
-
+from datetime import timedelta
+from django.utils import timezone
+import datetime
 from django.views.decorators.csrf import csrf_exempt
 from bs4 import BeautifulSoup
 import requests
@@ -77,6 +79,36 @@ def randomNews(request, random_number):
         li.append(n)
     feed = dict(feed=li)
     return JsonResponse(feed)
+
+def latestNews(request, random_number):
+    news = News.objects.all().order_by('-id')[:random_number]
+    li = []
+    for new in news:
+        n = model_to_dict(new)
+        li.append(n)
+    feed = dict(feed=li)
+    return JsonResponse(feed)
+
+def getNewsCategory(request, random_number, category):
+    # news = News.objects.filter(category__iexact=category).order_by('?')[:random_number]
+    li = []
+    i = 1
+    while True:
+        this_hour = timezone.now().replace(minute=0, second=0, microsecond=0)
+        one_hour_later = this_hour + timedelta(hours=i)
+        thetime = datetime.datetime.now() - timedelta(hours=i)
+        news = News.objects.filter(category__iexact=category, time__gte=thetime).order_by("-id")[:random_number]
+       
+        if len(news) >= random_number or i > 200:
+            break
+        else:
+            i += 1
+    for new in news:
+        n = model_to_dict(new)
+        li.append(n)
+    feed = dict(feed=li)
+    return JsonResponse(feed)
+
 
 def randomNewsCategory(request, random_number, category):
     news = News.objects.filter(category__iexact=category).order_by('?')[:random_number]

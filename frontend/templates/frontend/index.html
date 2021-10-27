@@ -196,6 +196,35 @@
  
 </style>
 <script>
+    function updateDate(elem) {
+       elem = elem.replace("+0100", "")
+       elem = elem.replace("+0200", "") 
+       elem = elem.replace("+0000", "") 
+       elem = elem.replace("000Z", "") 
+       elem = elem.replace("Mon", "") 
+       elem = elem.replace("Tue", "") 
+       elem = elem.replace("Wed", "") 
+       elem = elem.replace("Thu", "") 
+       elem = elem.replace("Fri", "") 
+       elem = elem.replace("Sun", "") 
+       elem = elem.replace("Sat", "") 
+       elem = elem.replace("Jan", "1") 
+       elem = elem.replace("Feb", "2") 
+       elem = elem.replace("Apr", "3") 
+       elem = elem.replace("Mar", "4") 
+       elem = elem.replace("May", "5") 
+       elem = elem.replace("Jun", "6") 
+       elem = elem.replace("Jul", "7") 
+       elem = elem.replace("Aug", "8") 
+       elem = elem.replace("Sep", "9") 
+       elem = elem.replace("Oct", "10") 
+       elem = elem.replace("Nov", "11") 
+       elem = elem.replace("Dec", "12") 
+       elem = elem.split("prije") 
+       return elem
+    }
+
+
     fetch(`rss/randomNewsCategory/2/Biznis`)
     .then(response => response.json())
     .then(data => {
@@ -208,7 +237,7 @@
                                     <div class="wrap-images">
                                         <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                         <div class="tag">
-                                            <p class="date">${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                                            <p class="date">${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
                                         </div>
                                     </div>
                                     <div class="text">
@@ -233,7 +262,7 @@
                                     <div class="wrap-images">
                                         <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                         <div class="tag">
-                                            <p class="date"> ${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                                            <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
                                         </div>
                                     </div>
                                     <div class="text">
@@ -257,7 +286,7 @@
                                 <div class="wrap-images">
                                     <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                     <div class="tag">
-                                        <p class="date"> ${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                                        <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
                                     </div>
                                 </div>
                                 <div class="text">
@@ -280,7 +309,7 @@
                                 <div class="wrap-images">
                                     <a class="images" href="${info[i]['link']}" title="images"><img style="width:100%; height:230px !important" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                     <div class="tag">
-                                        <p class="date"> ${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                                        <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
                                     </div>
                                 </div>
                                 <div class="text">
@@ -303,7 +332,7 @@
                                 <div class="wrap-images">
                                     <a class="images" href="${info[i]['link']}" title="images"><img style="width:100%; height:230px !important" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                     <div class="tag">
-                                        <p class="date"> ${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                                        <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
                                     </div>
                                 </div>
                                 <div class="text">
@@ -314,7 +343,7 @@
         `
         }
     })
-        fetch(`rss/randomNewsCategory/4/show`)
+        fetch(`rss/getNewsCategory/4/show`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']
@@ -326,7 +355,7 @@
                     <div class="text">
                         <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
                         <div class="tag">
-                            <p class="date"> ${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                            <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
                              
                         </div>
                         <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
@@ -335,7 +364,7 @@
             `
             }
         })
-        fetch(`rss/randomNewsCategory/4/Nogomet`)
+        fetch(`rss/getNewsCategory/4/Nogomet`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']
@@ -347,7 +376,7 @@
                     <div class="text">
                         <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
                         <div class="tag">
-                            <p class="date"> ${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                            <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
                              
                         </div>
                         <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
@@ -356,7 +385,7 @@
             `
             }
         })
-        fetch(`rss/randomNewsCategory/4/vijesti`)
+        fetch(`rss/getNewsCategory/4/vijesti`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']
@@ -368,7 +397,7 @@
                     <div class="text">
                         <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
                         <div class="tag">
-                            <p class="date"> ${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                            <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
                              
                         </div>
                         <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
@@ -377,7 +406,7 @@
             `
             }
         })
-        fetch(`rss/randomNewsCategory/4/Nogomet`)
+        fetch(`rss/getNewsCategory/4/Nogomet`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']
@@ -390,7 +419,7 @@
                         <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
                         
                         <div class="tag">
-                            <p class="date"> ${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                            <p class="date"> ${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
                              
                         </div>
                         <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
@@ -422,7 +451,7 @@
                                     <h2><a href="" title="title">${info[i]['title']}</a></h2>
                                     
                                     <div class="tag">
-                                        <p class="date">${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                                        <p class="date">${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
                                     </div>
                                 </div>
                             </div>
@@ -446,7 +475,7 @@
                         </div>
                         <div>
                             <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
-                            <small class="wrap" class="date">${info[i]['source']} prije ${info[i]['pub_date']}</small>
+                            <small class="wrap" class="date">${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</small>
                         </div>
                         <!-- End item -->
                     </div>
@@ -454,21 +483,21 @@
                 }
         })
 
-        fetch(`/rss/randomNews/3`)
+        fetch(`/rss/latest/3`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']
             home_head = document.querySelector(".home2-head")
             for ( var i = 0; i < info.length; i ++) { 
             home_head.innerHTML += `
-            <div class="col-md-4 col-sm-4"  style="z-index:55;">
+            <div class="col-md-4 col-sm-4" >
             <div class="post-item ver1 cat-3 overlay">
                 <a class="images" href="#" title="images"><img id="img-head-news" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                 
             </div>
 
                 <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
-                <small class="wrap" class="date">${info[i]['source']} prije ${info[i]['pub_date']}</small>
+                <small class="wrap" class="date">${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</small>
             </div>
 <!-- End item -->
         </div>
@@ -477,7 +506,7 @@
         })
     
 function getByCategory(cat) {
-    fetch(`rss/randomNewsCategory/4/${cat}`)
+    fetch(`rss/getNewsCategory/4/${cat}`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']
@@ -495,7 +524,7 @@ function getByCategory(cat) {
                                     </h2>
                                 <p>${info[i]['source']}</p>
                                 <div class="tag">
-                                    <p class="date">${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                                    <p class="date">${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</p>
                                      
                                 </div>
                             </div>
@@ -523,7 +552,7 @@ function randomCategory() {
                         </div>
                         <div>
                             <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
-                            <small class="wrap" class="date">${info[i]['source']} prije ${info[i]['pub_date']}</small>
+                            <small class="wrap" class="date">${info[i]['source']} prije ${updateDate(info[i]['pub_date'])}</small>
                         </div>
                         <!-- End item -->
                     </div>

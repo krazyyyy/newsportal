@@ -23,3 +23,4 @@ class News(models.Model):
     img = models.CharField(max_length=228)
     pub_date = models.CharField(max_length=228, null=True, blank=True)
     source = models.CharField(max_length=228, null=True, blank=True)
+    time = models.DateTimeField(auto_now_add=True)
