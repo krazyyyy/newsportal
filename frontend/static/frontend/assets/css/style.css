@@ -17980,7 +17980,19 @@ font-weight: bold;
   }
 }
 
+
+.hg200 {
+  height:200px; overflow : hidden;
+}
+
+
+
 @media (max-width: 467px) {
+  .hg200 {
+    height: auto;
+    overflow: auto;
+  }
+
   #topbar .topbar-right a {
     display: inline-block;
     border: none;

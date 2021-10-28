@@ -53,6 +53,61 @@
 </div>
 
 <script>
+    function updateDate(elem) {
+       elem = elem.replace("+0100", "")
+       elem = elem.replace("+0200", "") 
+       elem = elem.replace("+0000", "") 
+       elem = elem.replace("000Z", "") 
+       elem = elem.replace("Mon", "") 
+       elem = elem.replace("Tue", "") 
+       elem = elem.replace("Wed", "") 
+       elem = elem.replace("Thu", "") 
+       elem = elem.replace("Fri", "") 
+       elem = elem.replace("Sun", "") 
+       elem = elem.replace("Sat", "") 
+       elem = elem.replace("Jan", "1") 
+       elem = elem.replace("Feb", "2") 
+       elem = elem.replace("Apr", "3") 
+       elem = elem.replace("Mar", "4") 
+       elem = elem.replace("May", "5") 
+       elem = elem.replace("Jun", "6") 
+       elem = elem.replace("Jul", "7") 
+       elem = elem.replace("Aug", "8") 
+       elem = elem.replace("Sep", "9") 
+       elem = elem.replace("Oct", "10") 
+       elem = elem.replace("Nov", "11") 
+       elem = elem.replace("Dec", "12") 
+       elem = elem.replaceAll(" ", "/") 
+       elem = elem.replace("/01:", " 01:") 
+       elem = elem.replace("/02:", " 02:") 
+       elem = elem.replace("/03:", " 03:") 
+       elem = elem.replace("/04:", " 04:") 
+       elem = elem.replace("/05:", " 05:") 
+       elem = elem.replace("/06:", " 06:") 
+       elem = elem.replace("/07:", " 07:") 
+       elem = elem.replace("/08:", " 08:") 
+       elem = elem.replace("/09:", " 09:") 
+       elem = elem.replace("/10:", " 10:") 
+       elem = elem.replace("/11:", " 11:") 
+       elem = elem.replace("/12:", " 12:") 
+       elem = elem.replace("/13:", " 13:") 
+       elem = elem.replace("/14:", " 14:") 
+       elem = elem.replace("/15:", " 15:") 
+       elem = elem.replace("/16:", " 16:") 
+       elem = elem.replace("/17:", " 17:") 
+       elem = elem.replace("/18:", " 18:") 
+       elem = elem.replace("/19:", " 19:") 
+       elem = elem.replace("/20:", " 20:") 
+       elem = elem.replace("/21:", " 21:") 
+       elem = elem.replace("/22:", " 22:") 
+       elem = elem.replace("/23:", " 23:") 
+       elem = elem.replace("/24:", " 24:") 
+       elem = elem.slice(3, -1) 
+       
+       return elem
+    }
+
+
     page_no = 1
     category = '{{ main_item }}'
     function getByCategories() {
@@ -82,7 +137,7 @@
             </div>
 
                 <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
-                <small class="wrap" class="date">${info[i]['source']} prije ${info[i]['pub_date']}</small>
+                <small class="wrap" class="date">${info[i]['source']} | ${info[i]['category']} | ${updateDate(info[i]['pub_date'])}</small>
             </div>
 <!-- End item -->
         </div>
@@ -93,12 +148,12 @@
                 home_head = document.querySelector(".technnology")
               
                 home_head.innerHTML += `
-                <div class="post-item ver2" style="height:200px; overflow : hidden;">
+                <div class="post-item ver2 hg200">
                         <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                         <div class="text">
                             <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
                             <div class="tag">
-                                <p class="date"> ${info[i]['source']} prije ${info[i]['pub_date']}</p>
+                                <p class="date"> ${info[i]['source']} | ${info[i]['category']} | ${updateDate(info[i]['pub_date'])}</p>
                                 
                             </div>
                             <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
