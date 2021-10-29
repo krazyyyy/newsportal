@@ -1,0 +1,71 @@
+{% extends 'frontend/base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% load static %}
+
+{% block static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/bootstrap.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/style.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/owl-slider.css' %}"/>
+<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/custombox.min.css' %}"/>
+<link rel="shortcut icon" href="{% static 'frontend/assets/images/favicon.png' %}" />
+
+{% endblock %}
+
+{% block body %} 
+<div class="wrappage">
+    
+    
+    {% include 'frontend/header.html' %}
+    <div class="head-single">
+        <div class="blog-post-images">
+            <a href="#" title="Post"><img class="img-responsive" src="{{ news.img }}" alt="banner"></a>
+        </div>
+    </div>
+    <div class="container space-20 space-padding-tb-20">
+        <ul class="breadcrumb">
+           <li><a href="{% url 'index' %}">Home</a></li>
+           <li class="active">{{ news.category }}</li>
+       </ul>
+   </div>
+   <div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="single-post">
+                <div class="blog-post-item cat-1 box">
+                    <div class="content">
+                        <h3>{{ news.title }}</h3>
+                        <div class="tag">
+                            <p class="label">{{ news.category}}</p>
+                            <p class="date"><i class="fa fa-clock-o"></i>{{ news.time }}</p>
+                            <a class="comments" href="#" title="comments"><i class="fa fa-comments"></i>10</a>
+                        </div>
+                    <div>
+                        {{ news.news_context | safe }}
+                    </div>
+                  
+                
+
+                </div>
+            </div>
+            <!-- End signle-post -->
+        </div>
+    
+    </div>
+    </div>
+   </div>
+    {% include 'frontend/footer.html' %}
+
+</div>
+<script type="text/javascript" src="{% static 'frontend/assets/js/jquery-3.1.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/owl.carousel.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/jquery.themepunch.revolution.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/jquery.themepunch.plugins.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/engo-plugins.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/custombox.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/legacy.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'frontend/assets/js/store.js' %}"></script>
+{% endblock %}

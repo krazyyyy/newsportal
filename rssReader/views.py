@@ -9,8 +9,11 @@ from django.views.decorators.csrf import csrf_exempt
 from bs4 import BeautifulSoup
 import requests
 import json
+from itertools import chain
+import operator
 
-from .models import Feed, News
+
+from .models import Feed, News, PRVINews
 
 # Create your views here.
 def getNews(request):
@@ -125,6 +128,27 @@ def newsCategory(request, category):
     news = News.objects.filter(category__iexact=category)
     li = []
     paginator = Paginator(news, 20)
+    page_number = data['page_no']
+    news_pag = paginator.get_page(page_number)
+
+    for new in news_pag:
+        n = model_to_dict(new)
+        li.append(n)
+    feed = dict(feed=li, next=news_pag.has_next())
+    return JsonResponse(feed)
+
+@csrf_exempt
+def newsSource(request, source):
+    data = json.loads(request.body)
+    news = News.objects.filter(source__iexact=source)
+    news1 = PRVINews.objects.filter(source__iexact=source)
+    all_news = list(chain(news, news1))
+    try:
+        ourtags = sorted(all_news, key=operator.attrgetter('time'), reverse=True)
+    except:
+        ourtags = all_news
+    li = []
+    paginator = Paginator(ourtags, 20)
     page_number = data['page_no']
     news_pag = paginator.get_page(page_number)
 

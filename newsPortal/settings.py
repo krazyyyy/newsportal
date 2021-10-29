@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'frontend',
-    'rssReader'
+    'rssReader',
+    'ckeditor',
 ]
 
 AUTH_USER_MODEL = 'rssReader.CustomUser'
@@ -67,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "frontend.context_processors.management"
             ],
         },
     },

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Feed, CustomUser, News
+from .models import Feed, CustomUser, News, ADsCode, PRVINews
 
 # Register your models here.
 
@@ -19,3 +19,5 @@ class FeedAdmin(admin.ModelAdmin):
 admin.site.register(Feed, FeedAdmin)
 admin.site.register(News, NewsAdmin)
 admin.site.register(CustomUser)
+admin.site.register(ADsCode)
+admin.site.register(PRVINews)

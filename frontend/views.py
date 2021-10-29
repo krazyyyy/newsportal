@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from rssReader.models import News
+from rssReader.models import News, PRVINews
 
 # Create your views here.
 def index(request):
@@ -11,3 +11,12 @@ def index(request):
 
 def categoryPage(request, pk):
     return render(request, 'frontend/category.html', {"main_item" : pk})
+
+def sourcePage(request, pk):
+    return render(request, 'frontend/source.html', {"main_item" : pk})
+
+def prvi(request, pk):
+    news = PRVINews.objects.get(id=pk)
+    return render(request, 'frontend/single.html', {
+        "news" : news
+    })

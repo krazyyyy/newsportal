@@ -54,6 +54,7 @@
 
 <script>
     function updateDate(elem) {
+        if (elem != ""  && elem != null) {
        elem = elem.replace("+0100", "")
        elem = elem.replace("+0200", "") 
        elem = elem.replace("+0000", "") 
@@ -105,13 +106,17 @@
        elem = elem.slice(3, -1) 
        
        return elem
+        }
+    else {
+    return ""
+    }
     }
 
 
     page_no = 1
     category = '{{ main_item }}'
     function getByCategories() {
-    fetch(`/rss/newsCategory/${category}`, {
+    fetch(`/rss/newsSource/${category}`, {
         method : "POST",
         body : JSON.stringify({
             "page_no" : page_no

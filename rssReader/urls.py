@@ -10,5 +10,6 @@ urlpatterns = [
     path("randomNewsCategory/<int:random_number>/<str:category>", views.randomNewsCategory, name="randomNewsCategory"),
     path("getNewsCategory/<int:random_number>/<str:category>", views.getNewsCategory, name="getNewsCategory"),
     path("newsCategory/<str:category>", views.newsCategory, name="nameCategory"),
+    path("newsSource/<str:source>", views.newsSource, name="nameSource"),
     path("latest/<int:random_number>", views.latestNews, name="latestNews")
 ]
