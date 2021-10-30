@@ -19,28 +19,24 @@
     
     
     {% include 'frontend/header.html' %}
+    <div style="text-align: center;">
+        <h1 class="single-main-heading">{{ news.title }}</h1>
+    </div>
     <div class="head-single">
-        <div class="blog-post-images">
+        <div class="blog-post-images" style="text-align: center;">
             <a href="#" title="Post"><img class="img-responsive" src="{{ news.img }}" alt="banner"></a>
         </div>
     </div>
-    <div class="container space-20 space-padding-tb-20">
-        <ul class="breadcrumb">
-           <li><a href="{% url 'index' %}">Home</a></li>
-           <li class="active">{{ news.category }}</li>
-       </ul>
-   </div>
-   <div class="container">
+   <div class="container" style="max-width:600px; margin: 0 auto;">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="single-post">
                 <div class="blog-post-item cat-1 box">
                     <div class="content">
-                        <h3>{{ news.title }}</h3>
                         <div class="tag">
                             <p class="label">{{ news.category}}</p>
                             <p class="date"><i class="fa fa-clock-o"></i>{{ news.time }}</p>
-                            <a class="comments" href="#" title="comments"><i class="fa fa-comments"></i>10</a>
+                      
                         </div>
                     <div>
                         {{ news.news_context | safe }}

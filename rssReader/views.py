@@ -36,7 +36,17 @@ def getNews(request):
                     try:
                         img = i.find("media:content")['url']
                     except:
-                        img = i.img.text
+                        try:
+                            img = i.img.text
+                        except:
+                            try:
+                                t = (i.find('description').text)
+                                sp = BeautifulSoup(t, 'html5lib')
+                                img = (sp.find("img")['src'])
+                            except:
+                                t = (i.find('content').text)
+                                sp = BeautifulSoup(t, 'html5lib')
+                                img = (sp.find("img")['src'])
                 try:
                     category = i.category.text
                 except:

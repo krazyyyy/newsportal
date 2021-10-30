@@ -17985,6 +17985,24 @@ font-weight: bold;
   height:200px; overflow : hidden;
 }
 
+.single-main-heading::before {
+  position: absolute;
+  content: '';
+  left: 0px;
+  height: 26px;
+  width: 5px;
+  background: #db2e1c;
+  top: 5px;
+}
+
+.single-main-heading {
+  font: 400 30px/35px"Oswald";
+  color: #000;
+  padding-left: 15px;
+  position: relative;
+  margin: 20px 0px 40px
+
+}
 
 
 @media (max-width: 467px) {

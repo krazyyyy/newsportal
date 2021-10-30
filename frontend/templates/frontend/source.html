@@ -124,24 +124,29 @@
     })
         .then(response => response.json())
         .then(data => {
-            
             if (!data['next']) {
                 document.querySelector("#more_btn").style.display = 'none';
             }
-            console.log(page_no)
             info = data['feed']
+            
             for ( var i = 0; i < info.length; i ++) { 
-            if (page_no == 1 && i < 3) {
+            if ("link" in info[i]) {
+                link = info[i]['link']
+            }
+            else {
+                link = `/news/${info[i]['id']}`
+            }
+                if (page_no == 1 && i < 3) {
                 
                 home_head = document.querySelector(".home2-head")
                 home_head.innerHTML += `
                 <div class="col-md-4 col-sm-4"  style="z-index:55;">
             <div class="post-item ver1 cat-3 overlay">
-                <a class="images" href="#" title="images"><img id="img-head-news" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                <a class="images" href="${link}" title="images"><img id="img-head-news" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                 
             </div>
 
-                <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
+                <a class="wrap dsg" href="${link}"><h4>${info[i]['title']}</h4></a>
                 <small class="wrap" class="date">${info[i]['source']} | ${info[i]['category']} | ${updateDate(info[i]['pub_date'])}</small>
             </div>
 <!-- End item -->
@@ -154,14 +159,14 @@
               
                 home_head.innerHTML += `
                 <div class="post-item ver2 hg200">
-                        <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                        <a class="images" href="${link}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                         <div class="text">
-                            <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                            <h2><a href="${link}" title="title">${info[i]['title']}</a></h2>
                             <div class="tag">
                                 <p class="date"> ${info[i]['source']} | ${info[i]['category']} | ${updateDate(info[i]['pub_date'])}</p>
                                 
                             </div>
-                            <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
+                            <a class="read-more" href="${link}" title="readMore">Read More</a>
                         </div>
                     </div>
                 `
