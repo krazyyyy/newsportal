@@ -73,12 +73,12 @@
         {% endif %}    
         
         <div class="title-v1">
-                <h3>Vijesti</h3>
+               <a id="no-style-link" href="{% url 'category' 'Vijesti' %}"> <h3>Vijesti</h3></a>
                 <div class="orther-link">
                     <ul>
-                        <li><a href="#" title="Cars">24Sata</a></li>
-                        <li><a href="#" title="Developers">N1Info</a></li>
-                        <li><a href="#" title="Gears">Novilist</a></li>
+                        <li><a href="{% url 'source' 'Slobodnadalmacija' %}" title="Slobodnadalmacija"> Slobodnadalmacija</a></li>
+                        <li><a href="{% url 'source' 'Index' %}" title="Index"> Index</a></li>
+                        <li><a href="{% url 'source' 'Reci' %}" title="Reci"> Reci</a></li>
        
                     </ul>
                 </div>
@@ -94,12 +94,12 @@
         <img src="{% static 'frontend/assets/images/category.jpg' %}" alt="">
         {% endif %}
         <div class="title-v1">
-                <h3>Nogomet</h3>
+                <a id="no-style-link" href="{% url 'category' 'Nogomet' %}"><h3>Nogomet</h3></a>
                 <div class="orther-link">
                     <ul>
-                        <li><a href="#" title="Cars">24Sata</a></li>
-                        <li><a href="#" title="Developers">N1Info</a></li>
-                        <li><a href="#" title="Gears">Novilist</a></li>
+                        <li><a href="{% url 'source' 'Dnevno' %}" title="Dnevno">Dnevno</a></li>
+                        <li><a href="{% url 'source' 'net' %}" title="net">Net</a></li>
+                        <li><a href="{% url 'source' 'Tportal' %}" title="Tportal">Tportal</a></li>
        
                     </ul>
                 </div>
@@ -116,12 +116,12 @@
         <img src="{% static 'frontend/assets/images/category.jpg' %}" alt="">
         {% endif %}    
         <div class="title-v1">
-                <h3>Show</h3>
+               <a id="no-style-link" href="{% url 'category' 'Show' %}"> <h3>Show</h3></a>
                 <div class="orther-link">
                     <ul>
-                        <li><a href="#" title="Cars">24Sata</a></li>
-                        <li><a href="#" title="Developers">N1Info</a></li>
-                        <li><a href="#" title="Gears">Novilist</a></li>
+                        <li><a href="{% url 'source' '24sata' %}" title="24Sata">24Sata</a></li>
+                        <li><a href="{% url 'source' 'N1Info' %}" title="N1Info">N1Info</a></li>
+                        <li><a href="{% url 'source' 'Novilist' %}" title="Novilist">Novilist</a></li>
        
                     </ul>
                 </div>
