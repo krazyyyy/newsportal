@@ -167,3 +167,8 @@ def newsSource(request, source):
         li.append(n)
     feed = dict(feed=li, next=news_pag.has_next())
     return JsonResponse(feed)
+
+def countQuery(request, pk):
+    news_count = News.objects.filter(category__iexact=pk).count()
+    count = dict(total=news_count)
+    return JsonResponse(count)

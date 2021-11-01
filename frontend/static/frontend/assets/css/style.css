@@ -17934,18 +17934,36 @@ nav.megamenu-v2 ul.main-menu li:last-child {
 }
 
 .wrap{
+  font-family:  'Oswald';
   text-overflow: ellipsis;
-white-space: pre-wrap;
-overflow: hidden;
-width: 340px;
-height: 50px;
-padding: 0 2px 0 10px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  width: 340px;
+  height: 50px;
+  padding: 0 2px 0 10px;
 }
 .dsg {
 color: #333;
 font-size: 16px;
 line-height: 20px;
 font-family: "Oswald";
+padding-left: 7px;
+padding-bottom: 10px;
+}
+
+.text .date {
+  padding-left : 8px;
+}
+
+.text .read-more {
+  padding-left: 8px;
+  padding-top: 8px;
+}
+
+#no-style-link {
+  color : unset;
+  font-size: unset;
+  line-height: unset;
 }
 
 .dsg::after {

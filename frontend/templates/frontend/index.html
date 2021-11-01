@@ -169,26 +169,8 @@
 
         <div class="col-md-4">
             <aside class="widget social">
-                <div class="item facebook">
-                    <div class="bg">
-                        <i class="fa fa-facebook"></i>
-                        <p class="count">156,570</p>
-                        <p class="text">Fans</p>
-                    </div>
-                </div>
-                <div class="item twitter">
-                    <div class="bg">
-                        <i class="fa fa-twitter"></i>
-                        <p class="count">3,562</p>
-                        <p class="text">Followers</p>
-                    </div>
-                </div>
-                <div class="item google">
-                    <div class="bg">
-                        <i class="fa fa-google-plus"></i>
-                        <p class="count">29,546</p>
-                        <p class="text">Followers</p>
-                    </div>
+                <div class="banner">
+                    <img class="img-responsive" src="{% static 'frontend/assets/images/widget-banner.jpg' %}" alt="banner">
                 </div>
             </aside>
             <aside class="widget popular">
@@ -278,13 +260,13 @@
             <div class="col-md-6 col-sm-6">
                                 <div class="post-item ver3 overlay">
                                     <div class="wrap-images">
-                                        <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                                        <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                         <div class="tag">
-                                            <p class="date">${info[i]['source']} | ${info[i]['category']} | ${updateDate(info[i]['pub_date'])}</p>
+                                            <p class="date"><a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
                                         </div>
                                     </div>
                                     <div class="text">
-                                        <h2><a href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
+                                        <h2><a rel="nowfollow" href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
                                         
                                     </div>
                                 </div>
@@ -303,13 +285,13 @@
             <div class="col-md-6 col-sm-6">
                                 <div class="post-item ver3 overlay">
                                     <div class="wrap-images">
-                                        <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                                        <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                         <div class="tag">
-                                            <p class="date"> ${info[i]['source']} | ${info[i]['category']} | ${updateDate(info[i]['pub_date'])}</p>
+                                            <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
                                         </div>
                                     </div>
                                     <div class="text">
-                                        <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                                        <h2><a rel="nowfollow" href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
         
                                     </div>
                                 </div>
@@ -327,15 +309,15 @@
         elm.innerHTML += `
         <div class="post-item ver3 overlay max-width-700">
                                 <div class="wrap-images">
-                                    <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                                    <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                     <div class="tag">
                                         <p class="date"> ${info[i]['source']}  |  ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
                                     </div>
                                 </div>
                                 <div class="text">
-                                    <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                                    <h2><a rel="nowfollow" href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
                                     <p>${info[i]['source']}</p>
-                                    <a class="read-more" href="${info[i]['link']}" title="read more">read more</a>
+                                    <a class="read-more" href="${info[i]['link']}" title="pročitaj više">pročitaj više</a>
                                 </div>
                             </div>
         `
@@ -350,15 +332,15 @@
         elm.innerHTML += `
         <div class="post-item ver3 overlay max-width-700">
                                 <div class="wrap-images">
-                                    <a class="images" href="${info[i]['link']}" title="images"><img style="width:100%; height:230px !important" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                                    <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img style="width:100%; height:230px !important" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                     <div class="tag">
-                                        <p class="date"> ${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
+                                        <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
                                     </div>
                                 </div>
                                 <div class="text">
-                                    <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                                    <h2><a rel="nowfollow" href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
                                     
-                                    <a class="read-more" href="${info[i]['link']}" >read more</a>
+                                    <a class="read-more" href="${info[i]['link']}" >pročitaj više</a>
                                 </div>
                             </div>
         `
@@ -373,14 +355,14 @@
         elm.innerHTML += `
         <div class="post-item ver3 overlay max-width-700">
                                 <div class="wrap-images">
-                                    <a class="images" href="${info[i]['link']}" title="images"><img style="width:100%; height:230px !important" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                                    <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img style="width:100%; height:230px !important" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                                     <div class="tag">
-                                        <p class="date"> ${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
+                                        <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
                                     </div>
                                 </div>
                                 <div class="text">
-                                    <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
-                                    <a class="read-more" href="${info[i]['link']}" title="read more">read more</a>
+                                    <h2><a href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
+                                    <a rel="nowfollow" class="read-more" href="${info[i]['link']}" title="pročitaj više">pročitaj više</a>
                                 </div>
                             </div>
         `
@@ -394,14 +376,14 @@
             for ( var i = 0; i < info.length; i ++) { 
             home_head.innerHTML += `
             <div class="post-item ver2">
-                    <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                    <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                     <div class="text">
-                        <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                        <h2><a href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
                         <div class="tag">
-                            <p class="date"> ${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
+                            <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
                              
                         </div>
-                        <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
+                        <a rel="nowfollow" class="read-more" href="${info[i]['link']}" title="pročitaj više">pročitaj više</a>
                     </div>
                 </div>
             `
@@ -415,14 +397,14 @@
             for ( var i = 0; i < info.length; i ++) { 
             home_head.innerHTML += `
             <div class="post-item ver2">
-                    <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                    <a class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                     <div class="text">
-                        <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                        <h2><a rel="nowfollow" href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
                         <div class="tag">
-                            <p class="date"> ${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
+                            <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
                              
                         </div>
-                        <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
+                        <a rel="nowfollow" class="read-more" href="${info[i]['link']}" title="pročitaj više">pročitaj više</a>
                     </div>
                 </div>
             `
@@ -436,14 +418,14 @@
             for ( var i = 0; i < info.length; i ++) { 
             home_head.innerHTML += `
             <div class="post-item ver2">
-                    <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                    <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                     <div class="text">
-                        <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                        <h2><a href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
                         <div class="tag">
-                            <p class="date"> ${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
+                            <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
                              
                         </div>
-                        <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
+                        <a rel="nowfollow" class="read-more" href="${info[i]['link']}" title="pročitaj više">pročitaj više</a>
                     </div>
                 </div>
             `
@@ -457,15 +439,15 @@
             for ( var i = 0; i < info.length; i ++) { 
             home_head.innerHTML += `
             <div class="post-item ver2">
-                    <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                    <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                     <div class="text">
-                        <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
+                        <h2><a rel="nowfollow" href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
                         
                         <div class="tag">
-                            <p class="date"> ${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
+                            <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
                              
                         </div>
-                        <a class="read-more" href="${info[i]['link']}" title="readMore">Read More</a>
+                        <a rel="nowfollow" class="read-more" href="${info[i]['link']}" title="pročitaj više">pročitaj više</a>
                     </div>
                 </div>
             `
@@ -489,12 +471,12 @@
             }
                 home_head.innerHTML += `
             <div class="${cls}">
-                                <a class="images" href="${info[i]['link']}" title="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="images"></a>
+                                <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="images"></a>
                                 <div class="text">
-                                    <h2><a href="" title="title">${info[i]['title']}</a></h2>
+                                    <h2><a rel="nowfollow" href="" title="${info[i]['title']}">${info[i]['title']}</a></h2>
                                     
                                     <div class="tag">
-                                        <p class="date">${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
+                                        <p class="date"><a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
                                     </div>
                                 </div>
                             </div>
@@ -512,13 +494,13 @@
             home_head.innerHTML += `
             <div class="col-md-6 col-sm-6 space-30">
                         <div class="post-item ver4 overlay-v2 cat-4" style="height: 210px; overflow: hidden;">
-                            <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                            <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                           
                         
                         </div>
                         <div>
-                            <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
-                            <small class="wrap" class="date">${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</small>
+                            <a rel="nowfollow" class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
+                            <small class="wrap" class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</small>
                         </div>
                         <!-- End item -->
                     </div>
@@ -535,12 +517,12 @@
             home_head.innerHTML += `
             <div class="col-md-4 col-sm-4" >
             <div class="post-item ver1 cat-3 overlay">
-                <a class="images" href="#" title="images"><img id="img-head-news" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                <a rel="nowfollow" class="images" href="#" title="${info[i]['title']}" alt="${info[i]['title']}"><img id="img-head-news" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                 
             </div>
 
-                <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
-                <small class="wrap" class="date">${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</small>
+                <a rel="nowfollow" class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
+                <small class="wrap" class="date"><a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</small>
             </div>
 <!-- End item -->
         </div>
@@ -559,18 +541,12 @@ function getByCategory(cat) {
             home_head.innerHTML += `
             <div class="col-md-6 col-sm-6 space-30">
                         <div class="post-item ver4 overlay-v2 cat-4" style="height: 210px; overflow: hidden;">
-                            <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                            <div class="text">
-                                <span class="lable">${info[i]['category']}</span>
-                                <h2><a href="#" title="title">${info[i]['title']}</a>
-                                    </br>${info[i]['source']} 
-                                    </h2>
-                                <p>${info[i]['source']}</p>
-                                <div class="tag">
-                                    <p class="date">${info[i]['source']}  | ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
-                                     
-                                </div>
-                            </div>
+                            <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                         
+                        </div>
+                        <div>
+                            <a rel="nowfollow" class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
+                            <small class="wrap" class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])} </small>
                         </div>
                         <!-- End item -->
                     </div>
@@ -590,12 +566,12 @@ function randomCategory() {
             home_head.innerHTML += `
             <div class="col-md-6 col-sm-6 space-30">
                         <div class="post-item ver4 overlay-v2 cat-4" style="height: 210px; overflow: hidden;">
-                            <a class="images" href="${info[i]['link']}" title="images"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                            <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                          
                         </div>
                         <div>
-                            <a class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
-                            <small class="wrap" class="date">${info[i]['source']} | ${info[i]['category']} | ${updateDate(info[i]['pub_date'])}</small>
+                            <a rel="nowfollow" class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
+                            <small class="wrap" class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</small>
                         </div>
                         <!-- End item -->
                     </div>

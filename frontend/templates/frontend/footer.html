@@ -30,14 +30,11 @@
                   <h3 class="widget-title">CATEGORIES</h3>
                   <ul>
   
-                      <li><a href="{% url 'category' 'lifestyle' %}" title="social">Lifestyle</a><span class="count">(325)</span></li>
-                      <li><a href="{% url 'category' 'Biznis' %}" title="Business">Business</a><span class="count">(6566)</span></li>
-                      <li><a href="{% url 'category' 'Biznis' %}" title="Gaming">Gaming</a><span class="count">(890)</span></li>
-                      <li><a href="#" title="Technology">Technology</a><span class="count">(411)</span></li>
-                      <li><a href="{% url 'category' 'sport' %}" title="Sports">Sports</a><span class="count">(7841)</span></li>
-                      <li><a href="#" title="fashion">fashion</a><span class="count">(822)</span></li>
-                      <li><a href="#" title="Music">Music</a><span class="count">(1562)</span></li>
-                      <li><a href="#" title="movie">movie</a><span class="count">(325)</span></li>
+                      <li><a href="{% url 'category' 'Vijesti' %}" title="Vijesti">Vijesti</a><span class="count" id="vijesti_count"></span></li>
+                      <li><a href="{% url 'category' 'sport' %}" title="Sports">Sports</a><span class="count" id="sport_count"></span></li>
+                      <li><a href="{% url 'category' 'lifestyle' %}" title="LifeStyle">Lifestyle</a><span class="count" id="lifestyle_count"></span></li>
+                      <li><a href="{% url 'category' 'Biznis' %}" title="Biznis">Biznis</a><span class="count" id="biznis_count"></span></li>
+                      <li><a href="{% url 'category' 'Tehnologija' %}" title="Tehnologija">Tehnologija</a><span class="count" id="Tehnologija_count"></span></li>
                   </ul>
               </div>
           </div>
@@ -46,19 +43,26 @@
       <!-- End row -->
     </div>
     <!-- End container -->
-    <div class="footer-bottom">
+    <div style="text-align: center;" class="footer-bottom">
       <div class="container">
-          <p class="float-left">Copyright &copy; 2015 <a href="#" title="EngoTheme">EngoTheme</a> - All rights reserved.</p>
-          <div class="float-right align-right">
-              <ul class="menu-footer">
-                  <li><a href="#" title="Term">Term</a></li>
-                  <li><a href="#" title="Privacy">Privacy</a></li>
-                  <li><a href="#" title="Brand">Brand</a></li>
-                  <li><a href="#" title="About">About</a></li>
-                  <li><a href="#" title="Contact">Contact</a></li>
-              </ul>
-          </div>
+          <p>Copyright &copy; 2021 <a id="no-style-link" style="color: #fff;" href="{% url 'index' %}" title="Prvi.hr">Prvi.hr</a> - All rights reserved.</p>
       </div>
     </div>
   </footer>
+  <script>
+      function getCount(category, div_id) {
+   
+          fetch(`/rss/count/${category}`)
+          .then(response => response.json())
+          .then(data => {
+               document.querySelector(`${div_id}`).innerHTML = (data['total'])
+            })
+
+      }
+    getCount("Biznis", "#biznis_count")
+    getCount("Lifestyle", "#lifestyle_count")
+    getCount("Vijesti", "#vijesti_count")
+    getCount("Sport", "#sport_count")
+    getCount("Tehnologija", "#Tehnologija_count")
+  </script>
   

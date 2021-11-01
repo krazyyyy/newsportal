@@ -1,11 +1,6 @@
 {% load static %}
 <header style="z-index: 55;" id="header" class="header-v2">
-    <div class="search ver2 ver3">
-        <form class="form-search" action="#" method="get" accept-charset="utf-8">
-            <input type="text" onblur="if (this.value == '') {this.value = 'Search articles & products...';}" onfocus="if(this.value != '') {this.value = '';}" value="Search articles & products..." class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletter" name="email"> 
-            <button class="button" title="Subscribe" type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
+  
     <div class="header-top">
             <div class="container">
             <div class="box float-left">
@@ -39,25 +34,25 @@
     
             </li>
             <li class="level1 hover-menu">
-                <a href="{% url 'category' 'Vijesti' %}" title="Social">Vijesti</a>
+                <a href="{% url 'category' 'Vijesti' %}" title="Vijesti">Vijesti</a>
             </li>
             <li class="level1 hover-menu">
-                <a href="{% url 'category' 'Biznis' %}" title="BUSINESS">Biznis</a>
+                <a href="{% url 'category' 'Biznis' %}" title="Biznis">Biznis</a>
             </li>
             <li class="level1 hover-menu">
                 <a href="{% url 'category' 'Lifestyle' %}" title="Lifestyle">Lifestyle</a>
             </li>
             <li class="level1 hover-menu">
-                <a href="{% url 'category' 'Auti' %}" title="TRAVEL">Auti</a>
+                <a href="{% url 'category' 'Auti' %}" title="Auti">Auti</a>
             </li>
             <li class="level1 hover-menu">
-                <a href="{% url 'category' 'Nogomet' %}" title="SPORTS">SPORTS</a>
+                <a href="{% url 'category' 'sport' %}" title="SPORTS">SPORTS</a>
             </li>
             <li class="level1 hover-menu">
-                <a href="{% url 'source' 'prvi' %}" title="SPORTS">PRVI</a>
+                <a href="{% url 'source' 'prvi' %}" title="PRVI">PRVI</a>
             </li>
             
-            <li class="level1 hover-menu"><a href="#" title="Post style">More</a>
+            <li class="level1 hover-menu"><a href="#" title="More">More</a>
                 <ul class="menu-level-1 list-menu">
                     <li class="level2"><a href="{% url 'category' 'Vijesti' %}" title="Vijesti" target="_blank">Vijesti</a>
                         <ul class="menu-level-2">
