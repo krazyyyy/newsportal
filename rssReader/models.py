@@ -47,3 +47,10 @@ class News(models.Model):
     pub_date = models.CharField(max_length=228, null=True, blank=True)
     source = models.CharField(max_length=228, null=True, blank=True)
     time = models.DateTimeField(auto_now_add=True)
+
+class footerHTML(models.Model):
+    section_one = RichTextField(null=True, blank=True)
+    section_two = RichTextField(null=True, blank=True)
+    section_three = RichTextField(null=True, blank=True)
+    access_name = models.CharField(max_length=128, default="admin")
+    

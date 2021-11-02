@@ -134,6 +134,20 @@ def randomNewsCategory(request, random_number, category):
 
 @csrf_exempt
 def newsCategory(request, category):
+    if category == "trending":
+        data = json.loads(request.body)
+        news = News.objects.all().order_by("-id")
+        li = []
+        paginator = Paginator(news, 30)
+        page_number = data['page_no']
+        news_pag = paginator.get_page(page_number)
+
+        for new in news_pag:
+            n = model_to_dict(new)
+            li.append(n)
+        feed = dict(feed=li, next=news_pag.has_next())
+        return JsonResponse(feed)
+
     data = json.loads(request.body)
     news = News.objects.filter(category__iexact=category)
     li = []

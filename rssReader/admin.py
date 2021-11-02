@@ -3,7 +3,7 @@ from django.contrib import admin
 import requests
 from bs4 import BeautifulSoup
 
-from .models import Feed, CustomUser, News, ADsCode, PRVINews
+from .models import Feed, CustomUser, News, ADsCode, footerHTML, PRVINews
 
 # Register your models here.
 
@@ -66,3 +66,4 @@ admin.site.register(News, NewsAdmin)
 admin.site.register(CustomUser)
 admin.site.register(ADsCode)
 admin.site.register(PRVINews)
+admin.site.register(footerHTML)
