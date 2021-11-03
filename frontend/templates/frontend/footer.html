@@ -4,26 +4,10 @@
     <div class="container">
       <div class="row">
           <div class="col-md-3">
-              <a class="logo-footer space-30" href="#" title="logo"><img src="{% static 'frontend/assets/images/PRVI-preloader.png' %}" alt="Logo-footer"></a>
-              <p class="space-30">prvi.hr - sve vijesti na jednom mjestu! Vaš prvi korak u online svijet sada je lakši nego ikada prije!.</p>
-              <!-- End widget -->
-          </div>
+          {{ footer.section_one | safe }}
+        </div>
           <div class="col-md-6">
-              <div class="widget footer-info">
-                  <h3 class="widget-title">main office</h3>
-                  <ul>
-                      <li><i class="fa fa-home"></i> 121 King Street, Melbourne Victoria 3000 Australia</li>
-                      <li><i class="fa fa-phone-square"></i> 070-7782-9137</li>
-                      <li><i class="fa fa-fax"></i> 070-7782-9137</li>
-                      <li><i class="fa fa-envelope"></i> <a href="mailto:" title="link">contact@dailyplus.com</a></li>
-                  </ul>
-              </div>
-              <div class="social">
-                   <a href="#" title="title"><i class="fa fa-facebook"></i></a>
-                   <a href="#" title="title"><i class="fa fa-twitter"></i></a>
-                   <a href="#" title="title"><i class="fa fa-google-plus"></i></a>
-                   <a href="#" title="title"><i class="fa fa-rss"></i></a>
-               </div>
+            {{ footer.section_two | safe }}
           </div>
           <div class="col-md-3">
               <div class="widget categories">

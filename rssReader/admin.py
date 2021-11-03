@@ -60,6 +60,8 @@ class FeedAdmin(admin.ModelAdmin):
             except:
                 pass
         News.objects.bulk_create(insert_list)
+        obj.save()
+        super(FeedAdmin, self).save_model(request, obj, form, change)
 
 admin.site.register(Feed, FeedAdmin)
 admin.site.register(News, NewsAdmin)
