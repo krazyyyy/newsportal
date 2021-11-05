@@ -1,7 +1,16 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hr">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121453555-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-121453555-1');
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +23,7 @@
     <meta property="og:site_name" content="prvi.hr">
     <meta property="og:image" content="{% static 'frontend/assets/images/PRVI-preloader.png' %}">
     <title>PRVI.HR - {% block title %} {% endblock %}</title>
+    <!-- <meta http-equiv="refresh" content="180"> -->
     <link rel="stylesheet" href="{% static 'frontend/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/fontawesome.min.css">
     {% block static %}

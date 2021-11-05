@@ -21,9 +21,9 @@ def getNews(request):
     li = []
     insert_list = []
     
+    links_list = []
     for feed in feeds:
         url = requests.get(feed.website_url)
-
         soup = BeautifulSoup(url.content, 'xml')
         entries = soup.find_all('item')
         for i in entries:
@@ -52,7 +52,9 @@ def getNews(request):
                 except:
                     category = feed.category
                 pub_ = i.pubDate.text.replace("+0000", "")
-                if not chk.exists():
+                
+                if not chk.exists() and i.link.text not in links_list:
+                    links_list.append(i.link.text)
                     insert_list.append(News(title=i.title.text, link=i.link.text, category=category, source=feed.source, pub_date=pub_, img=img))
                 data['title'] = i.title.text
                 data['link'] = i.link.text
@@ -136,7 +138,7 @@ def randomNewsCategory(request, random_number, category):
 def newsCategory(request, category):
     if category == "trending":
         data = json.loads(request.body)
-        news = News.objects.all().order_by("-id")
+        news = News.objects.all().order_by("-id").order_by('-id')
         li = []
         paginator = Paginator(news, 30)
         page_number = data['page_no']
@@ -149,7 +151,7 @@ def newsCategory(request, category):
         return JsonResponse(feed)
 
     data = json.loads(request.body)
-    news = News.objects.filter(category__iexact=category)
+    news = News.objects.filter(category__iexact=category).order_by('-id')
     li = []
     paginator = Paginator(news, 20)
     page_number = data['page_no']
@@ -164,8 +166,8 @@ def newsCategory(request, category):
 @csrf_exempt
 def newsSource(request, source):
     data = json.loads(request.body)
-    news = News.objects.filter(source__iexact=source)
-    news1 = PRVINews.objects.filter(source__iexact=source)
+    news = News.objects.filter(source__iexact=source).order_by('-id')
+    news1 = PRVINews.objects.filter(source__iexact=source).order_by('-id')
     all_news = list(chain(news, news1))
     try:
         ourtags = sorted(all_news, key=operator.attrgetter('time'), reverse=True)

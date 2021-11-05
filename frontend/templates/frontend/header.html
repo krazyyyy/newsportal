@@ -30,29 +30,29 @@
         <nav class="mega-menu">
         <!-- Brand and toggle get grouped for better mobile display -->
           <ul class="nav navbar-nav" id="navbar">
-            <li class="level1 active hover-menu"><a class="active" href="{% url 'index' %}" title="Home">Home</a>
+            <li class="level1 hover-menu" id="home-active" ><a  href="{% url 'index' %}" title="Home">Home</a>
     
             </li>
-            <li class="level1 hover-menu">
-                <a href="{% url 'category' 'Vijesti' %}" title="Vijesti">Vijesti</a>
+            <li class="level1 hover-menu" id="vijesti-active">
+                <a href="{% url 'category' 'Vijesti' %}"  title="Vijesti">Vijesti</a>
             </li>
-            <li class="level1 hover-menu">
-                <a href="{% url 'category' 'Biznis' %}" title="Biznis">Biznis</a>
+            <li class="level1 hover-menu" id="biznis-active">
+                <a href="{% url 'category' 'Biznis' %}"  title="Biznis">Biznis</a>
             </li>
-            <li class="level1 hover-menu">
+            <li class="level1 hover-menu" id="lifestyle-active">
                 <a href="{% url 'category' 'Lifestyle' %}" title="Lifestyle">Lifestyle</a>
             </li>
-            <li class="level1 hover-menu">
-                <a href="{% url 'category' 'Auti' %}" title="Auti">Auti</a>
+            <li class="level1 hover-menu" id="auti-active">
+                <a href="{% url 'category' 'Auti' %}"  title="Auti">Auti</a>
             </li>
-            <li class="level1 hover-menu">
-                <a href="{% url 'category' 'sport' %}" title="SPORTS">SPORTS</a>
+            <li class="level1 hover-menu" id="sports-active">
+                <a href="{% url 'category' 'sport' %}"  title="SPORTS">SPORTS</a>
             </li>
-            <li class="level1 hover-menu">
-                <a href="{% url 'source' 'prvi' %}" title="PRVI">PRVI</a>
+            <li class="level1 hover-menu" id="prvi-active">
+                <a href="{% url 'source' 'prvi' %}"  title="PRVI">PRVI</a>
             </li>
             
-            <li class="level1 hover-menu"><a href="#" title="More">More</a>
+            <li class="level1 hover-menu" id="more-active"> <a href="#" title="More">More</a>
                 <ul class="menu-level-1 list-menu">
                     <li class="level2"><a href="{% url 'category' 'Vijesti' %}" title="Vijesti" target="_blank">Vijesti</a>
                         <ul class="menu-level-2">
@@ -108,3 +108,34 @@
         </div>
         <!-- End megamenu -->
 </header>
+
+<script>
+    path = window.location.pathname
+    console.log(path)
+    if (path == "/") {
+        console.log("tet")
+        document.querySelector("#home-active").classList.add("active")
+    }
+    else if(path == "/category/Vijesti") {
+        document.querySelector("#vijesti-active").classList.add("active")
+    }
+    else if(path == "/category/Biznis") {
+        document.querySelector("#biznis-active").classList.add("active")
+    }
+    else if(path == "/category/Lifestyle") {
+        document.querySelector("#lifestyle-active").classList.add("active")
+    }
+    else if(path == "/category/Auti") {
+        document.querySelector("#auti-active").classList.add("active")
+    }
+    else if(path == "/category/sport") {
+        document.querySelector("#sports-active").classList.add("active")
+    }
+    else if(path == "/source/prvi") {
+        document.querySelector("#prvi-active").classList.add("active")
+    }
+    else {
+        document.querySelector("#more-active").classList.add("active")
+
+    }
+</script>

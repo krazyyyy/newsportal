@@ -6,6 +6,8 @@
 
 {% block static %}
 
+
+
 <link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/bootstrap.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/style.css' %}"/>
 <link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/owl-slider.css' %}"/>
@@ -17,8 +19,36 @@
 
 
 {% block body %}
+<style>
+    
+.banner-container {
+    height: 3000px;
+}
+
+#sidead-banner {
+    margin : 10px 0;
+    position: sticky;
+    top: 60px;
+}
+
+@media (max-width: 900px) {
+.banner-container {
+    height: unset;
+}
+}
+</style>
+
 <div class="wrappage">
     {% include 'frontend/header.html' %}
+    <div class="row" style="padding-top: 20px;    display: flex;
+    justify-content: center;">
+    {% if options.top_banner %}
+        {{ options.top_banner | safe  }}
+    {% else %}
+    <img src="{% static 'frontend/assets/images/top banner.jpg' %}" alt="">
+    {% endif %}
+    </div>
+
     <div class="row" style="    display: flex;
     justify-content: center;">
     <div class="home2-head box slide-owl-mobile nav-ver5">
@@ -26,7 +56,14 @@
     </div>
     </div>
 
-
+    
+    <div class="banner" style="margin: 4px 85px;">
+        {% if options.bill_board %}
+                {{ options.bill_board | safe }}
+        {% else %}
+        <img src="{% static 'frontend/assets/images/billboard.jpg' %}" alt="">
+        {% endif %}
+    </div>
 
     <div class="container">
     <div class="row">
@@ -35,13 +72,26 @@
                
     </div>
     <div class="mid_button">
-        <button id="more_btn" onclick="getByCategories()">More</button>
+        <button id="more_btn" onclick="getByCategories()">Učitaj više</button>
     </div>
 </div>
 <div class="col-md-4">
     <aside class="widget">
         <div class="banner">
+            {% if options.category_sideAD %}
+            {{ options.category_sideAD | safe }}
+            {% else %}
             <img class="img-responsive" src="{% static 'frontend/assets/images/widget-banner.jpg' %}" alt="banner">
+            {% endif %}
+        </div>
+        <div class="banner-container">
+            <div class="banner" id="sidead-banner">
+                {% if options.sidebarAD %}
+                    {{ options.sidebarAD | safe }}
+                {% else %}
+                    <img class="img-responsive" src="{% static 'frontend/assets/images/300x600.png' %}" alt="sidebar-banner">
+                {% endif %}
+            </div>
         </div>
     </aside>
 </div>
@@ -123,14 +173,16 @@
             if (!data['next']) {
                 document.querySelector("#more_btn").style.display = 'none';
             }
-            console.log(page_no)
+            
             info = data['feed']
             for ( var i = 0; i < info.length; i ++) { 
+              
+      
             if (page_no == 1 && i < 3) {
                 
                 home_head = document.querySelector(".home2-head")
                 home_head.innerHTML += `
-                <div class="col-md-4 col-sm-4"  style="z-index:55;">
+                <div class="col-md-4 col-sm-4">
             <div class="post-item ver1 cat-3 overlay">
                 <a rel="nofollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img id="img-head-news" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                 
@@ -141,6 +193,7 @@
             </div>
 <!-- End item -->
         </div>
+       
             ` 
             }
             else { 
@@ -159,6 +212,7 @@
                             <a class="read-more" href="${info[i]['link']}" title="pročitaj više">pročitaj više</a>
                         </div>
                     </div>
+            
                 `
                 }
                 }

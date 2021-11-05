@@ -16,12 +16,51 @@
 
 {% block body %} 
 
+<style>
+
+.banner-container {
+    height: 3000px;
+}
+
+#sidead-banner {
+    margin : 10px 0;
+    position: sticky;
+    top: 60px;
+}
+
+@media (max-width: 900px) {
+.banner-container {
+    height: unset;
+}
+
+.btn-home {
+    margin : 8px;
+  }
+  
+  #hd-mb {
+    display: none!important;
+    }
+  .home-ul-card {
+    margin: 11px 40px;
+    flex: unset;
+  }
+}
+
+#ad-banner {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+</style>
+
 <!-- End pushmenu -->
 <div class="wrappage">
     
     
     {% include 'frontend/header.html' %}
-    <div class="row" style="    display: flex;
+    <div class="row" style="padding-top: 20px;    display: flex;
     justify-content: center;">
     {% if options.top_banner %}
         {{ options.top_banner | safe  }}
@@ -30,7 +69,7 @@
     {% endif %}
     </div>
     <div class="container">
-        <div class="row" style="display: flex;">
+        <div class="row" style="display: flex; margin-left: 15px;" id="hd-mb">
             <div class="home-ul-card">
             <ul class="pad-10">
                 <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.24sata.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/24sata.png'); line-height: 25px;" title="24sata" alt="24sata"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">24sata</span></a></li>
@@ -41,14 +80,14 @@
             <div class="home-ul-card">
             <ul class="pad-10">
                 <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.index.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Index.png'); line-height: 25px;" title="Index" alt="Index"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Index</span></a></li>
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.jutarnji.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Jutarnji list.png'); line-height: 25px;" title="Jutarnji List" alt="Jutarnji List"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Jutarnji List</span></a></li>
+                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.jutarnji.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Jutarnjilist.png'); line-height: 25px;" title="Jutarnji List" alt="Jutarnji List"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Jutarnji List</span></a></li>
                 <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://hr.n1info.com/" style="background-image: url('/static/frontend/assets/images/sponsors/n1.png'); line-height: 25px;" title="N1" alt="n1"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">N1</span></a></li>
             </ul>
             </div>
             <div class="home-ul-card">
             <ul class="pad-10">
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://net.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/net.hr.png'); line-height: 25px;" title="Net"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Net</span></a></li>
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.novilist.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Novi list.png'); line-height: 25px;" title="Novilist"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Novi List</span></a></li>
+                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://net.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Nethr.png'); line-height: 25px;" title="Net"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Net</span></a></li>
+                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.novilist.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Novilist.png'); line-height: 25px;" title="Novilist"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Novi List</span></a></li>
                 <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.poslovni.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Poslovni.jpg'); line-height: 25px;" title="Poslovni"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Poslovni</span></a></li>
             </ul>
             </div>
@@ -62,7 +101,7 @@
             <div class="home-ul-card">
             <ul class="pad-10">
                 <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.tportal.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/tportal.png'); line-height: 25px;" title="Tportal"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Tportal</span></a></li>
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.vecernji.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Večernji list.png'); line-height: 25px;" title="Večernji list"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Večernji list</span></a></li>
+                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.vecernji.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Vecernjilist.png'); line-height: 25px;" title="Večernji list"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Večernji list</span></a></li>
             </ul>
             </div>
         
@@ -78,10 +117,13 @@
 </div>
 
 <div class="container">
-    <div class="row" style="display: flex;">
-        <button style="background: #333; color : #fff;" class="btn-home">POPULARNO</button></a>
-        <a class="sp2" id="no-style-link" href="{% url 'source' '24Sata' %}"><button class="btn-home"><img style="width: 21px;" src="/static/frontend/assets/images/sponsors/24sata.png" alt="24Sata"> 24Sata</button> </a>
-    <a id="no-style-link" href="{% url 'source' 'Jutarnji' %}"><button class="btn-home"><img style="width: 21px;" src="/static/frontend/assets/images/sponsors/Jutarnji list.png" alt="Jutarnji "> Jutarnji List</button> </a>
+    <div class="row" id="row-wraper">
+        <button style="background: #333; color : #fff;" class="btn-home">Izvori</button></a>
+        <a id="no-style-link" href="{% url 'source' 'Index' %}"><button class="btn-home"><img style="width: 21px; padding: 0 3px;" src="/static/frontend/assets/images/sponsors/Index.png" alt="Index "> Index</button> </a>
+        <a class="sp2" id="no-style-link" href="{% url 'source' 'n1' %}"><button class="btn-home"><img style="width: 21px; padding: 0 3px;" src="/static/frontend/assets/images/sponsors/n1.png" alt="n1"> N1</button> </a>
+    <a id="no-style-link" href="{% url 'source' 'net' %}"><button class="btn-home"><img style="width: 21px; padding: 0 3px;" src="/static/frontend/assets/images/sponsors/Nethr.png" alt="net">Net</button> </a>
+    <a class="sp2" id="no-style-link" href="{% url 'source' '24Sata' %}"><button class="btn-home"><img style="width: 21px;" src="/static/frontend/assets/images/sponsors/24sata.png" alt="24Sata"> 24Sata</button> </a>
+    <a id="no-style-link" href="{% url 'source' 'Jutarnji' %}"><button class="btn-home"><img style="width: 21px;" src="/static/frontend/assets/images/sponsors/Jutarnjilist.png" alt="Jutarnji "> Jutarnji List</button> </a>
     <a id="no-style-link" href="{% url 'source' 'Poslovni' %}"><button class="btn-home"><img style="width: 21px;" src="/static/frontend/assets/images/sponsors/Poslovni.jpg" alt="Poslovni">Poslovni</button> </a>
 
 </div>
@@ -92,13 +134,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
+    <div class="banner" style="margin: 0 85px;">
     {% if options.bill_board %}
             {{ options.bill_board | safe }}
     {% else %}
     <img src="{% static 'frontend/assets/images/billboard.jpg' %}" alt="">
     {% endif %}
-
-            <div class="title-v1">
+    </div>
+            <div class="title-v1" >
                <a href="{% url 'category' 'trending' %}"> <h3>TRENDING</h3></a>
                 <div class="orther-link">
                     <ul>
@@ -116,12 +159,13 @@
                     
                 </div>
             </div>
+        <div class="banner" id="ad-banner" style="margin : 10px 0">
         {% if options.category_one %}
             {{ options.category_one | safe }}
         {% else %}
         <img src="{% static 'frontend/assets/images/category.jpg' %}" alt="">
         {% endif %}    
-        
+        </div>
         <div class="title-v1">
                <a id="no-style-link" href="{% url 'category' 'Vijesti' %}"> <h3>Vijesti</h3></a>
                 <div class="orther-link">
@@ -137,12 +181,15 @@
             <div class="vijesti technnology box space-30">
                
             </div>
-        {% if options.cateogry_two %}
+        <div class="banner" id="ad-banner" style="margin : 10px 0">
+        
+        {% if options.category_two %}
             {{ options.category_two | safe }}
         {% else %}
       
         <img src="{% static 'frontend/assets/images/category.jpg' %}" alt="">
         {% endif %}
+        </div>
         <div class="title-v1">
                 <a id="no-style-link" href="{% url 'category' 'Nogomet' %}"><h3>Nogomet</h3></a>
                 <div class="orther-link">
@@ -159,12 +206,14 @@
                
             </div>
 
-
+        <div class="banner" id="ad-banner" style="margin : 10px 0">
+        
         {% if options.category_three %}
             {{ options.category_three | safe }}
         {% else %}
         <img src="{% static 'frontend/assets/images/category.jpg' %}" alt="">
         {% endif %}    
+        </div>
         <div class="title-v1">
                <a id="no-style-link" href="{% url 'category' 'Show' %}"> <h3>Show</h3></a>
                 <div class="orther-link">
@@ -218,16 +267,30 @@
         </div>
 
         <div class="col-md-4">
-            <aside class="widget social">
-                <div class="banner">
-                    <img class="img-responsive" src="{% static 'frontend/assets/images/widget-banner.jpg' %}" alt="banner">
-                </div>
+            <aside class="widget social" id="hg-extra">
             </aside>
             <aside class="widget popular">
                 <h3 class="widget-title">MOST POPULAR</h3>
+                <div class="banner" style="margin : 10px 0">
+                    {% if options.home_sideAD %}
+                        {{ options.home_sideAD | safe }}
+                        {% else %}
+                        <img class="img-responsive" src="{% static 'frontend/assets/images/widget-banner.jpg' %}" alt="banner">
+                    {% endif %}
+                    </div>
+            
                 <div class="content" id="popular_dynm">
 
                 </div>
+                <div class="banner-container">
+                <div class="banner" id="sidead-banner">
+                    {% if options.sidebarAD %}
+                        {{ options.sidebarAD | safe }}
+                    {% else %}
+                        <img class="img-responsive" src="{% static 'frontend/assets/images/300x600.png' %}" alt="sidebar-banner">
+                    {% endif %}
+                </div>
+            </div>
             </aside>
             </div>
     </div>

@@ -17,8 +17,37 @@
 
 
 {% block body %}
+
+<style>
+    
+.banner-container {
+    height: 3000px;
+}
+
+#sidead-banner {
+    margin : 10px 0;
+    position: sticky;
+    top: 60px;
+}
+
+@media (max-width: 900px) {
+.banner-container {
+    height: unset;
+}
+}
+</style>
+
 <div class="wrappage">
     {% include 'frontend/header.html' %}
+    <div class="row" style="padding-top: 20px;    display: flex;
+    justify-content: center;">
+    {% if options.top_banner %}
+        {{ options.top_banner | safe  }}
+    {% else %}
+    <img src="{% static 'frontend/assets/images/top banner.jpg' %}" alt="">
+    {% endif %}
+    </div>
+
     <div class="row" style="    display: flex;
     justify-content: center;">
     <div class="home2-head box slide-owl-mobile nav-ver5">
@@ -26,7 +55,14 @@
     </div>
     </div>
 
-
+    <div class="banner" style="margin: 4px 85px;">
+        {% if options.bill_board %}
+                {{ options.bill_board | safe }}
+        {% else %}
+        <img src="{% static 'frontend/assets/images/billboard.jpg' %}" alt="">
+        {% endif %}
+    </div>
+    
 
     <div class="container">
     <div class="row">
@@ -35,13 +71,26 @@
                
     </div>
     <div class="mid_button">
-        <button id="more_btn" onclick="getByCategories()">More</button>
+        <button id="more_btn" onclick="getByCategories()">Učitaj više</button>
     </div>
 </div>
 <div class="col-md-4">
     <aside class="widget">
         <div class="banner">
+            {% if options.source_sideAD %}
+            {{ options.source_sideAD | safe }}
+            {% else %}
             <img class="img-responsive" src="{% static 'frontend/assets/images/widget-banner.jpg' %}" alt="banner">
+            {% endif %}
+        </div>
+        <div class="banner-container">
+            <div class="banner" id="sidead-banner">
+                {% if options.sidebarAD %}
+                    {{ options.sidebarAD | safe }}
+                {% else %}
+                    <img class="img-responsive" src="{% static 'frontend/assets/images/300x600.png' %}" alt="sidebar-banner">
+                {% endif %}
+            </div>
         </div>
     </aside>
 </div>

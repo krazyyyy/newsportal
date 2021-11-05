@@ -34,7 +34,12 @@ class ADsCode(models.Model):
     category_one = models.TextField(null=True, blank=True)
     category_two = models.TextField(null=True, blank=True)
     category_three = models.TextField(null=True, blank=True)
+    home_sideAD = models.TextField(null=True, blank=True)
+    category_sideAD = models.TextField(null=True, blank=True)
+    source_sideAD = models.TextField(null=True, blank=True)
     access_name = models.CharField(max_length=32, default="admin")
+    sidebarAD = models.TextField(null=True, blank=True)
+
 
     def __str__(self):
         return "Banner AD Code"
