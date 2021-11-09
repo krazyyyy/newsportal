@@ -5,653 +5,2113 @@
 {% load static %}
 
 {% block static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'frontend/assets/favicon/favicon-32x32.png' %}">
+<link rel="icon" type="image/png" sizes="16x16" href="{% static 'frontend/assets/favicon/favicon-16x16.png' %}">
+<link rel="manifest" href="{% static 'frontend/assets/favicon/site.webmanifest' %}">
+<link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
+    type='text/css'>
 
-<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/bootstrap.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/css/style.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/owl-slider.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets/vendor/custombox.min.css' %}"/>
-<link rel="shortcut icon" href="{% static 'frontend/assets/images/favicon.png' %}" />
+<style type="text/css">
+    img.wp-smiley,
+    img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+    }
 
+    .mvp-nav-menu ul li a {
+        font-size: 17px !important;
+    }
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href="{% static 'frontend/assets/css/style.min.css' type='text/css' %}"
+    media='all' />
+<link rel='stylesheet' id='wc-blocks-vendors-style-css'
+    href="{% static 'frontend/assets/css/wc-blocks-vendors-style.css' %}" type='text/css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-css' href="{% static 'frontend/assets/css/wc-blocks-style.css' %}"
+    type='text/css' media='all' />
+<link rel='stylesheet' id='titan-adminbar-styles-css' href="{% static 'frontend/assets/css/admin-bar.css' %}"
+    type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css' href="{% static 'frontend/assets/css/woocommerce-layout.css' %}"
+    type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css'
+    href="{% static 'frontend/assets/css/woocommerce-smallscreen.css' %}" type='text/css'
+    media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css' href="{% static 'frontend/assets/css/woocommerce.css' %}"
+    type='text/css' media='all' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+    .woocommerce form .form-row .required {
+        visibility: visible;
+    }
+</style>
+<link rel='stylesheet' id='ql-jquery-ui-css' href="{% static 'frontend/assets/css/jquery-ui.css' %}" type='text/css'
+    media='all' />
+<link rel='stylesheet' id='reviewer-photoswipe-css' href="{% static 'frontend/assets/css/photoswipe.css' %}"
+    type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css' href="{% static 'frontend/assets/css/dashicons.min.css' %}" type='text/css'
+    media='all' />
+<link rel='stylesheet' id='reviewer-public-css' href="{% static 'frontend/assets/css/reviewer-public.css' %}"
+    type='text/css' media='all' />
+<link rel='stylesheet' id='mvp-custom-style-css' href="{% static 'frontend/assets/css/style.css' %}" type='text/css'
+    media='all' />
+
+<style id='mvp-custom-style-inline-css' type='text/css'>
+    #mvp-wallpaper {
+        background: url() no-repeat 50% 0;
+    }
+
+    #mvp-foot-copy a {
+        color: #db2e1c;
+    }
+
+    #mvp-content-main p a,
+    #mvp-content-main ul a,
+    #mvp-content-main ol a,
+    .mvp-post-add-main p a,
+    .mvp-post-add-main ul a,
+    .mvp-post-add-main ol a {
+        box-shadow: inset 0 -4px 0 #db2e1c;
+    }
+
+    #mvp-content-main p a:hover,
+    #mvp-content-main ul a:hover,
+    #mvp-content-main ol a:hover,
+    .mvp-post-add-main p a:hover,
+    .mvp-post-add-main ul a:hover,
+    .mvp-post-add-main ol a:hover {
+        background: #db2e1c;
+    }
+
+    a,
+    a:visited,
+    .post-info-name a,
+    .woocommerce .woocommerce-breadcrumb a {
+        color: #ff005b;
+    }
+
+    #mvp-side-wrap a:hover {
+        color: #ff005b;
+    }
+
+    .mvp-fly-top:hover,
+    .mvp-vid-box-wrap,
+    ul.mvp-soc-mob-list li.mvp-soc-mob-com {
+        background: #db2e1c;
+    }
+
+    nav.mvp-fly-nav-menu ul li.menu-item-has-children:after,
+    .mvp-feat1-left-wrap span.mvp-cd-cat,
+    .mvp-widget-feat1-top-story span.mvp-cd-cat,
+    .mvp-widget-feat2-left-cont span.mvp-cd-cat,
+    .mvp-widget-dark-feat span.mvp-cd-cat,
+    .mvp-widget-dark-sub span.mvp-cd-cat,
+    .mvp-vid-wide-text span.mvp-cd-cat,
+    .mvp-feat2-top-text span.mvp-cd-cat,
+    .mvp-feat3-main-story span.mvp-cd-cat,
+    .mvp-feat3-sub-text span.mvp-cd-cat,
+    .mvp-feat4-main-text span.mvp-cd-cat,
+    .woocommerce-message:before,
+    .woocommerce-info:before,
+    .woocommerce-message:before {
+        color: #db2e1c;
+    }
+
+    #searchform input,
+    .mvp-authors-name {
+        border-bottom: 1px solid #db2e1c;
+    }
+
+    .mvp-fly-top:hover {
+        border-top: 1px solid #db2e1c;
+        border-left: 1px solid #db2e1c;
+        border-bottom: 1px solid #db2e1c;
+    }
+
+    .woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+    .woocommerce #respond input#submit.alt,
+    .woocommerce a.button.alt,
+    .woocommerce button.button.alt,
+    .woocommerce input.button.alt,
+    .woocommerce #respond input#submit.alt:hover,
+    .woocommerce a.button.alt:hover,
+    .woocommerce button.button.alt:hover,
+    .woocommerce input.button.alt:hover {
+        background-color: #db2e1c;
+    }
+
+    .woocommerce-error,
+    .woocommerce-info,
+    .woocommerce-message {
+        border-top-color: #db2e1c;
+    }
+
+    ul.mvp-feat1-list-buts li.active span.mvp-feat1-list-but,
+    span.mvp-widget-home-title,
+    span.mvp-post-cat,
+    span.mvp-feat1-pop-head {
+        background: #ff005b;
+    }
+
+    .woocommerce span.onsale {
+        background-color: #ff005b;
+    }
+
+    .mvp-widget-feat2-side-more-but,
+    .woocommerce .star-rating span:before,
+    span.mvp-prev-next-label,
+    .mvp-cat-date-wrap .sticky {
+        color: #ff005b !important;
+    }
+
+    #mvp-main-nav-top,
+    #mvp-fly-wrap,
+    .mvp-soc-mob-right,
+    #mvp-main-nav-small-cont {
+        background: #000000;
+    }
+
+    #mvp-main-nav-small .mvp-fly-but-wrap span,
+    #mvp-main-nav-small .mvp-search-but-wrap span,
+    .mvp-nav-top-left .mvp-fly-but-wrap span,
+    #mvp-fly-wrap .mvp-fly-but-wrap span {
+        background: #777777;
+    }
+
+    .mvp-nav-top-right .mvp-nav-search-but,
+    span.mvp-fly-soc-head,
+    .mvp-soc-mob-right i,
+    #mvp-main-nav-small span.mvp-nav-search-but,
+    #mvp-main-nav-small .mvp-nav-menu ul li a {
+        color: #777777;
+    }
+
+    #mvp-main-nav-small .mvp-nav-menu ul li.menu-item-has-children a:after {
+        border-color: #777777 transparent transparent transparent;
+    }
+
+    #mvp-nav-top-wrap span.mvp-nav-search-but:hover,
+    #mvp-main-nav-small span.mvp-nav-search-but:hover {
+        color: #db2e1c;
+    }
+
+    #mvp-nav-top-wrap .mvp-fly-but-wrap:hover span,
+    #mvp-main-nav-small .mvp-fly-but-wrap:hover span,
+    span.mvp-woo-cart-num:hover {
+        background: #db2e1c;
+    }
+
+    #mvp-main-nav-bot-cont {
+        background: #ffffff;
+    }
+
+    #mvp-nav-bot-wrap .mvp-fly-but-wrap span,
+    #mvp-nav-bot-wrap .mvp-search-but-wrap span {
+        background: #333333;
+    }
+
+    #mvp-nav-bot-wrap span.mvp-nav-search-but,
+    #mvp-nav-bot-wrap .mvp-nav-menu ul li a {
+        color: #333333;
+    }
+
+    #mvp-nav-bot-wrap .mvp-nav-menu ul li.menu-item-has-children a:after {
+        border-color: #333333 transparent transparent transparent;
+    }
+
+    .mvp-nav-menu ul li:hover a {
+        border-bottom: 5px solid #db2e1c;
+    }
+
+    #mvp-nav-bot-wrap .mvp-fly-but-wrap:hover span {
+        background: #db2e1c;
+    }
+
+    #mvp-nav-bot-wrap span.mvp-nav-search-but:hover {
+        color: #db2e1c;
+    }
+
+    body,
+    .mvp-feat1-feat-text p,
+    .mvp-feat2-top-text p,
+    .mvp-feat3-main-text p,
+    .mvp-feat3-sub-text p,
+    #searchform input,
+    .mvp-author-info-text,
+    span.mvp-post-excerpt,
+    .mvp-nav-menu ul li ul.sub-menu li a,
+    nav.mvp-fly-nav-menu ul li a,
+    .mvp-ad-label,
+    span.mvp-feat-caption,
+    .mvp-post-tags a,
+    .mvp-post-tags a:visited,
+    span.mvp-author-box-name a,
+    #mvp-author-box-text p,
+    .mvp-post-gallery-text p,
+    ul.mvp-soc-mob-list li span,
+    #comments,
+    h3#reply-title,
+    h2.comments,
+    #mvp-foot-copy p,
+    span.mvp-fly-soc-head,
+    .mvp-post-tags-header,
+    span.mvp-prev-next-label,
+    span.mvp-post-add-link-but,
+    #mvp-comments-button a,
+    #mvp-comments-button span.mvp-comment-but-text,
+    .woocommerce ul.product_list_widget span.product-title,
+    .woocommerce ul.product_list_widget li a,
+    .woocommerce #reviews #comments ol.commentlist li .comment-text p.meta,
+    .woocommerce div.product p.price,
+    .woocommerce div.product p.price ins,
+    .woocommerce div.product p.price del,
+    .woocommerce ul.products li.product .price del,
+    .woocommerce ul.products li.product .price ins,
+    .woocommerce ul.products li.product .price,
+    .woocommerce #respond input#submit,
+    .woocommerce a.button,
+    .woocommerce button.button,
+    .woocommerce input.button,
+    .woocommerce .widget_price_filter .price_slider_amount .button,
+    .woocommerce span.onsale,
+    .woocommerce-review-link,
+    #woo-content p.woocommerce-result-count,
+    .woocommerce div.product .woocommerce-tabs ul.tabs li a,
+    a.mvp-inf-more-but,
+    span.mvp-cont-read-but,
+    span.mvp-cd-cat,
+    span.mvp-cd-date,
+    .mvp-feat4-main-text p,
+    span.mvp-woo-cart-num,
+    span.mvp-widget-home-title2,
+    .wp-caption,
+    #mvp-content-main p.wp-caption-text,
+    .gallery-caption,
+    .mvp-post-add-main p.wp-caption-text,
+    #bbpress-forums,
+    #bbpress-forums p,
+    .protected-post-form input,
+    #mvp-feat6-text p {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .mvp-blog-story-text p,
+    span.mvp-author-page-desc,
+    #mvp-404 p,
+    .mvp-widget-feat1-bot-text p,
+    .mvp-widget-feat2-left-text p,
+    .mvp-flex-story-text p,
+    .mvp-search-text p,
+    #mvp-content-main p,
+    .mvp-post-add-main p,
+    #mvp-content-main ul li,
+    #mvp-content-main ol li,
+    .rwp-summary,
+    .rwp-u-review__comment,
+    .mvp-feat5-mid-main-text p,
+    .mvp-feat5-small-main-text p,
+    #mvp-content-main .wp-block-button__link,
+    .wp-block-audio figcaption,
+    .wp-block-video figcaption,
+    .wp-block-embed figcaption,
+    .wp-block-verse pre,
+    pre.wp-block-verse {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .mvp-nav-menu ul li a,
+    #mvp-foot-menu ul li a {
+        font-family: 'Oswald', sans-serif;
+    }
+
+
+    .mvp-feat1-sub-text h2,
+    .mvp-feat1-pop-text h2,
+    .mvp-feat1-list-text h2,
+    .mvp-widget-feat1-top-text h2,
+    .mvp-widget-feat1-bot-text h2,
+    .mvp-widget-dark-feat-text h2,
+    .mvp-widget-dark-sub-text h2,
+    .mvp-widget-feat2-left-text h2,
+    .mvp-widget-feat2-right-text h2,
+    .mvp-blog-story-text h2,
+    .mvp-flex-story-text h2,
+    .mvp-vid-wide-more-text p,
+    .mvp-prev-next-text p,
+    .mvp-related-text,
+    .mvp-post-more-text p,
+    h2.mvp-authors-latest a,
+    .mvp-feat2-bot-text h2,
+    .mvp-feat3-sub-text h2,
+    .mvp-feat3-main-text h2,
+    .mvp-feat4-main-text h2,
+    .mvp-feat5-text h2,
+    .mvp-feat5-mid-main-text h2,
+    .mvp-feat5-small-main-text h2,
+    .mvp-feat5-mid-sub-text h2,
+    #mvp-feat6-text h2,
+    .alp-related-posts-wrapper .alp-related-post .post-title {
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .mvp-feat2-top-text h2,
+    .mvp-feat1-feat-text h2,
+    h1.mvp-post-title,
+    h1.mvp-post-title-wide,
+    .mvp-drop-nav-title h4,
+    #mvp-content-main blockquote p,
+    .mvp-post-add-main blockquote p,
+    #mvp-content-main p.has-large-font-size,
+    #mvp-404 h1,
+    #woo-content h1.page-title,
+    .woocommerce div.product .product_title,
+    .woocommerce ul.products li.product h3,
+    .alp-related-posts .current .post-title {
+        font-family: 'Oswald', sans-serif;
+    }
+
+    span.mvp-feat1-pop-head,
+    .mvp-feat1-pop-text:before,
+    span.mvp-feat1-list-but,
+    span.mvp-widget-home-title,
+    .mvp-widget-feat2-side-more,
+    span.mvp-post-cat,
+    span.mvp-page-head,
+    h1.mvp-author-top-head,
+    .mvp-authors-name,
+    #mvp-content-main h1,
+    #mvp-content-main h2,
+    #mvp-content-main h3,
+    #mvp-content-main h4,
+    #mvp-content-main h5,
+    #mvp-content-main h6,
+    .woocommerce .related h2,
+    .woocommerce div.product .woocommerce-tabs .panel h2,
+    .woocommerce div.product .product_title,
+    .mvp-feat5-side-list .mvp-feat1-list-img:after {
+        font-family: 'Oswald', sans-serif;
+    }
+
+
+
+    .mvp-nav-links {
+        display: none;
+    }
+
+
+    @media screen and (max-width: 479px) {
+        .single #mvp-content-body-top {
+            max-height: 400px;
+        }
+
+        .single .mvp-cont-read-but-wrap {
+            display: inline;
+        }
+    }
+
+
+    @media screen and (min-width: 900px) {
+
+        .mvp-leader2,
+        .mvp-leader3 {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 899px) and (min-width: 480px) {
+
+        .mvp-leader1,
+        .mvp-leader3 {
+            display: none;
+        }
+
+        .mvp-leader2 {
+            display: inline-block;
+        }
+    }
+
+    @media screen and (max-width: 479px) {
+
+        .mvp-leader1,
+        .mvp-leader2,
+        .mvp-leader4 {
+            display: none;
+        }
+
+        .mvp-leader3 {
+            display: inline-block;
+        }
+    }
+
+    #mvp-leader-wrap {
+        background: #f5f9fa;
+    }
+</style>
+<link rel='stylesheet' id='mvp-reset-css' href="{% static 'frontend/assets/css/reset.css' %}" type='text/css'
+    media='all' type='text/css' media='all' />
+<link crossorigin="anonymous" rel='stylesheet' id='mvp-fonts-css'
+    href='https://fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C700%2C900%7COswald%3A400%2C700%7CAdvent+Pro%3A700%7COpen+Sans%3A700%7CAnton%3A400Oswald%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7COswald%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7COswald%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7CRoboto%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7CRoboto%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7COswald%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%26subset%3Dlatin%2Clatin-ext%2Ccyrillic%2Ccyrillic-ext%2Cgreek-ext%2Cgreek%2Cvietnamese'
+    type='text/css' media='all' />
+<link rel='stylesheet' id='mvp-media-queries-css' href="{% static 'frontend/assets/css/media-queries.css' %}"
+    type='text/css' media='all' />
+<script type='text/javascript' src="{% static 'frontend/assets/js/jquery.min.js' %}" id='jquery-core-js'></script>
+<script type='text/javascript' src="{% static 'frontend/assets/js/jquery-migrate.min.js' %}" id='jquery-migrate-js'>
+</script>
+<noscript>
+    <style>
+        .woocommerce-product-gallery {
+            opacity: 1 !important;
+        }
+    </style>
+</noscript>
+<style type="text/css" id="custom-background-css">
+    body.custom-background {
+        background-color: #dddddd;
+    }
+</style>
 {% endblock %}
 
-{% block body %} 
+{% block body %}
 
-<style>
-
-.banner-container {
-    height: 3000px;
-}
-
-#sidead-banner {
-    margin : 10px 0;
-    position: sticky;
-    top: 60px;
-}
-
-@media (max-width: 900px) {
-.banner-container {
-    height: unset;
-}
-
-.btn-home {
-    margin : 8px;
-  }
-  
-  #hd-mb {
-    display: none!important;
-    }
-  .home-ul-card {
-    margin: 11px 40px;
-    flex: unset;
-  }
-}
-
-#ad-banner {
-  display: flex;
-  justify-content: center;
-}
-
-
-
-</style>
 
 <!-- End pushmenu -->
-<div class="wrappage">
-    
-    
-    {% include 'frontend/header.html' %}
-    <div class="row" style="padding-top: 20px;    display: flex;
-    justify-content: center;">
-    {% if options.top_banner %}
-        {{ options.top_banner | safe  }}
-    {% else %}
-    <img src="{% static 'frontend/assets/images/top banner.jpg' %}" alt="">
-    {% endif %}
-    </div>
-    <div class="container">
-        <div class="row" style="display: flex; margin-left: 15px;" id="hd-mb">
-            <div class="home-ul-card">
-            <ul class="pad-10">
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.24sata.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/24sata.png'); line-height: 25px;" title="24sata" alt="24sata"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">24sata</span></a></li>
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://dnevnik.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/dnevnik.png'); line-height: 25px;" title="Dnevnik" alt="Dnevnik"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Dnevnik</span></a></li>
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.dnevno.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/dnevno.png'); line-height: 25px;" title="dnevno" alt="Dnevno"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Dnevno</span></a></li>
-            </ul>
+<div id="mvp-fly-wrap">
+    <div id="mvp-fly-menu-top" class="left relative">
+        <div class="mvp-fly-top-out left relative">
+            <div class="mvp-fly-top-in">
+                <div id="mvp-fly-logo" class="left relative">
+                    <a href="#"><img src="{% static 'frontend/assets/images/logo/PRVI-preloader-new.png' %}"
+                            alt="PRVI.HR" data-rjs="2" /></a>
+                </div>
+                <!--mvp-fly-logo-->
             </div>
-            <div class="home-ul-card">
-            <ul class="pad-10">
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.index.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Index.png'); line-height: 25px;" title="Index" alt="Index"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Index</span></a></li>
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.jutarnji.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Jutarnjilist.png'); line-height: 25px;" title="Jutarnji List" alt="Jutarnji List"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Jutarnji List</span></a></li>
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://hr.n1info.com/" style="background-image: url('/static/frontend/assets/images/sponsors/n1.png'); line-height: 25px;" title="N1" alt="n1"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">N1</span></a></li>
-            </ul>
+            <!--mvp-fly-top-in-->
+            <div class="mvp-fly-but-wrap mvp-fly-but-menu mvp-fly-but-click">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-            <div class="home-ul-card">
-            <ul class="pad-10">
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://net.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Nethr.png'); line-height: 25px;" title="Net"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Net</span></a></li>
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.novilist.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Novilist.png'); line-height: 25px;" title="Novilist"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Novi List</span></a></li>
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.poslovni.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Poslovni.jpg'); line-height: 25px;" title="Poslovni"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Poslovni</span></a></li>
-            </ul>
-            </div>
-            <div class="home-ul-card">
-            <ul class="pad-10">
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://reci.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/reci.png'); line-height: 25px;" title="Reci"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Reci</span></a></li>
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://slobodnadalmacija.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/SlobDalmacija.png'); line-height: 25px;" title="Slobodnadalmacija"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Slobodnadalmacija</span></a></li>
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.telegram.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Telegram.png'); line-height: 25px;" title="Telegram"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Telegram</span></a></li>
-            </ul>
-            </div>
-            <div class="home-ul-card">
-            <ul class="pad-10">
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.tportal.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/tportal.png'); line-height: 25px;" title="Tportal"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Tportal</span></a></li>
-                <li class="li-home-style"> <a id="no-style-link" class="outside_img" target="_blank" class="" href="https://www.vecernji.hr/" style="background-image: url('/static/frontend/assets/images/sponsors/Vecernjilist.png'); line-height: 25px;" title="Večernji list"><span class="sponsors_img" style="line-height: 0; font-size : unset;"></span><span class="sponsors_name">Večernji list</span></a></li>
-            </ul>
-            </div>
-        
-            
+            <!--mvp-fly-but-wrap-->
         </div>
+        <!--mvp-fly-top-out-->
     </div>
+    <!--mvp-fly-menu-top-->
+    <div id="mvp-fly-menu-wrap">
+        <nav class="mvp-fly-nav-menu left relative">
+            <div class="menu-main-menu-container">
+                <ul id="menu-main-menu" class="menu">
+                    <li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7">
+                        <a href="{% url 'index' %}">HOME</a>
 
-    <div class="row" style="display: flex;
-    justify-content: center;">
-    <div class="home2-head box slide-owl-mobile nav-ver5">
+                    </li>
+                    <li id="menu-item-335"
+                        class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-7">
+                        <a> More</a>
+                        <ul class="sub-menu">
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-172">
+                                <a href="{% url 'category' 'Vijesti' %}">Vijesti</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-453">
+                                        <a href="{% url 'category' 'Damacija' %}">Damacija</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1963">
+                                        <a href="{% url 'category' 'Slavonija' %}">Slavonija</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-451">
+                                        <a href="{% url 'category' 'Istra i Kvarner' %}">Istra i Kvarner</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-450">
+                                        <a href="{% url 'category' 'Lika i gorski kotar' %}">Lika i gorski kotar</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1923">
+                                        <a href="{% url 'category'  'Zagreb' %}">Zagreb</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-169">
+                                <a href="{% url 'category' 'Lifestyle' %}">LifeStyle</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-408">
+                                        <a href="{% url 'category' 'Moda i ljepota' %}">Moda i ljepota</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-409">
+                                        <a href="{% url 'category' 'Zdravlje' %}">Zdravlje</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-410">
+                                        <a href="{% url 'category' 'Mama'%}">Mama</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-411">
+                                        <a href="{% url 'category' 'Kuharica' %}">Kuharica</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-412">
+                                        <a href="{% url 'category' 'Kućni ljubimci' %}">Kućni ljubimci</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-413">
+                                        <a href="{% url 'category' 'Putovanja' %}">Putovanja</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-414">
+                                        <a href="{% url 'category' 'Dom i dizajn' %}">Dom i dizajn</a>
+                                    </li>
 
+                                </ul>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-170">
+                                <a href="#">TECHNOLOGY</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296">
+                                        <a href="#">Science</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-298">
+                                        <a href="#">Games</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-170">
+                                <a href="#">Sport</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296">
+                                        <a href="#">Football</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-298">
+                                        <a href="#">Basketball</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-297">
+                                        <a href="#">Tennis</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1893">
+                                <a href="#">SEX</a>
+                            </li>
+                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1894">
+                                <a href="#">AUTI</a>
+                            </li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427">
+                                <a href="#">BUSINESS</a>
+                            </li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1898">
+                                <a href="#">Showbiz</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-39" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39">
+                        <a href="{% url 'category' 'Vijesti' %}">Vijesti</a></li>
+                    <li id="menu-item-177"
+                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-177"><a
+                            href="{% url 'category' 'Biznis' %}">Biznis</a></li>
+                    <li id="menu-item-364"
+                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-364"><a
+                            href="{% url 'category' 'Lifestyle' %}">LifeStyle</a></li>
+                    <li id="menu-item-175"
+                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-178"><a
+                            href="{% url 'category' 'Sport' %}">Sports</a></li>
+                    <li id="menu-item-178"
+                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-175"><a
+                            href="{% url 'source' 'PRVI' %}">PRVI</a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
+    <!--mvp-fly-menu-wrap-->
+    <div id="mvp-fly-soc-wrap">
+        <span class="mvp-fly-soc-head">Connect with us</span>
+        <ul class="mvp-fly-soc-list left relative">
+            <li><a href="#" target="_blank" class="fab fa-facebook-f"></a></li>
+            <li><a href="#" target="_blank" class="fab fa-twitter"></a></li>
+            <li><a href="#" target="_blank" class="fab fa-pinterest-p"></a></li>
+            <li><a href="#" target="_blank" class="fab fa-instagram"></a></li>
+            <li><a href="#" target="_blank" class="fab fa-youtube"></a></li>
+            <li><a href="#" target="_blank" class="fab fa-linkedin"></a></li>
+            <li><a href="#" target="_blank" class="fab fa-tumblr"></a>
+            </li>
+        </ul>
+    </div>
+    <!--mvp-fly-soc-wrap-->
 </div>
-
-<div class="container">
-    <div class="row" id="row-wraper">
-        <button style="background: #333; color : #fff;" class="btn-home">Izvori</button></a>
-        <a id="no-style-link" href="{% url 'source' 'Index' %}"><button class="btn-home"><img style="width: 21px; padding: 0 3px;" src="/static/frontend/assets/images/sponsors/Index.png" alt="Index "> Index</button> </a>
-        <a class="sp2" id="no-style-link" href="{% url 'source' 'n1' %}"><button class="btn-home"><img style="width: 21px; padding: 0 3px;" src="/static/frontend/assets/images/sponsors/n1.png" alt="n1"> N1</button> </a>
-    <a id="no-style-link" href="{% url 'source' 'net' %}"><button class="btn-home"><img style="width: 21px; padding: 0 3px;" src="/static/frontend/assets/images/sponsors/Nethr.png" alt="net">Net</button> </a>
-    <a class="sp2" id="no-style-link" href="{% url 'source' '24Sata' %}"><button class="btn-home"><img style="width: 21px;" src="/static/frontend/assets/images/sponsors/24sata.png" alt="24Sata"> 24Sata</button> </a>
-    <a id="no-style-link" href="{% url 'source' 'Jutarnji' %}"><button class="btn-home"><img style="width: 21px;" src="/static/frontend/assets/images/sponsors/Jutarnjilist.png" alt="Jutarnji "> Jutarnji List</button> </a>
-    <a id="no-style-link" href="{% url 'source' 'Poslovni' %}"><button class="btn-home"><img style="width: 21px;" src="/static/frontend/assets/images/sponsors/Poslovni.jpg" alt="Poslovni">Poslovni</button> </a>
-
-</div>
-</div>
-
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
-    <div class="banner" style="margin: 0 85px;">
-    {% if options.bill_board %}
-            {{ options.bill_board | safe }}
-    {% else %}
-    <img src="{% static 'frontend/assets/images/billboard.jpg' %}" alt="">
-    {% endif %}
+<!--mvp-fly-wrap-->
+<div id="mvp-site" class="left relative">
+    <div id="mvp-search-wrap">
+        <div id="mvp-search-box">
+            <form method="get" id="searchform" action="#">
+                <input type="text" name="s" id="s" value="Search"
+                    onfocus='if (this.value == "Search") { this.value = ""; }'
+                    onblur='if (this.value == "") { this.value = "Search"; }' />
+                <input type="hidden" id="searchsubmit" value="Search" />
+            </form>
+        </div>
+        <!--mvp-search-box-->
+        <div class="mvp-search-but-wrap mvp-search-click">
+            <span></span>
+            <span></span>
+        </div>
+        <!--mvp-search-but-wrap-->
     </div>
-            <div class="title-v1" >
-               <a href="{% url 'category' 'trending' %}"> <h3>TRENDING</h3></a>
-                <div class="orther-link">
-                    <ul>
-                        <li><a onclick="randomCategory()" title="All">All</a></li>
-                        <li><a onclick="getByCategory('LifeStyle')" title="Social">Life Style</a></li>
-                        <li><a onclick="getByCategory('Biznis')"  title="Business">Business</a></li>
-                        <li><a onclick="getByCategory('Hrvatska')"  title="Travel">Travel</a></li>
-                        <li><a onclick="getByCategory('Nogomet')" title="Sports">Sports</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- End title -->
-            <div class="trending box space-30">
-                <div id="news_feed_main" class="row">
-                    
-                </div>
-            </div>
-        <div class="banner" id="ad-banner" style="margin : 10px 0">
-        {% if options.category_one %}
-            {{ options.category_one | safe }}
-        {% else %}
-        <img src="{% static 'frontend/assets/images/category.jpg' %}" alt="">
-        {% endif %}    
+    <!--mvp-search-wrap-->
+    <div id="mvp-site-wall" class="left relative">
+        <div id="mvp-leader-wrap">
+            <a href="#"><img class="mvp-leader1"
+                    src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox-leader.png" /><img
+                    class="mvp-leader2"
+                    src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox728.png" /><img
+                    class="mvp-leader3"
+                    src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox360.png" /></a>
         </div>
-        <div class="title-v1">
-               <a id="no-style-link" href="{% url 'category' 'Vijesti' %}"> <h3>Vijesti</h3></a>
-                <div class="orther-link">
-                    <ul>
-                        <li><a href="{% url 'source' 'Slobodnadalmacija' %}" title="Slobodnadalmacija"> Slobodnadalmacija</a></li>
-                        <li><a href="{% url 'source' 'Index' %}" title="Index"> Index</a></li>
-                        <li><a href="{% url 'source' 'Reci' %}" title="Reci"> Reci</a></li>
-       
-                    </ul>
-                </div>
-            </div>
+        <!--mvp-leader-wrap-->
+        <div id="mvp-site-main" class="left relative">
+            <header id="mvp-main-head-wrap" class="left relative">
 
-            <div class="vijesti technnology box space-30">
-               
-            </div>
-        <div class="banner" id="ad-banner" style="margin : 10px 0">
-        
-        {% if options.category_two %}
-            {{ options.category_two | safe }}
-        {% else %}
-      
-        <img src="{% static 'frontend/assets/images/category.jpg' %}" alt="">
-        {% endif %}
-        </div>
-        <div class="title-v1">
-                <a id="no-style-link" href="{% url 'category' 'Nogomet' %}"><h3>Nogomet</h3></a>
-                <div class="orther-link">
-                    <ul>
-                        <li><a href="{% url 'source' 'Dnevno' %}" title="Dnevno">Dnevno</a></li>
-                        <li><a href="{% url 'source' 'net' %}" title="net">Net</a></li>
-                        <li><a href="{% url 'source' 'Tportal' %}" title="Tportal">Tportal</a></li>
-       
-                    </ul>
-                </div>
-            </div>
-
-            <div id="Nogomet" class="technnology box space-30">
-               
-            </div>
-
-        <div class="banner" id="ad-banner" style="margin : 10px 0">
-        
-        {% if options.category_three %}
-            {{ options.category_three | safe }}
-        {% else %}
-        <img src="{% static 'frontend/assets/images/category.jpg' %}" alt="">
-        {% endif %}    
-        </div>
-        <div class="title-v1">
-               <a id="no-style-link" href="{% url 'category' 'Show' %}"> <h3>Show</h3></a>
-                <div class="orther-link">
-                    <ul>
-                        <li><a href="{% url 'source' '24sata' %}" title="24Sata">24Sata</a></li>
-                        <li><a href="{% url 'source' 'N1Info' %}" title="N1Info">N1Info</a></li>
-                        <li><a href="{% url 'source' 'Novilist' %}" title="Novilist">Novilist</a></li>
-       
-                    </ul>
-                </div>
-            </div>
-
-            <div id="tech_box" class="technnology box space-30">
-               
-            </div>
-
-           
-
-            
-            <div class="box">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="title-v1">
-                            <h3>Svijet</h3>
+                <nav id="mvp-main-nav-wrap" class="left relative">
+                    <div id="mvp-main-nav-top" class="left relative">
+                        <div class="mvp-main-box">
+                            <div id="mvp-nav-top-wrap" class="left relative">
+                                <div class="mvp-nav-top-right-out left relative">
+                                    <div class="mvp-nav-top-right-in">
+                                        <div class="mvp-nav-top-cont left relative">
+                                            <div class="mvp-nav-top-left-out relative">
+                                                <div class="mvp-nav-top-left">
+                                                    <div class="mvp-nav-soc-wrap">
+                                                        <a href="#" target="_blank"><span
+                                                                class="mvp-nav-soc-but fab fa-facebook-f"></span></a>
+                                                        <a href="#" target="_blank"><span
+                                                                class="mvp-nav-soc-but fab fa-twitter"></span></a>
+                                                        <a href="#" target="_blank"><span
+                                                                class="mvp-nav-soc-but fab fa-instagram"></span></a>
+                                                        <a href="#" target="_blank"><span
+                                                                class="mvp-nav-soc-but fab fa-youtube"></span></a>
+                                                    </div>
+                                                    <!--mvp-nav-soc-wrap-->
+                                                    <div class="mvp-fly-but-wrap mvp-fly-but-click left relative">
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                        <span></span>
+                                                    </div>
+                                                    <!--mvp-fly-but-wrap-->
+                                                </div>
+                                                <!--mvp-nav-top-left-->
+                                                <div class="mvp-nav-top-left-in">
+                                                    <div class="mvp-nav-top-mid left relative" itemscope
+                                                        itemtype="http://schema.org/Organization">
+                                                        <a class="mvp-nav-logo-reg" itemprop="url" href="#"><img
+                                                                itemprop="logo"
+                                                                src="{% static 'frontend/assets/images/logo/PRVI-preloader-new.png' %}"
+                                                                alt="PRVI.HR" data-rjs="2" /></a>
+                                                        <a class="mvp-nav-logo-small" href="#"><img
+                                                                src="{% static 'frontend/assets/images/logo/PRVI-preloader-new.png' %}"
+                                                                alt="PRVI.HR" data-rjs="2" /></a>
+                                                        <h2 class="mvp-logo-title">PRVI.HR</h2>
+                                                    </div>
+                                                    <!--mvp-nav-top-mid-->
+                                                </div>
+                                                <!--mvp-nav-top-left-in-->
+                                            </div>
+                                            <!--mvp-nav-top-left-out-->
+                                        </div>
+                                        <!--mvp-nav-top-cont-->
+                                    </div>
+                                    <!--mvp-nav-top-right-in-->
+                                    <div class="mvp-nav-top-right">
+                                        <div class="mvp-woo-cart-wrap">
+                                            <a class="mvp-woo-cart" href="#" title="View your shopping cart"><span
+                                                    class="mvp-woo-cart-num">0</span></a><span
+                                                class="mvp-woo-cart-icon far fa-shopping-cart"
+                                                aria-hidden="true"></span>
+                                        </div>
+                                        <!--mvp-woo-cart-wrap-->
+                                        <span class="mvp-nav-search-but fa fa-search fa-2 mvp-search-click"></span>
+                                    </div>
+                                    <!--mvp-nav-top-right-->
+                                </div>
+                                <!--mvp-nav-top-right-out-->
+                            </div>
+                            <!--mvp-nav-top-wrap-->
                         </div>
-                        <!-- End tile -->
-         
-                        <!-- End box -->
-                        <div class="row size-16 Svijet_16">
-                         
+                        <!--mvp-main-box-->
+                    </div>
+                    <!--mvp-main-nav-top-->
+                    <div id="mvp-main-nav-bot" class="left relative">
+                        <div id="mvp-main-nav-bot-cont" class="left">
+                            <div class="mvp-main-box">
+                                <div id="mvp-nav-bot-wrap" class="left">
+                                    <div class="mvp-nav-bot-right-out left">
+                                        <div class="mvp-nav-bot-right-in">
+                                            <div class="mvp-nav-bot-cont left">
+                                                <div class="mvp-nav-bot-left-out">
+                                                    <div class="mvp-nav-bot-left left relative">
+                                                        <div class="mvp-fly-but-wrap mvp-fly-but-click left relative">
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </div>
+                                                        <!--mvp-fly-but-wrap-->
+                                                    </div>
+                                                    <!--mvp-nav-bot-left-->
+                                                    <div class="mvp-nav-bot-left-in">
+                                                        <div class="mvp-nav-menu left">
+                                                            <div class="menu-main-menu-container">
+                                                                <ul id="menu-main-menu-1" class="menu">
+                                                                    <li
+                                                                        class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-7">
+                                                                        <a href="{% url 'index' %}">HOME</a>
+
+                                                                    </li>
+                                                                    <li
+                                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39">
+                                                                        <a href="{% url 'category' 'Vijesti' %}">
+                                                                            Vijesti</a>
+                                                                    </li>
+                                                                    <li
+                                                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-177 mvp-mega-dropdown">
+                                                                        <a
+                                                                            href="{% url 'category' 'Biznis' %}">Biznis</a>
+                                                                    </li>
+                                                                    <li
+                                                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-364 mvp-mega-dropdown">
+                                                                        <a href="{% url 'category' 'Lifestyle' %}">Lifestyle
+                                                                        </a>
+
+                                                                    </li>
+                                                                    <li
+                                                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-175 mvp-mega-dropdown">
+                                                                        <a href="{% url 'category' 'Sport' %}">SPORTS
+                                                                        </a>
+
+                                                                    </li>
+                                                                    <li
+                                                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-178 mvp-mega-dropdown">
+                                                                        <a href="{% url 'category' 'Auti' %}">Auti</a>
+                                                                    </li>
+                                                                    <li
+                                                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-335 mvp-mega-dropdown">
+                                                                        <a href="{% url 'source' 'PRVI' %}">PRVI</a>
+                                                                    </li>
+                                                                    <li
+                                                                        class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-7">
+                                                                        <a href="#">More</a>
+                                                                        <ul class="sub-menu">
+                                                                            <li
+                                                                                class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-172">
+                                                                                <a
+                                                                                    href="{% url 'category' 'Vijesti' %}">Vijesti</a>
+                                                                                <ul class="sub-menu">
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-453">
+                                                                                        <a
+                                                                                            href="{% url 'category' 'Dalmacija' %}">Dalmacija</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1963">
+                                                                                        <a
+                                                                                            href="{% url 'category' 'Slavonija' %}">Slavonija</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-451">
+                                                                                        <a
+                                                                                            href="{% url 'category' 'Istra i Kvarner' %}">Istra
+                                                                                            i Kvarner</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-450">
+                                                                                        <a
+                                                                                            href="{% url 'category' 'Kontinentalna' %}">Kontinentalna</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1901 current_page_item menu-item-1903">
+                                                                                        <a href="{% url 'category' 'Lika i gorski kotar' %}"
+                                                                                            aria-current="page">Lika i
+                                                                                            gorski kotar</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1923">
+                                                                                        <a
+                                                                                            href="{% url 'category' 'Zagreb' %}">Zagreb</a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-170">
+                                                                                <a href="{% url 'category' 'Sport' %}">Sport</a>
+                                                                                <ul class="sub-menu">
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296">
+                                                                                        <a href="{% url 'category' 'Nogomet' %}">Nogomet</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-298">
+                                                                                        <a href="{% url 'category' 'Košarka' %}">Košarka</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-297">
+                                                                                        <a href="{% url 'category' 'Tenis' %}">Tenis</a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-169">
+                                                                                <a
+                                                                                    href="{% url 'category' 'Lifestyle' %}">LifeStyle</a>
+                                                                                <ul class="sub-menu">
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-408">
+                                                                                        <a
+                                                                                            href="{% url 'category' 'Moda i ljepota' %}">Moda
+                                                                                            i ljepota</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-409">
+                                                                                        <a
+                                                                                            href="{% url 'category' 'Zdravlje' %}">Zdravlje</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-410">
+                                                                                        <a
+                                                                                            href="{% url 'category' 'Mama' %}">Mama</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-411">
+                                                                                        <a
+                                                                                            href="{% url 'category' 'Kuharica' %}">Kuharica</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-412">
+                                                                                        <a
+                                                                                            href="{% url 'category' 'Kućni ljubimci' %}">Kućni ljubimci</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-413">
+                                                                                        <a
+                                                                                            href="{% url 'category' 'Putovanja' %}">Putovanja</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-414">
+                                                                                        <a
+                                                                                            href="{% url 'category' 'Dom i dizajn' %}">Dom i dizajn</a>
+                                                                                    </li>
+
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1893">
+                                                                                <a href="{% url 'category' 'Sex' %}">SEX</a>
+                                                                            </li>
+                                                                            <li
+                                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1894">
+                                                                                <a href="{% url 'category' 'AUTI' %}">AUTI</a>
+                                                                            </li>
+                                                                            <li
+                                                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427">
+                                                                                <a href="{% url 'category' 'BIZNIS' %}">BIZNIS</a>
+                                                                            </li>
+                                                                            <li
+                                                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1898">
+                                                                                <a href="{% url 'category' 'SHOWBIZ' %}">SHOWBIZ</a>
+                                                                                <ul class="sub-menu">
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296">
+                                                                                        <a href="{% url 'category' 'Film' %}">Film</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-298">
+                                                                                        <a href="{% url 'category' 'Glazba' %}">Glazba</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-297">
+                                                                                        <a href="{% url 'category' 'Kultura' %}">Kultura</a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                            <li
+                                                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-170">
+                                                                                <a href="{% url 'category' 'TEHNOLOGIJA' %}">TEHNOLOGIJA</a>
+                                                                                <ul class="sub-menu">
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296">
+                                                                                        <a href="{% url 'category' 'Znanost' %}">Znanost</a>
+                                                                                    </li>
+                                                                                    <li
+                                                                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-298">
+                                                                                        <a href="{% url 'category' 'Igre' %}">Igre</a>
+                                                                                    </li>
+
+                                                                            </li>
+                                                                            
+                                                                            
+
+                                                                        </ul>
+                                                                    </li>
+
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <!--mvp-nav-menu-->
+                                                    </div>
+                                                    <!--mvp-nav-bot-left-in-->
+                                                </div>
+                                                <!--mvp-nav-bot-left-out-->
+                                            </div>
+                                            <!--mvp-nav-bot-cont-->
+                                        </div>
+                                        <!--mvp-nav-bot-right-in-->
+                                        <div class="mvp-nav-bot-right left relative">
+                                            <span class="mvp-nav-search-but fa fa-search fa-2 mvp-search-click"></span>
+                                        </div>
+                                        <!--mvp-nav-bot-right-->
+                                    </div>
+                                    <!--mvp-nav-bot-right-out-->
+                                </div>
+                                <!--mvp-nav-bot-wrap-->
+                            </div>
+                            <!--mvp-main-nav-bot-cont-->
+                        </div>
+                        <!--mvp-main-box-->
+                    </div>
+                    <!--mvp-main-nav-bot-->
+                </nav>
+                <!--mvp-main-nav-wrap-->
+            </header>
+            <!--mvp-main-head-wrap-->
+            <div id="mvp-main-body-wrap" class="left relative">
+                <div class="mvp-main-box">
+                    <section id="mvp-feat5-wrap" class="left relative">
+                        <div class="mvp-feat5-side-out left relative">
+                            <div class="mvp-feat5-side-in">
+                                <div class="mvp-feat5-main-wrap left relative">
+                                    <div class="mvp-feat5-mid-wrap right relative">
+                                        <div id="politika-one">
+
+                                        </div>
+                                        <div id="politika-two" class="mvp-feat5-mid-sub-wrap left relative">
+
+
+                                        </div>
+                                        <!--mvp-feat5-mid-sub-wrap-->
+                                    </div>
+                                    <!--mvp-feat5-mid-wrap-->
+                                    <div class="mvp-feat5-small-wrap left relative">
+                                        <h3 class="mvp-feat1-pop-head"><span class="mvp-feat1-pop-head"> Latest</span>
+                                        </h3>
+
+                                        <div id="latest-one">
+
+                                        </div>
+                                        <div id="latest-two" class="mvp-feat5-small-sub left relative">
+
+                                        </div>
+                                        <!--mvp-feat5-small-sub-->
+                                    </div>
+                                    <!--mvp-feat5-small-wrap-->
+                                </div>
+                                <!--mvp-feat5-main-wrap-->
+                            </div>
+                            <!--mvp-feat5-side-out-->
+                            <div class="mvp-feat5-side-wrap left relative">
+                                <div class="mvp-feat1-list-ad left relative">
+                                    <span class="mvp-ad-label">Advertisement</span>
+                                    {% if options.home_sideAD %}
+                                    {{ options.home_sideAD | safe }}
+                                    {% else %}
+                                    <img
+                                        src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox300.png" />
+                                    {% endif %}
+                                </div>
+                                <!--mvp-feat1-list-ad-->
+                                <h3 class="mvp-feat1-pop-head"><span class="mvp-feat1-pop-head">Trending</span></h3>
+                                <div id="side-news-bar" class="mvp-feat5-side-list left relative">
+
+
+                                </div>
+                                <!--mvp-feat5-side-list-->
+                            </div>
+                            <!--mvp-feat5-side-wrap-->
+                        </div>
+                        <!--mvp-feat5-side-out-->
+                    </section>
+                    <!--mvp-feat5-wrap-->
+                </div>
+                <!--mvp-main-box-->
+                <div id="mvp-home-widget-wrap" class="left relative">
+                    <section id="mvp_home_feat2_widget-3" class="mvp-widget-home left relative mvp_home_feat2_widget">
+                        <div class="mvp-main-box">
+                            <div class="mvp-widget-home-head">
+                                <h4 class="mvp-widget-home-title"><span class="mvp-widget-home-title">Sports</span></h4>
+                            </div>
+                            <div class="mvp-widget-feat2-wrap left relative">
+                                <div class="mvp-widget-feat2-out left relative">
+                                    <div class="mvp-widget-feat2-in">
+                                        <div class="mvp-widget-feat2-main left relative">
+                                            <div class="mvp-widget-feat2-left left relative" id="sports-section-one">
+
+                                            </div>
+                                            <!--mvp-widget-feat2-left-->
+                                            <div class="mvp-widget-feat2-right left relative" id="sports-section-two">
+
+                                            </div>
+                                            <!--mvp-widget-feat2-right-->
+                                        </div>
+                                        <!--mvp-widget-feat2-main-->
+                                    </div>
+                                    <!--mvp-widget-feat2-in-->
+                                    <div class="mvp-widget-feat2-side left relative">
+                                        <div class="mvp-widget-feat2-side-ad left relative">
+                                            <span class="mvp-ad-label">Advertisement</span>
+                                            {% if options.home_sideAD %}
+                                            {{ options.home_sideAD | safe }}
+                                            {% else %}
+                                            <img
+                                                src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox300.png" />
+                                            {% endif %}
+                                        </div>
+                                        <!--mvp-widget-feat2-side-ad-->
+                                        <div class="mvp-widget-feat2-side-list left relative">
+                                            <div class="mvp-feat1-list left relative" id="sports-section-three">
+
+                                            </div>
+                                            <!--mvp-feat1-list-->
+
+                                        </div>
+                                        <!--mvp-widget-feat2-side-list-->
+                                    </div>
+                                    <!--mvp-widget-feat2-side-->
+                                </div>
+                                <!--mvp-widget-feat2-out-->
+                            </div>
+                            <!--mvp-widget-feat2-wrap-->
+
+                        </div>
+                    </section>
+                    <section class="mvp-widget-home left relative">
+                        <div class="mvp-widget-dark-wrap left relative">
+                            <div class="mvp-main-box">
+                                <div class="mvp-widget-home-head">
+                                    <h4 class="mvp-widget-home-title"><span class="mvp-widget-home-title">Show</span>
+                                    </h4>
+                                </div>
+                                <!--mvp-widget-home-head-->
+                                <div class="mvp-widget-dark-main left relative">
+                                    <div class="mvp-widget-dark-left left relative" id="show-section-one">
+
+                                    </div>
+                                    <!--mvp-widget-dark-left-->
+                                    <div class="mvp-widget-dark-right left relative" id="show-section-two">
+
+                                    </div>
+                                    <!--mvp-widget-dark-right-->
+                                </div>
+                                <!--mvp-widget-dark-main-->
+                            </div>
+                            <!--mvp-main-box-->
+                        </div>
+                        <!--mvp-widget-dark-wrap-->
+                    </section>
+                    <!--mvp-widget-home-->
+
+                    <section id="mvp_home_feat2_widget-4" class="mvp-widget-home left relative mvp_home_feat2_widget">
+                        <div class="mvp-main-box">
+                            <div class="mvp-widget-home-head">
+                                <h4 class="mvp-widget-home-title"><span class="mvp-widget-home-title">Biznis</span></h4>
+                            </div>
+                            <div class="mvp-widget-feat2-wrap left relative">
+                                <div class="mvp-widget-feat2-out left relative">
+                                    <div class="mvp-widget-feat2-in">
+                                        <div class="mvp-widget-feat2-main left relative">
+                                            <div class="mvp-widget-feat2-left left relative mvp-widget-feat2-left-alt"
+                                                id="Biznis-one-section">
+
+                                            </div>
+                                            <!--mvp-widget-feat2-left-->
+                                            <div class="mvp-widget-feat2-right left relative" id="Biznis-two-section">
+
+
+                                            </div>
+                                            <!--mvp-widget-feat2-right-->
+                                        </div>
+                                        <!--mvp-widget-feat2-main-->
+                                    </div>
+                                    <!--mvp-widget-feat2-in-->
+                                    <div class="mvp-widget-feat2-side left relative">
+                                        <div class="mvp-widget-feat2-side-ad left relative">
+                                            <span class="mvp-ad-label">Advertisement</span>
+                                            {% if options.home_sideAD %}
+                                            {{ options.home_sideAD | safe }}
+                                            {% else %}
+                                            <img
+                                                src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox300.png" />
+                                            {% endif %}
+                                        </div>
+                                        <!--mvp-widget-feat2-side-ad-->
+                                        <div class="mvp-widget-feat2-side-list left relative">
+                                            <div class="mvp-feat1-list left relative" id="Biznis-three-section">
+
+                                            </div>
+                                            <!--mvp-feat1-list-->
+                                            <a href="{% url 'category' 'biznis' %}">
+                                                <div class="mvp-widget-feat2-side-more-but left relative">
+                                                    <span class="mvp-widget-feat2-side-more">More Business</span><i
+                                                        class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                                </div>
+                                                <!--mvp-widget-feat2-side-more-but-->
+                                            </a>
+                                        </div>
+                                        <!--mvp-widget-feat2-side-list-->
+                                    </div>
+                                    <!--mvp-widget-feat2-side-->
+                                </div>
+                                <!--mvp-widget-feat2-out-->
+                            </div>
+                            <!--mvp-widget-feat2-wrap-->
+
+                        </div>
+                    </section>
+                    <section id="mvp_ad_widget-9" class="mvp-widget-home left relative mvp_ad_widget">
+                        <div class="mvp-main-box">
+                            <div class="mvp-widget-ad left relative">
+                                <span class="mvp-ad-label">Advertisement</span>
+                                <a href="#">
+                                    {% if options.category_three %}
+                                    {{ options.category_three | safe }}
+                                    {% else %}
+                                    <img class="mvp-leader1"
+                                        src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox-leader.png" /><img
+                                        class="mvp-leader2"
+                                        src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox728.png" /><img
+                                        class="mvp-leader3"
+                                        src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox360.png" /></a>
+                                {% endif %}
+                            </div>
+                            <!--mvp-widget-ad-->
+                        </div>
+                    </section>
+                    <section id="mvp_home_feat1_widget-4" class="mvp-widget-home left relative mvp_home_feat1_widget">
+                        <div class="mvp-main-box">
+                            <div class="mvp-widget-home-head">
+                                <h4 class="mvp-widget-home-title"><span class="mvp-widget-home-title">Vijesti</span>
+                                </h4>
+                            </div>
+                            <div class="mvp-widget-feat1-wrap left relative">
+                                <div class="mvp-widget-feat1-cont left relative" id="vijesti-head">
+
+                                </div>
+                                <!--mvp-widget-feat1-cont-->
+                                <div class="mvp-widget-feat1-cont left relative" id="vijesti-bottom">
+
+
+                                </div>
+                                <!--mvp-widget-feat1-cont-->
+                            </div>
+                            <!--mvp-widget-feat1-wrap-->
+
+                        </div>
+                    </section>
+                </div>
+                <!--mvp-home-widget-wrap-->
+                <div class="mvp-main-blog-wrap left relative">
+                    <div class="mvp-main-box">
+                        <div class="mvp-main-blog-cont left relative">
+                            <div class="mvp-widget-home-head">
+                                <h4 class="mvp-widget-home-title">
+                                    <span class="mvp-widget-home-title">More News</span>
+                                </h4>
+                            </div>
+                            <!--mvp-widget-home-head-->
+                            <div class="mvp-main-blog-out left relative">
+                                <div class="mvp-main-blog-in">
+                                    <div class="mvp-main-blog-body left relative">
+                                        <ul id="footer-news" class="mvp-blog-story-list left relative infinite-content">
+
+                                            <!--mvp-blog-story-wrap-->
+
+                                            <!--mvp-blog-story-wrap-->
+                                        </ul>
+                                        <div class="mvp-inf-more-wrap left relative">
+                                            <a href="#" class="mvp-inf-more-but">More Posts</a>
+                                            <div class="mvp-nav-links">
+                                                <div class="pagination"><span>Page 1 of 4</span><span
+                                                        class="current">1</span><a href='#' class="inactive">2</a><a
+                                                        href='#' class="inactive">3</a><a href='#'
+                                                        class="inactive">4</a></div>
+                                            </div>
+                                            <!--mvp-nav-links-->
+                                        </div>
+                                        <!--mvp-inf-more-wrap-->
+                                    </div>
+                                    <!--mvp-main-blog-body-->
+                                </div>
+                                <!--mvp-main-blog-in-->
+                                <div id="mvp-side-wrap" class="left relative theiaStickySidebar">
+                                    <section id="mvp_ad_widget-6" class="mvp-side-widget mvp_ad_widget">
+                                        <div class="mvp-widget-ad left relative">
+                                            <span class="mvp-ad-label">Advertisement</span>
+                                            {% if options.home_sideAD %}
+                                            {{ options.home_sideAD | safe }}
+                                            {% else %}
+                                            <img
+                                                src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox300.png" />
+                                            {% endif %}
+                                        </div>
+                                        <!--mvp-widget-ad-->
+                                    </section>
+                                    <section id="mvp_tabber_widget-5" class="mvp-side-widget mvp_tabber_widget">
+                                        <div class="mvp-widget-tab-wrap left relative">
+                                            <div class="mvp-feat1-list-wrap left relative">
+                                                <div class="mvp-feat1-list-head-wrap left relative">
+                                                    <ul class="mvp-feat1-list-buts left relative">
+                                                        <li class="mvp-feat-col-tab"><a href="#mvp-tab-col1"><span
+                                                                    class="mvp-feat1-list-but">Latest</span></a>
+                                                        </li>
+                                                        <li><a href="#mvp-tab-col2"><span
+                                                                    class="mvp-feat1-list-but">Trending</span></a>
+                                                        </li>
+                                                        <li><a href="#mvp-tab-col3"><span
+                                                                    class="mvp-feat1-list-but">Videos</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!--mvp-feat1-list-wrap-->
+                                        </div>
+                                        <!--mvp-widget-tab-wrap-->
+
+                                    </section>
+                                </div>
+                                <!--mvp-side-wrap-->
+                            </div>
+                            <!--mvp-mmain-blog-out-->
+                        </div>
+                        <!--mvp-main-blog-cont-->
+                    </div>
+                    <!--mvp-main-box-->
+                </div>
+                <!--mvp-main-blog-wrap-->
+            </div>
+            <!--mvp-main-body-wrap-->
+            <footer id="mvp-foot-wrap" class="left relative">
+                <div id="mvp-foot-top" class="left relative">
+                    <div class="mvp-main-box">
+                        <div id="mvp-foot-logo" class="left relative">
+                            <a href="#"><img src="{% static 'frontend/assets/images/logo/PRVI-logo.png' %}"
+                                    alt="PRVI.HR" data-rjs="2" /></a>
+                        </div>
+                        <!--mvp-foot-logo-->
+                        <div id="mvp-foot-soc" class="left relative">
+                            <ul class="mvp-foot-soc-list left relative">
+                                <li><a href="#" target="_blank" class="fab fa-facebook-f"></a></li>
+                                <li><a href="#" target="_blank" class="fab fa-twitter"></a></li>
+                                <li><a href="#" target="_blank" class="fab fa-pinterest-p"></a></li>
+                                <li><a href="#" target="_blank" class="fab fa-instagram"></a></li>
+                                <!-- <li><a href="#" target="_blank"
+                                        class="fab fa-tiktok"></a></li> -->
+                                <li><a href="#" target="_blank" class="fab fa-youtube"></a></li>
+                                <li><a href="#" target="_blank" class="fab fa-linkedin"></a></li>
+                                <li><a href="#" target="_blank" class="fab fa-tumblr"></a></li>
+                            </ul>
+                        </div>
+                        <!--mvp-foot-soc-->
+                        <div id="mvp-foot-menu-wrap" class="left relative">
+                            <div id="mvp-foot-menu" class="left relative">
+                                <div class="menu-footer-menu-container">
+                                    <ul id="menu-footer-menu" class="menu">
+                                        <li id="menu-item-184"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-184">
+                                            <a href="#">News</a>
+                                        </li>
+                                        <li id="menu-item-188"
+                                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-188">
+                                            <a href="#">BUSINESS</a>
+                                        </li>
+                                        <li id="menu-item-186"
+                                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-186">
+                                            <a href="#">LIFESTYLE</a>
+                                        </li>
+                                        <li id="menu-item-189"
+                                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-189">
+                                            <a href="#">Sports</a>
+                                        </li>
+                                        <li id="menu-item-187"
+                                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-187">
+                                            <a href="#">CARS</a>
+                                        </li>
+                                        <li id="menu-item-283"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-283">
+                                            <a href="#">First</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--mvp-foot-menu-->
+                        </div>
+                        <!--mvp-foot-menu-wrap-->
+                    </div>
+                    <!--mvp-main-box-->
+                </div>
+                <!--mvp-foot-top-->
+
+                <!--mvp-foot-bot-->
+            </footer>
+        </div>
+        <!--mvp-site-main-->
+    </div>
+    <!--mvp-site-wall-->
+</div>
+<!--mvp-site-->
+<div class="mvp-fly-top back-to-top">
+    <i class="fa fa-angle-up fa-3"></i>
+</div>
+<!--mvp-fly-top-->
+<div class="mvp-fly-fade mvp-fly-but-click">
+</div>
+<div data-theiaStickySidebar-sidebarSelector='"#mvp-side-wrap,.mvp-post-soc-wrap,.mvp-flex-side-wrap,.mvp-alp-side"'
+    data-theiaStickySidebar-options='{"containerSelector":"","additionalMarginTop":120,"additionalMarginBottom":20,"updateSidebarHeight":false,"minWidth":1004,"sidebarBehavior":"modern","disableOnResponsiveLayouts":true}'>
+</div>
+<script type="text/javascript">
+    (function () {
+        var c = document.body.className;
+        c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+        document.body.className = c;
+    })();
+</script>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader-active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
                         </div>
                     </div>
-                    <!-- End col-md-6 -->
-                    <div class="col-md-6">
-                        <div class="title-v1">
-                            <h3>Biznis</h3>
-                        </div>
-                        <!-- End tile -->
-                     
-                        <!-- End box -->
-                        <div class="row size-16 Bizniz_16">
-                           
-                        </div>
-                    </div>
-                    <!-- End col-md-6 -->
                 </div>
             </div>
-           
-        
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
 
         </div>
 
-        <div class="col-md-4">
-            <aside class="widget social" id="hg-extra">
-            </aside>
-            <aside class="widget popular">
-                <h3 class="widget-title">MOST POPULAR</h3>
-                <div class="banner" style="margin : 10px 0">
-                    {% if options.home_sideAD %}
-                        {{ options.home_sideAD | safe }}
-                        {% else %}
-                        <img class="img-responsive" src="{% static 'frontend/assets/images/widget-banner.jpg' %}" alt="banner">
-                    {% endif %}
-                    </div>
-            
-                <div class="content" id="popular_dynm">
-
-                </div>
-                <div class="banner-container">
-                <div class="banner" id="sidead-banner">
-                    {% if options.sidebarAD %}
-                        {{ options.sidebarAD | safe }}
-                    {% else %}
-                        <img class="img-responsive" src="{% static 'frontend/assets/images/300x600.png' %}" alt="sidebar-banner">
-                    {% endif %}
-                </div>
-            </div>
-            </aside>
-            </div>
     </div>
-</div>
-
-
-
-
-
-{% include 'frontend/footer.html' %}
 
 </div>
 
-<style>
- 
-</style>
 <script>
     function updateDate(elem) {
-       elem = elem.replace("+0100", "")
-       elem = elem.replace("+0200", "") 
-       elem = elem.replace("+0000", "") 
-       elem = elem.replace("000Z", "") 
-       elem = elem.replace("Mon", "") 
-       elem = elem.replace("Tue", "") 
-       elem = elem.replace("Wed", "") 
-       elem = elem.replace("Thu", "") 
-       elem = elem.replace("Fri", "") 
-       elem = elem.replace("Sun", "") 
-       elem = elem.replace("Sat", "") 
-       elem = elem.replace("Jan", "1") 
-       elem = elem.replace("Feb", "2") 
-       elem = elem.replace("Apr", "3") 
-       elem = elem.replace("Mar", "4") 
-       elem = elem.replace("May", "5") 
-       elem = elem.replace("Jun", "6") 
-       elem = elem.replace("Jul", "7") 
-       elem = elem.replace("Aug", "8") 
-       elem = elem.replace("Sep", "9") 
-       elem = elem.replace("Oct", "10") 
-       elem = elem.replace("Nov", "11") 
-       elem = elem.replace("Dec", "12") 
-       elem = elem.replaceAll(" ", "/") 
-       elem = elem.replace("/01:", " 01:") 
-       elem = elem.replace("/02:", " 02:") 
-       elem = elem.replace("/03:", " 03:") 
-       elem = elem.replace("/04:", " 04:") 
-       elem = elem.replace("/05:", " 05:") 
-       elem = elem.replace("/06:", " 06:") 
-       elem = elem.replace("/07:", " 07:") 
-       elem = elem.replace("/08:", " 08:") 
-       elem = elem.replace("/09:", " 09:") 
-       elem = elem.replace("/10:", " 10:") 
-       elem = elem.replace("/11:", " 11:") 
-       elem = elem.replace("/12:", " 12:") 
-       elem = elem.replace("/13:", " 13:") 
-       elem = elem.replace("/14:", " 14:") 
-       elem = elem.replace("/15:", " 15:") 
-       elem = elem.replace("/16:", " 16:") 
-       elem = elem.replace("/17:", " 17:") 
-       elem = elem.replace("/18:", " 18:") 
-       elem = elem.replace("/19:", " 19:") 
-       elem = elem.replace("/20:", " 20:") 
-       elem = elem.replace("/21:", " 21:") 
-       elem = elem.replace("/22:", " 22:") 
-       elem = elem.replace("/23:", " 23:") 
-       elem = elem.replace("/24:", " 24:") 
-       elem = elem.slice(3, -1) 
-       
-       return elem
+        elem = elem.replace("+0100", "")
+        elem = elem.replace("+0200", "")
+        elem = elem.replace("+0000", "")
+        elem = elem.replace("000Z", "")
+        elem = elem.replace("Mon", "")
+        elem = elem.replace("Tue", "")
+        elem = elem.replace("Wed", "")
+        elem = elem.replace("Thu", "")
+        elem = elem.replace("Fri", "")
+        elem = elem.replace("Sun", "")
+        elem = elem.replace("Sat", "")
+        elem = elem.replace("Jan", "1")
+        elem = elem.replace("Feb", "2")
+        elem = elem.replace("Apr", "3")
+        elem = elem.replace("Mar", "4")
+        elem = elem.replace("May", "5")
+        elem = elem.replace("Jun", "6")
+        elem = elem.replace("Jul", "7")
+        elem = elem.replace("Aug", "8")
+        elem = elem.replace("Sep", "9")
+        elem = elem.replace("Oct", "10")
+        elem = elem.replace("Nov", "11")
+        elem = elem.replace("Dec", "12")
+        elem = elem.replaceAll(" ", "/")
+        elem = elem.replace("/01:", " 01:")
+        elem = elem.replace("/02:", " 02:")
+        elem = elem.replace("/03:", " 03:")
+        elem = elem.replace("/04:", " 04:")
+        elem = elem.replace("/05:", " 05:")
+        elem = elem.replace("/06:", " 06:")
+        elem = elem.replace("/07:", " 07:")
+        elem = elem.replace("/08:", " 08:")
+        elem = elem.replace("/09:", " 09:")
+        elem = elem.replace("/10:", " 10:")
+        elem = elem.replace("/11:", " 11:")
+        elem = elem.replace("/12:", " 12:")
+        elem = elem.replace("/13:", " 13:")
+        elem = elem.replace("/14:", " 14:")
+        elem = elem.replace("/15:", " 15:")
+        elem = elem.replace("/16:", " 16:")
+        elem = elem.replace("/17:", " 17:")
+        elem = elem.replace("/18:", " 18:")
+        elem = elem.replace("/19:", " 19:")
+        elem = elem.replace("/20:", " 20:")
+        elem = elem.replace("/21:", " 21:")
+        elem = elem.replace("/22:", " 22:")
+        elem = elem.replace("/23:", " 23:")
+        elem = elem.replace("/24:", " 24:")
+        elem = elem.slice(3, -1)
+
+        return elem
     }
 
 
-    fetch(`rss/randomNewsCategory/2/Biznis`)
-    .then(response => response.json())
-    .then(data => {
-        info = data['feed']
-        elm = document.querySelector(".Bizniz_16")
-        for (var i = 0; i < info.length; i ++) {
-            elm.innerHTML += `
-            <div class="col-md-6 col-sm-6">
-                                <div class="post-item ver3 overlay">
-                                    <div class="wrap-images">
-                                        <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                                        <div class="tag">
-                                            <p class="date"><a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
-                                        </div>
-                                    </div>
-                                    <div class="text">
-                                        <h2><a rel="nowfollow" href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
-                                        
-                                    </div>
-                                </div>
-                                <!-- End item -->
-                            </div>
-            `
-        }
-    })
-    fetch(`rss/randomNewsCategory/2/Svijet`)
-    .then(response => response.json())
-    .then(data => {
-        info = data['feed']
-        elm = document.querySelector(".Svijet_16")
-        for (var i = 0; i < info.length; i ++) {
-            elm.innerHTML += `
-            <div class="col-md-6 col-sm-6">
-                                <div class="post-item ver3 overlay">
-                                    <div class="wrap-images">
-                                        <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                                        <div class="tag">
-                                            <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
-                                        </div>
-                                    </div>
-                                    <div class="text">
-                                        <h2><a rel="nowfollow" href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
-        
-                                    </div>
-                                </div>
-                                <!-- End item -->
-                            </div>
-            `
-        }
-    })
-    fetch(`rss/randomNewsCategory/1/Biznis`)
-    .then(response => response.json())
-    .then(data => {
-        info = data['feed']
-        elm = document.querySelector(".Biznis")
-        for (var i = 0; i < info.length; i ++) {
-        elm.innerHTML += `
-        <div class="post-item ver3 overlay max-width-700">
-                                <div class="wrap-images">
-                                    <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                                    <div class="tag">
-                                        <p class="date"> ${info[i]['source']}  |  ${info[i]['category']} |  ${updateDate(info[i]['pub_date'])}</p>
-                                    </div>
-                                </div>
-                                <div class="text">
-                                    <h2><a rel="nowfollow" href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
-                                    <p>${info[i]['source']}</p>
-                                    <a class="read-more" href="${info[i]['link']}" title="pročitaj više">pročitaj više</a>
-                                </div>
-                            </div>
-        `
-        }
-    })
-    fetch(`rss/randomNewsCategory/1/Nogomet`)
-    .then(response => response.json())
-    .then(data => {
-        info = data['feed']
-        elm = document.querySelector(".footer_news")
-        for (var i = 0; i < info.length; i ++) {
-        elm.innerHTML += `
-        <div class="post-item ver3 overlay max-width-700">
-                                <div class="wrap-images">
-                                    <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img style="width:100%; height:230px !important" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                                    <div class="tag">
-                                        <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
-                                    </div>
-                                </div>
-                                <div class="text">
-                                    <h2><a rel="nowfollow" href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
-                                    
-                                    <a class="read-more" href="${info[i]['link']}" >pročitaj više</a>
-                                </div>
-                            </div>
-        `
-        }
-    })
-    fetch(`rss/randomNewsCategory/1/Svijet`)
-    .then(response => response.json())
-    .then(data => {
-        info = data['feed']
-        elm = document.querySelector(".Svijet")
-        for (var i = 0; i < info.length; i ++) {
-        elm.innerHTML += `
-        <div class="post-item ver3 overlay max-width-700">
-                                <div class="wrap-images">
-                                    <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img style="width:100%; height:230px !important" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                                    <div class="tag">
-                                        <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
-                                    </div>
-                                </div>
-                                <div class="text">
-                                    <h2><a href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
-                                    <a rel="nowfollow" class="read-more" href="${info[i]['link']}" title="pročitaj više">pročitaj više</a>
-                                </div>
-                            </div>
-        `
-        }
-    })
-        fetch(`rss/getNewsCategory/4/show`)
+    fetch(`rss/getNewsCategory/5/Show`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']
-            home_head = document.querySelector("#tech_box")
-            for ( var i = 0; i < info.length; i ++) { 
-            home_head.innerHTML += `
-            <div class="post-item ver2">
-                    <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                    <div class="text">
-                        <h2><a href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
-                        <div class="tag">
-                            <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
-                             
+            show_one = document.querySelector("#show-section-one")
+            show_two = document.querySelector("#show-section-two")
+            for (var i = 0; i < info.length; i++) {
+                if (i == 0) {
+                    show_one.innerHTML += `
+                <a href="${info[i]['link']}" rel="nofolkow">
+                    <div class="mvp-widget-dark-feat left relative">
+                        <div class="mvp-widget-dark-feat-img left relative">
+                            <img width="1000" height="600"
+                                src="${info[i]['img']}"
+                                class="mvp-reg-img lazy wp-post-image" alt="${info[i]['title']}" loading="lazy"
+                                srcset="${info[i]['img']} 1000w, ${info[i]['img']} 600w, ${info[i]['img']} 300w, ${info[i]['img']} 768w, ${info[i]['img']} 590w, ${info[i]['img']} 400w"
+                                sizes="(max-width: 1000px) 100vw, 1000px" /> <img
+                                width="400" height="240"
+                                src="${info[i]['img']}"
+                                class="mvp-mob-img lazy wp-post-image" alt="" loading="lazy"
+                                srcset="${info[i]['img']} 400w, ${info[i]['img']} 600w, ${info[i]['img']} 300w, ${info[i]['img']} 768w, ${info[i]['img']} 590w, ${info[i]['img']} 1000w"
+                                sizes="(max-width: 400px) 100vw, 400px" />
+                            <div class="mvp-vid-box-wrap mvp-vid-marg">
+                                <i class="fa fa-2 fa-camera" aria-hidden="true"></i>
+                            </div>
+                            <!--mvp-vid-box-wrap-->
                         </div>
-                        <a rel="nowfollow" class="read-more" href="${info[i]['link']}" title="pročitaj više">pročitaj više</a>
+                        <!--mvp-widget-dark-feat-img-->
+                        <div class="mvp-widget-dark-feat-text left relative">
+                            <div class="mvp-cat-date-wrap left relative">
+                                <span
+                                    class="mvp-cd-cat left relative">${info[i]['category']}</span>
+                                    <span class="mvp-cd-date left relative">${info[i]['source']}</span>
+                                    <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
+                            </div>
+                            <!--mvp-cat-date-wrap-->
+                            <h2>${info[i]['title']}</h2>
+                        </div>
+                        <!--mvp-widget-dark-feat-text-->
                     </div>
+                    <!--mvp-widget-dark-feat-->
+                </a>
+                `
+                } else {
+                    show_two.innerHTML += `
+            <a href="${info[i]['link']}" rel="nofollow">
+                <div class="mvp-widget-dark-sub left relative">
+                    <div class="mvp-widget-dark-sub-out right relative">
+                        <div class="mvp-widget-dark-sub-img left relative">
+                            <img width="400" height="240"
+                                src="${info[i]['img']}"
+                                class="mvp-reg-img lazy wp-post-image" alt="${info[i]['title']}"
+                                loading="lazy"
+                                srcset="${info[i]['img']} 400w, ${info[i]['img']} 600w, ${info[i]['img']} 300w, ${info[i]['img']} 768w, ${info[i]['img']} 590w, ${info[i]['img']} 1000w"
+                                sizes="(max-width: 400px) 100vw, 400px" /> <img
+                                width="80" height="80"
+                                src="${info[i]['img']}"
+                                class="mvp-mob-img lazy wp-post-image" alt="${info[i]['title']}"
+                                loading="lazy"
+                                srcset="${info[i]['img']} 80w, ${info[i]['img']} 300w, ${info[i]['img']} 100w, ${info[i]['img']} 150w"
+                                sizes="(max-width: 80px) 100vw, 80px" />
+                            <div
+                                class="mvp-vid-box-wrap mvp-vid-box-small mvp-vid-marg-small">
+                                <i class="fa fa-2 fa-camera" aria-hidden="true"></i>
+                            </div>
+                            <!--mvp-vid-box-wrap-->
+                        </div>
+                        <!--mvp-widget-dark-sub-img-->
+                        <div class="mvp-widget-dark-sub-in">
+                            <div class="mvp-widget-dark-sub-text left relative">
+                                <div class="mvp-cat-date-wrap left relative">
+                                    <span
+                                        class="mvp-cd-cat left relative">${info[i]['category']}</span>
+                                        <span class="mvp-cd-date left relative">${info[i]['source']}</span>
+                                        <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
+                                </div>
+                                <!--mvp-cat-date-wrap-->
+                                <h2>${info[i]['title']}</h2>
+                            </div>
+                            <!--mvp-widget-dark-sub-text-->
+                        </div>
+                        <!--mvp-widget-dark-sub-in-->
+                    </div>
+                    <!--mvp-widget-dark-sub-out-->
                 </div>
-            `
-            }
-        })
-        fetch(`rss/getNewsCategory/4/Nogomet`)
-        .then(response => response.json())
-        .then(data => {
-            info = data['feed']
-            home_head = document.querySelector("#Nogomet")
-            for ( var i = 0; i < info.length; i ++) { 
-            home_head.innerHTML += `
-            <div class="post-item ver2">
-                    <a class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                    <div class="text">
-                        <h2><a rel="nowfollow" href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
-                        <div class="tag">
-                            <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
-                             
-                        </div>
-                        <a rel="nowfollow" class="read-more" href="${info[i]['link']}" title="pročitaj više">pročitaj više</a>
-                    </div>
-                </div>
-            `
-            }
-        })
-        fetch(`rss/getNewsCategory/4/vijesti`)
-        .then(response => response.json())
-        .then(data => {
-            info = data['feed']
-            home_head = document.querySelector(".vijesti")
-            for ( var i = 0; i < info.length; i ++) { 
-            home_head.innerHTML += `
-            <div class="post-item ver2">
-                    <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                    <div class="text">
-                        <h2><a href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
-                        <div class="tag">
-                            <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
-                             
-                        </div>
-                        <a rel="nowfollow" class="read-more" href="${info[i]['link']}" title="pročitaj više">pročitaj više</a>
-                    </div>
-                </div>
-            `
-            }
-        })
-        fetch(`rss/getNewsCategory/4/Nogomet`)
-        .then(response => response.json())
-        .then(data => {
-            info = data['feed']
-            home_head = document.querySelector(".footer_details")
-            for ( var i = 0; i < info.length; i ++) { 
-            home_head.innerHTML += `
-            <div class="post-item ver2">
-                    <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                    <div class="text">
-                        <h2><a rel="nowfollow" href="${info[i]['link']}" title="${info[i]['title']}">${info[i]['title']}</a></h2>
-                        
-                        <div class="tag">
-                            <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
-                             
-                        </div>
-                        <a rel="nowfollow" class="read-more" href="${info[i]['link']}" title="pročitaj više">pročitaj više</a>
-                    </div>
-                </div>
-            `
-            }
-        })
-    
-        
-
-
-        fetch(`/rss/randomNews/5`)
-        .then(response => response.json())
-        .then(data => {
-            info = data['feed']
-            home_head = document.querySelector("#popular_dynm")
-            for ( var i = 0; i < info.length; i ++) { 
-            if (i == 0) {
-                cls = "post-item ver2"
-            }
-            else {
-                cls = "post-item ver2 "
-            }
-                home_head.innerHTML += `
-            <div class="${cls}">
-                                <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="images"></a>
-                                <div class="text">
-                                    <h2><a rel="nowfollow" href="" title="${info[i]['title']}">${info[i]['title']}</a></h2>
-                                    
-                                    <div class="tag">
-                                        <p class="date"><a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
-                                    </div>
-                                </div>
-                            </div>
-            ` 
-            
-        }
-        })
-
-        fetch(`/rss/randomNews/4`)
-        .then(response => response.json())
-        .then(data => {
-            info = data['feed']
-            home_head = document.querySelector("#news_feed_main")
-            for ( var i = 0; i < info.length; i ++) { 
-            home_head.innerHTML += `
-            <div class="col-md-6 col-sm-6 space-30">
-                        <div class="post-item ver4 overlay-v2 cat-4" style="height: 210px; overflow: hidden;">
-                            <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                          
-                        
-                        </div>
-                        <div>
-                            <a rel="nowfollow" class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
-                            <small class="wrap" class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</small>
-                        </div>
-                        <!-- End item -->
-                    </div>
+                <!--mvp-widget-dark-sub-->
+            </a>
             `
                 }
+            }
         })
 
-        fetch(`/rss/latest/3`)
+    fetch(`rss/getNewsCategory/7/sport`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']
-            home_head = document.querySelector(".home2-head")
-            for ( var i = 0; i < info.length; i ++) { 
-            home_head.innerHTML += `
-            <div class="col-md-4 col-sm-4" >
-            <div class="post-item ver1 cat-3 overlay">
-                <a rel="nowfollow" class="images" href="#" title="${info[i]['title']}" alt="${info[i]['title']}"><img id="img-head-news" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+            sp_one = document.querySelector("#sports-section-one")
+            sp_two = document.querySelector("#sports-section-two")
+            sp_three = document.querySelector("#sports-section-three")
+            for (var i = 0; i < info.length; i++) {
+                if (i < 1) {
+                    sp_one.innerHTML += `
+                <a href="${info[i]['link']}" rel="nofollow">
+                    <div class="mvp-widget-feat2-left-cont left relative">
+                        <div class="mvp-feat1-feat-img left relative">
+                            <img width="560" height="600"
+                                src="${info[i]['img']}"
+                                class="attachment-mvp-port-thumb size-mvp-port-thumb wp-post-image"
+                                alt="${info[i]['title']}" loading="lazy" />
+                            <div class="mvp-vid-box-wrap mvp-vid-marg">
+                                <i class="fa fa-2 fa-camera" aria-hidden="true"></i>
+                            </div>
+                            <!--mvp-vid-box-wrap-->
+                        </div>
+                        <!--mvp-feat1-feat-img-->
+                        <div class="mvp-feat1-feat-text left relative">
+                            <div class="mvp-cat-date-wrap left relative">
+                                <span class="mvp-cd-cat left relative">${info[i]['category']}</span>
+                                <span class="mvp-cd-date left relative">${info[i]['source']}</span>
+                                <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
+                            </div>
+                            <!--mvp-cat-date-wrap-->
+                            <h2>${info[i]['title']}</p>
+                        </div>
+                        <!--mvp-feat1-feat-text-->
+                    </div>
+                    <!--mvp-widget-feat2-left-cont-->
+                </a>
+                `
+                } else if (i > 1 && i < 4) {
+                    sp_two.innerHTML += `
+                <a href="${info[i]['link']}" rel="nofollow">
+                    <div class="mvp-widget-feat2-right-cont left relative">
+                        <div class="mvp-widget-feat2-right-img left relative">
+                            <img width="400" height="240"
+                                src="${info[i]['img']}"
+                                class="mvp-reg-img lazy wp-post-image" alt="${info[i]['title']}"
+                                loading="lazy"
+                                srcset="${info[i]['img']} 400w, ${info[i]['img']} 600w, ${info[i]['img']} 300w, ${info[i]['img']} 768w, ${info[i]['img']} 590w, ${info[i]['img']} 1000w"
+                                sizes="(max-width: 400px) 100vw, 400px" /> <img
+                                width="80" height="80"
+                                src="${info[i]['img']}"
+                                class="mvp-mob-img lazy wp-post-image" alt="${info[i]['title']}"
+                                loading="lazy"
+                                srcset="${info[i]['img']} 80w, ${info[i]['img']} 300w, ${info[i]['img']} 100w, ${info[i]['img']} 150w"
+                                sizes="(max-width: 80px) 100vw, 80px" />
+                        </div>
+                        <!--mvp-widget-feat2-right-img-->
+                        <div class="mvp-widget-feat2-right-text left relative">
+                            <div class="mvp-cat-date-wrap left relative">
+                                <span class="mvp-cd-cat left relative">${info[i]['category']}</span>
+                                <span class="mvp-cd-date left relative">${info[i]['source']}</span>
+                                <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
+                            </div>
+                            <!--mvp-cat-date-wrap-->
+                            <h2>${info[i]['title']}</h2>
+                        </div>
+                        <!--mvp-widget-feat2-right-text-->
+                    </div>
+                    <!--mvp-widget-feat2-right-cont-->
+                </a>
+                `
+                } else {
+                    sp_three.innerHTML += `
+                <a href="${info[i]['link']}" rel="nofollow">
+                    <div class="mvp-feat1-list-cont left relative">
+                        <div class="mvp-feat1-list-out relative">
+                            <div class="mvp-feat1-list-img left relative">
+                                <img width="80" height="80"
+                                    src="${info[i]['img']}"
+                                    class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
+                                    alt="${info[i]['title']}" loading="lazy"
+                                    srcset="${info[i]['img']} 80w, ${info[i]['img']} 300w, ${info[i]['img']} 100w, ${info[i]['img']} 150w"
+                                    sizes="(max-width: 80px) 100vw, 80px" />
+                            </div>
+                            <!--mvp-feat1-list-img-->
+                            <div class="mvp-feat1-list-in">
+                                <div class="mvp-feat1-list-text">
+                                    <div class="mvp-cat-date-wrap left relative">
+                                        <span class="mvp-cd-cat left relative">${info[i]['category']}</span>
+                                        <span class="mvp-cd-date left relative">${info[i]['source']}</span>
+                                        <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
+                                    </div>
+                                    <!--mvp-cat-date-wrap-->
+                                    <h2>${info[i]['title']}</h2>
+                                </div>
+                                <!--mvp-feat1-list-text-->
+                            </div>
+                            <!--mvp-feat1-list-in-->
+                        </div>
+                        <!--mvp-feat1-list-out-->
+                    </div>
+                    <!--mvp-feat1-list-cont-->
+                </a>
+                `
+
+                }
+            }
+        })
+
+    fetch(`rss/getNewsCategory/6/biznis`)
+        .then(response => response.json())
+        .then(data => {
+            info = data['feed']
+            biz_one = document.querySelector("#Biznis-one-section")
+            biz_two = document.querySelector("#Biznis-two-section")
+            biz_three = document.querySelector("#Biznis-three-section")
+            for (var i = 0; i < info.length; i++) {
+                if (i < 1) {
+                    biz_one.innerHTML += `
+                    <a href="${info[i]['link']}" rel="nofollow">
+                        <div class="mvp-widget-feat2-left-cont left relative">
+                            <div class="mvp-feat1-feat-img left relative">
+                                <img width="560" height="600"
+                                    src="${info[i]['img']}"
+                                    class="attachment-mvp-port-thumb size-mvp-port-thumb wp-post-image"
+                                    alt="${info[i]['title']}" loading="lazy" />
+                            </div>
+                            <!--mvp-feat1-feat-img-->
+                            <div class="mvp-feat1-feat-text left relative">
+                                <div class="mvp-cat-date-wrap left relative">
+                                    <span
+                                        class="mvp-cd-cat left relative">${info[i]['category']}</span>
+                                        <span class="mvp-cd-date left relative">${info[i]['source']}</span>
+                                        <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
+                                </div>
+                                <!--mvp-cat-date-wrap-->
+                                <h2>${info[i]['title']}</h2>
+                                
+                            </div>
+                            <!--mvp-feat1-feat-text-->
+                        </div>
+                        <!--mvp-widget-feat2-left-cont-->
+                    </a>
+                `
+                } else if (i > 1 && i < 4) {
+                    biz_two.innerHTML += `
+                        <a href="${info[i]['link']}" rel="nofollow">
+                            <div class="mvp-widget-feat2-right-cont left relative">
+                                <div class="mvp-widget-feat2-right-img left relative">
+                                    <img width="400" height="240"
+                                        src="${info[i]['img']}"
+                                        class="mvp-reg-img lazy wp-post-image" alt="${info[i]['title']}"
+                                        loading="lazy"
+                                        srcset="${info[i]['img']} 400w, ${info[i]['img']} 600w, ${info[i]['img']} 300w, ${info[i]['img']} 768w, ${info[i]['img']} 590w, ${info[i]['img']} 1000w"
+                                        sizes="(max-width: 400px) 100vw, 400px" /> <img
+                                        width="80" height="80"
+                                        src="${info[i]['img']}"
+                                        class="mvp-mob-img lazy wp-post-image" alt="${info[i]['title']}"
+                                        loading="lazy"
+                                        srcset="${info[i]['img']} 80w, ${info[i]['img']} 300w, ${info[i]['img']} 100w, ${info[i]['img']} 150w"
+                                        sizes="(max-width: 80px) 100vw, 80px" />
+                                    <div class="mvp-vid-box-wrap mvp-vid-box-mid">
+                                        <i class="fa fa-2 fa-camera" aria-hidden="true"></i>
+                                    </div>
+                                    <!--mvp-vid-box-wrap-->
+                                </div>
+                                <!--mvp-widget-feat2-right-img-->
+                                <div class="mvp-widget-feat2-right-text left relative">
+                                    <div class="mvp-cat-date-wrap left relative">
+                                        <span
+                                            class="mvp-cd-cat left relative">${info[i]['category']}</span>
+                                            <span class="mvp-cd-date left relative">${info[i]['source']}</span>
+                                            <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
+                                    </div>
+                                    <!--mvp-cat-date-wrap-->
+                                    <h2>${info[i]['title']}
+                                    </h2>
+                                </div>
+                                <!--mvp-widget-feat2-right-text-->
+                            </div>
+                            <!--mvp-widget-feat2-right-cont-->
+                        </a>
+                    `
+                } else {
+                    biz_three.innerHTML += `
+                    <a href="${info[i]['link']}" rel="nofollow">
+                        <div class="mvp-feat1-list-cont left relative">
+                            <div class="mvp-feat1-list-out relative">
+                                <div class="mvp-feat1-list-img left relative">
+                                    <img width="80" height="80"
+                                        src="${info[i]['img']}"
+                                        class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
+                                        alt="${info[i]['title']}" loading="lazy"
+                                        srcset="${info[i]['img']} 80w, ${info[i]['img']} 300w, ${info[i]['img']} 100w, ${info[i]['img']} 150w"
+                                        sizes="(max-width: 80px) 100vw, 80px" />
+                                </div>
+                                <!--mvp-feat1-list-img-->
+                                <div class="mvp-feat1-list-in">
+                                    <div class="mvp-feat1-list-text">
+                                        <div class="mvp-cat-date-wrap left relative">
+                                            <span class="mvp-cd-cat left relative">${info[i]['category']}</span>
+                                            <span class="mvp-cd-date left relative">${info[i]['source']}</span>
+                                            <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
+                                        </div>
+                                        <!--mvp-cat-date-wrap-->
+                                        <h2>${info[i]['title']}</h2>
+                                    </div>
+                                    <!--mvp-feat1-list-text-->
+                                </div>
+                                <!--mvp-feat1-list-in-->
+                            </div>
+                            <!--mvp-feat1-list-out-->
+                        </div>
+                        <!--mvp-feat1-list-cont-->
+                    </a>
+                    `
+                }
+            }
+        })
+    fetch(`rss/getNewsCategory/3/politika`)
+        .then(response => response.json())
+        .then(data => {
+            info = data['feed']
+            pol_one = document.querySelector("#politika-one")
+            pol_two = document.querySelector("#politika-two")
+            for (var i = 0; i < info.length; i++) {
+                if (i < 1) {
+                    pol_one.innerHTML += `
+                    <a href="${info[i]['link']}" rel="nofollw">
+                        <div class="mvp-feat5-mid-main left relative">
+                            <div class="mvp-feat5-mid-main-img left relative">
+                                <img width="590" height="354"
+                                    src="${info[i]['img']}"
+                                    class="mvp-reg-img wp-post-image" alt="${info[i]['title']}" loading="lazy"
+                                    srcset="${info[i]['img']} 590w, ${info[i]['img']} 600w, ${info[i]['img']} 300w, ${info[i]['img']} 768w, ${info[i]['img']} 1024w, ${info[i]['img']} 1000w, ${info[i]['img']} 400w, ${info[i]['img']} 1600w"
+                                    sizes="(max-width: 590px) 100vw, 590px" /> <img width="560"
+                                    height="600"
+                                    src="${info[i]['img']}"
+                                    class="mvp-mob-img wp-post-image" alt="${info[i]['title']}" loading="lazy" />
+                                <div class="mvp-vid-box-wrap mvp-vid-marg">
+                                    <i class="fa fa-2 fa-camera" aria-hidden="true"></i>
+                                </div>
+                                <!--mvp-vid-box-wrap-->
+                            </div>
+                            <!--mvp-feat5-mid-main-img-->
+                            <div class="mvp-feat5-mid-main-text left relative">
+                                <div class="mvp-cat-date-wrap left relative">
+                                    <span class="mvp-cd-cat left relative">${info[i]['category']}</span>
+                                    <span class="mvp-cd-date left relative">${info[i]['source']}</span>
+                                    <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
+                                </div>
+                                <!--mvp-cat-date-wrap-->
+                                <h2>${info[i]['title']}</h2>
+                                
+                            </div>
+                            <!--mvp-feat5-mid-main-text-->
+                        </div>
+                        <!--mvp-feat5-mid-main-->
+                    </a>`
+                } else {
+                    pol_two.innerHTML += `
+                    <a href="${info[i]['link']}" rel="nofollow">
+                        <div class="mvp-feat5-mid-sub-story left relative">
+                            <div class="mvp-feat5-mid-sub-out right relative">
+                                <div class="mvp-feat5-mid-sub-img left relative">
+                                    <img width="400" height="240"
+                                        src="${info[i]['img']}"
+                                        class="mvp-reg-img wp-post-image" alt="${info[i]['title']}"
+                                        loading="lazy"
+                                        srcset="${info[i]['img']} 400w, ${info[i]['img']} 600w, ${info[i]['img']} 300w, ${info[i]['img']} 768w, ${info[i]['img']} 590w, ${info[i]['img']} 1000w"
+                                        sizes="(max-width: 400px) 100vw, 400px" /> <img
+                                        width="80" height="80"
+                                        src="${info[i]['img']}"
+                                        class="mvp-mob-img wp-post-image" alt="${info[i]['title']}"
+                                        loading="lazy"
+                                        srcset="${info[i]['img']} 80w, ${info[i]['img']} 300w, ${info[i]['img']} 100w, ${info[i]['img']} 150w"
+                                        sizes="(max-width: 80px) 100vw, 80px" />
+                                </div>
+                                <!--mvp-feat5-mid-sub-img-->
+                                <div class="mvp-feat5-mid-sub-in">
+                                    <div class="mvp-feat5-mid-sub-text left relative">
+                                        <div class="mvp-cat-date-wrap left relative">
+                                            <span
+                                                class="mvp-cd-cat left relative">${info[i]['category']}</span>
+                                                <span class="mvp-cd-date left relative">${info[i]['source']}</span>
+                                                <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
+                                        </div>
+                                        <!--mvp-cat-date-wrap-->
+                                        <h2>${info[i]['title']}</h2>
+                                    </div>
+                                    <!--mvp-feat5-mid-sub-text-->
+                                </div>
+                                <!--mvp-feat5-mid-sub-in-->
+                            </div>
+                            <!--mvp-feat5-mid-sub-out-->
+                        </div>
+                        <!--mvp-feat5-mid-sub-story-->
+                    </a>
+                    `
+                }
+            }
+        })
+
+    // Vijesti Section
+    fetch(`rss/getNewsCategory/6/vijesti`)
+        .then(response => response.json())
+        .then(data => {
+            info = data['feed']
+            vijesti_head = document.querySelector("#vijesti-head")
+            vijesti_bottom = document.querySelector("#vijesti-bottom")
+            for (var i = 0; i < info.length; i++) {
+                if (i < 2) {
+
+                    vijesti_head.innerHTML += `
                 
-            </div>
+                    <a href="${info[i]['link']}" rel="nofollow">
+                        <div class="mvp-widget-feat1-top-story left relative">
+                            <div class="mvp-widget-feat1-top-img left relative">
+                                <img width="590" height="354"
+                                            src="${info[i]['img']}"
+                                            class="mvp-reg-img wp-post-image" alt="${info[i]['title']}" loading="lazy"
+                                            srcset="${info[i]['img']} 590w, ${info[i]['img']} 600w, ${info[i]['img']} 300w, ${info[i]['img']} 768w, ${info[i]['img']} 1024w, ${info[i]['img']} 1000w, ${info[i]['img']} 400w, ${info[i]['img']} 1600w"
+                                            sizes="(max-width: 590px) 100vw, 590px" /> <img width="560"
+                                            height="600"
+                                            src="${info[i]['img']}"
+                                            class="mvp-mob-img wp-post-image" alt="${info[i]['title']}" loading="lazy" />
+                            </div>
+                    
+                            <div class="mvp-widget-feat1-top-text left relative">
+                                <div class="mvp-cat-date-wrap left relative">
 
-                <a rel="nowfollow" class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
-                <small class="wrap" class="date"><a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</small>
-            </div>
-<!-- End item -->
-        </div>
-            ` 
-    }
+                                    <span class="mvp-cd-cat left relative">${info[i]['category']} </span>
+                                    <span class="mvp-cd-date left relative" onclick="location.href = '/source${info[i]['source']}' "> ${info[i]['source']}</span>
+                                    <span class="mvp-cd-date left relative"> ${updateDate(info[i]['pub_date'])}</span>
+                                </div>
+                                <!--mvp-cat-date-wrap-->
+                                <h2>${info[i]['title']}</h2>
+                            </div>
+                            <!--mvp-widget-feat1-top-text-->
+                        </div>
+                        <!--mvp-widget-feat1-top-story-->
+                    </a>
+                    
+                    `
+                } else {
+                    vijesti_bottom.innerHTML += `
+                <a href="${info[i]['link']}" rel="nofollow">
+                    <div class="mvp-widget-feat1-bot-story left relative">
+                        <div class="mvp-widget-feat1-bot-img left relative">
+                            <img width="400" height="240"
+                                        src="${info[i]['img']}"
+                                        class="attachment-mvp-mid-thumb size-mvp-mid-thumb wp-post-image"
+                                        alt="${info[i]['title']}" loading="lazy"
+                                        srcset="${info[i]['img']} 400w, ${info[i]['img']} 600w, ${info[i]['img']} 300w, ${info[i]['img']} 768w, ${info[i]['img']} 590w, ${info[i]['img']} 1000w"
+                                        sizes="(max-width: 400px) 100vw, 400px" />
+                            <div class="mvp-vid-box-wrap mvp-vid-box-mid">
+                                <i class="fa fa-2 fa-camera" aria-hidden="true"></i>
+                            </div>
+                            <!--mvp-vid-box-wrap-->
+                        </div>
+                        <!--mvp-widget-feat1-bot-img-->
+                        <div class="mvp-widget-feat1-bot-text left relative">
+                            <div class="mvp-cat-date-wrap left relative">
+                                <span class="mvp-cd-cat left relative">${info[i]['category']} </span>
+                                <span class="mvp-cd-date left relative"> ${info[i]['source']}</span>
+                                <span class="mvp-cd-date left relative"> ${updateDate(info[i]['pub_date'])}</span>
+                            </div>
+                            <!--mvp-cat-date-wrap-->
+                            <h2>${info[i]['title']}</h2>
+                        </div>
+                        <!--mvp-widget-feat1-bot-text-->
+                    </div>
+                    <!--mvp-widget-feat1-bot-story-->
+                </a>
+`
+                }
+            }
         })
-    
-function getByCategory(cat) {
-    fetch(`rss/getNewsCategory/4/${cat}`)
+
+
+
+    fetch(`/rss/randomNews/8`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']
-            home_head = document.querySelector("#news_feed_main")
-            home_head.innerHTML = ""
-            for ( var i = 0; i < info.length; i ++) { 
-            home_head.innerHTML += `
+            footer_news = document.querySelector("#footer-news")
+            for (var i = 0; i < info.length; i++) {
+
+                footer_news.innerHTML += `
+            <li class="mvp-blog-story-wrap left relative infinite-post">
+                <a href="${info[i]['link']}" rel="bookmark">
+                    <div class="mvp-blog-story-out relative">
+                        <div class="mvp-blog-story-img left relative">
+                            <img width="400" height="240"
+                                src="${info[i]['img']}"
+                                class="mvp-reg-img lazy wp-post-image" alt="${info[i]['title']}"
+                                loading="lazy"
+                                srcset="${info[i]['img']} 400w, ${info[i]['img']} 600w, ${info[i]['img']}, ${info[i]['img']} 768w, h${info[i]['img']} 590w, ${info[i]['img']} 1000w"
+                                sizes="(max-width: 400px) 100vw, 400px" /> <img
+                                width="80" height="80"
+                                src="${info[i]['img']}"
+                                class="mvp-mob-img lazy wp-post-image" alt="${info[i]['title']}"
+                                loading="lazy"
+                                srcset="${info[i]['img']} 80w, ${info[i]['img']} 300w, ${info[i]['img']} 100w, ${info[i]['img']} 150w"
+                                sizes="(max-width: 80px) 100vw, 80px" />
+                        </div>
+                        <!--mvp-blog-story-img-->
+                        <div class="mvp-blog-story-in">
+                            <div class="mvp-blog-story-text left relative">
+                                <div class="mvp-cat-date-wrap left relative">
+                                    <span
+                                        class="mvp-cd-cat left relative">${info[i]['category']}</span>
+                                        <span class="mvp-cd-date left relative">${info[i]['source']}</span>
+                                        <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
+                                </div>
+                                <!--mvp-cat-date-wrap-->
+                                <h2>${info[i]['title']}</h2>
+                                 </div>
+                            <!--mvp-blog-story-text-->
+                        </div>
+                        <!--mvp-blog-story-in-->
+                    </div>
+                    <!--mvp-blog-story-out-->
+                </a>
+            </li>
+`
+
+            }
+        })
+
+
+
+    fetch(`/rss/latest/6`)
+        .then(response => response.json())
+        .then(data => {
+            info = data['feed']
+            lat_one = document.querySelector("#latest-one")
+            lat_two = document.querySelector("#latest-two")
+            for (var i = 0; i < info.length; i++) {
+                if (i < 1) {
+                    lat_one.innerHTML += `
+                    <a href="${info[i]['link']}" rel="nofollow">
+                        <div class="mvp-feat5-small-main left relative">
+                            <div class="mvp-feat5-small-main-img left relative">
+                                <img width="400" height="240"
+                                    src="${info[i]['img']}"
+                                    class="attachment-mvp-mid-thumb size-mvp-mid-thumb wp-post-image"
+                                    alt="${info[i]['title']}" loading="lazy"
+                                    srcset="${info[i]['img']} 400w, ${info[i]['img']} 600w, ${info[i]['img']} 300w, ${info[i]['img']} 768w, ${info[i]['img']} 590w, ${info[i]['img']} 1000w"
+                                    sizes="(max-width: 400px) 100vw, 400px" />
+                            </div>
+                            <!--mvp-feat5-small-main-img-->
+                            <div class="mvp-feat5-small-main-text left relative">
+                                <div class="mvp-cat-date-wrap left relative">
+                                    <span class="mvp-cd-cat left relative">${info[i]['category']}</span>
+                                    <span class="mvp-cd-date left relative">${info[i]['source']}</span>
+                                    <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
+
+                                </div>
+                                <!--mvp-cat-date-wrap-->
+                                <h2>${info[i]['title']}
+                                </h2>
+                                
+                            </div>
+                            <!--mvp-feat5-small-main-text-->
+                        </div>
+                        <!--mvp-feat5-small-main-->
+                                </a>
+                    `
+                } else {
+                    lat_two.innerHTML += `
+                    <a href="${info[i]['link']}" rel="nofollow">
+                        <div class="mvp-feat1-list-cont left relative">
+                            <div class="mvp-feat1-list-out relative">
+                                <div class="mvp-feat1-list-img left relative">
+                                    <img width="80" height="80"
+                                        src="${info[i]['img']}"
+                                        class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
+                                        alt="${info[i]['title']}" loading="lazy"
+                                        srcset="${info[i]['img']} 80w, ${info[i]['img']} 300w, ${info[i]['img']} 100w, ${info[i]['img']} 150w"
+                                        sizes="(max-width: 80px) 100vw, 80px" />
+                                </div>
+                                <!--mvp-feat1-list-img-->
+                                <div class="mvp-feat1-list-in">
+                                    <div class="mvp-feat1-list-text">
+                                        <div class="mvp-cat-date-wrap left relative">
+                                            <span class="mvp-cd-cat left relative">${info[i]['category']}</span>
+                                            <span class="mvp-cd-date left relative">${info[i]['source']}</span>
+                                            <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
+                                        </div>
+                                        <!--mvp-cat-date-wrap-->
+                                        <h2>${info[i]['title']}
+                                        </h2>
+                                    </div>
+                                    <!--mvp-feat1-list-text-->
+                                </div>
+                                <!--mvp-feat1-list-in-->
+                            </div>
+                            <!--mvp-feat1-list-out-->
+                        </div>
+                        <!--mvp-feat1-list-cont-->
+                    </a>
+                    `
+                }
+            }
+        })
+
+    function getByCategory(cat) {
+        fetch(`rss/getNewsCategory/4/${cat}`)
+            .then(response => response.json())
+            .then(data => {
+                info = data['feed']
+                home_head = document.querySelector("#news_feed_main")
+                home_head.innerHTML = ""
+                for (var i = 0; i < info.length; i++) {
+                    home_head.innerHTML += `
             <div class="col-md-6 col-sm-6 space-30">
                         <div class="post-item ver4 overlay-v2 cat-4" style="height: 210px; overflow: hidden;">
                             <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
@@ -665,18 +2125,60 @@ function getByCategory(cat) {
                     </div>
             `
                 }
-        })
-}
-
-function randomCategory() {
-    fetch(`/rss/randomNews/4`)
+            })
+    }
+    fetch(`/rss/randomNews/6`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']
-            home_head = document.querySelector("#news_feed_main")
-            home_head = ""
-            for ( var i = 0; i < info.length; i ++) { 
-            home_head.innerHTML += `
+            side_news = document.querySelector("#side-news-bar")
+
+            for (var i = 0; i < info.length; i++) {
+                side_news.innerHTML += `
+            <a href="${info[i]['link']}" rel="nofollow">
+                <div class="mvp-feat1-list-cont left relative">
+                    <div class="mvp-feat1-list-out relative">
+                        <div class="mvp-feat1-list-img left relative">
+                            <img width="80" height="80"
+                                src="${info[i]['img']}"
+                                class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
+                                alt="${info[i]['title']}" loading="lazy"
+                                srcset="${info[i]['img']} 80w, ${info[i]['img']} 300w, ${info[i]['img']} 100w, ${info[i]['img']} 150w"
+                                sizes="(max-width: 80px) 100vw, 80px" />
+                        </div>
+                        <!--mvp-feat1-list-img-->
+                        <div class="mvp-feat1-list-in">
+                            <div class="mvp-feat1-list-text">
+                                <div class="mvp-cat-date-wrap left relative">
+                                    <span
+                                        class="mvp-cd-cat left relative">${info[i]['category']}</span>
+                                        <span class="mvp-cd-date left relative">${info[i]['source']}</span>
+                                        <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
+                                </div>
+                                <!--mvp-cat-date-wrap-->
+                                <h2>${info[i]['title']}</h2>
+                            </div>
+                            <!--mvp-feat1-list-text-->
+                        </div>
+                        <!--mvp-feat1-list-in-->
+                    </div>
+                    <!--mvp-feat1-list-out-->
+                </div>
+                <!--mvp-feat1-list-cont-->
+            </a>
+            `
+            }
+        })
+
+    function randomCategory() {
+        fetch(`/rss/randomNews/4`)
+            .then(response => response.json())
+            .then(data => {
+                info = data['feed']
+                home_head = document.querySelector("#news_feed_main")
+                home_head = ""
+                for (var i = 0; i < info.length; i++) {
+                    home_head.innerHTML += `
             <div class="col-md-6 col-sm-6 space-30">
                         <div class="post-item ver4 overlay-v2 cat-4" style="height: 210px; overflow: hidden;">
                             <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
@@ -690,9 +2192,8 @@ function randomCategory() {
                     </div>
             `
                 }
-        })
-}
-
+            })
+    }
 </script>
 
 

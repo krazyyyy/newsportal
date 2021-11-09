@@ -21,34 +21,239 @@
     <meta property="og:description" content="sve vijesti na jednom mjestu! Vaš prvi korak u online svijet sada je lakši nego ikada prije!">
     <meta property="og:url" content="https://prvi.hr/">
     <meta property="og:site_name" content="prvi.hr">
-    <meta property="og:image" content="{% static 'frontend/assets/images/PRVI-preloader.png' %}">
+    <meta property="og:image" content="{% static 'frontend/assets/favicon/favicon-32x32.png' %}">
     <title>PRVI.HR - {% block title %} {% endblock %}</title>
     <!-- <meta http-equiv="refresh" content="180"> -->
-    <link rel="stylesheet" href="{% static 'frontend/style.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/fontawesome.min.css">
+    
     {% block static %}
     {% endblock %}
 </head>
-<body>
-    <div class="awe-page-loading">
-        <div class="awe-loading-wrapper">
-           <div class="awe-loading-icon">
-              <img src="{% static 'frontend/assets/images/PRVI-preloader.png' %}" alt="images">
-           </div>
-           <div class="progress">
-              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-           </div>
-        </div>
-     </div>
-     <div id="box-user" style="display:none;">
-        <iframe width="980" src="#"></iframe>
-    </div>
+<body   class="page-template page-template-template-home5 page-template-template-home5-php page page-id-1901 custom-background wp-embed-responsive theme-zox-news woocommerce-no-js">
+   
     {% block body %}
 
     {% endblock %}
-    
-<div id="back-to-top">
-    <i class="fa fa-long-arrow-up"></i>
-</div>
+    <script type='text/javascript' src="{% static 'frontend/assets/js/ResizeSensor.js' %}"
+    id='theia-sticky-sidebar/ResizeSensor.js-js'></script>
+<script type='text/javascript' src="{% static 'frontend/assets/js/theia-sticky-sidebar.js' %}"
+    id='theia-sticky-sidebar/theia-sticky-sidebar.js-js'></script>
+<script type='text/javascript' src="{% static 'frontend/assets/js/main.js' %}" id='theia-sticky-sidebar/main.js-js'></script>
+<script type='text/javascript' src="{% static 'frontend/assets/js/jquery.blockUI.min.js' %}"
+    id='jquery-blockui-js'></script>
+<!-- <script type='text/javascript' id='wc-add-to-cart-js-extra'>
+    /* <![CDATA[ */
+    var wc_add_to_cart_params = { "ajax_url": "\/zoxnews\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/zoxnews\/?wc-ajax=%%endpoint%%", "i18n_view_cart": "View cart", "cart_url": "https:\/\/mvpthemes.com\/zoxnews\/cart\/", "is_cart": "", "cart_redirect_after_add": "no" };
+/* ]]> */
+</script> -->
+<script type='text/javascript' src="{% static 'frontend/assets/js/add-to-cart.min.js' %}" id='wc-add-to-cart-js'></script>
+<!-- <script type='text/javascript'
+    src='https://mvpthemes.com/zoxnews/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.5.8.0'
+    id='js-cookie-js'></script> -->
+<!-- <script type='text/javascript' id='woocommerce-js-extra'>
+    /* <![CDATA[ */
+    var woocommerce_params = { "ajax_url": "\/zoxnews\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/zoxnews\/?wc-ajax=%%endpoint%%" };
+/* ]]> */
+</script> -->
+<script type='text/javascript' src="{% static 'frontend/assets/js/woocommerce.min.js' %}" id='woocommerce-js'></script>
+<script type='text/javascript' id='wc-cart-fragments-js-extra'>
+    /* <![CDATA[ */
+    var wc_cart_fragments_params = { "ajax_url": "\/zoxnews\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/zoxnews\/?wc-ajax=%%endpoint%%", "cart_hash_key": "wc_cart_hash_309f7ca1f7e9739cbb108119961f856f", "fragment_name": "wc_fragments_309f7ca1f7e9739cbb108119961f856f", "request_timeout": "5000" };
+/* ]]> */
+</script>
+<!-- <script type='text/javascript'
+    src='https://mvpthemes.com/zoxnews/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js'
+    id='wc-cart-fragments-js'></script> -->
+<script type='text/javascript' src="{% static 'frontend/assets/js/core.min.js' %}" id='jquery-ui-core-js'></script>
+<script type='text/javascript' src="{% static 'frontend/assets/js/jquery.sticky-kit.min.js' %}"
+    id='jquery-sticky-kit-js'></script>
+<script type='text/javascript' src="{% static 'frontend/assets/js/jquery.waypoints.min.js' %}" id='jquery-waypoints-js'></script>
+<script type='text/javascript' src="{% static 'frontend/assets/js/jquery.nouislider.all.min.js' %}"
+    id='reviewer-nouislider-plugin-js'></script>
+<script type='text/javascript' src="{% static 'frontend/assets/js/photoswipe.js' %}" id='reviewer-photoswipe-js'></script>
+<script type='text/javascript' src="{% static 'frontend/assets/js/jquery.knob.js' %}" id='reviewer-knob-plugin-js'></script>
+<script type='text/javascript' src="{% static 'frontend/assets/js/reviewer.public.min.js' %}"
+    id='reviewer-public-script-js'></script>
+<!-- <script type='text/javascript' id='reviewer-reviews-boxes-script-js-extra'>
+    /* <![CDATA[ */
+    var rwpConstants = { "debugVue": "" };
+    var reviewerRatingObj = { "ajax_nonce": "048715d153", "ajax_url": "https:\/\/mvpthemes.com\/zoxnews\/wp-admin\/admin-ajax.php", "action": "rwp_ajax_action_rating" };
+    var reviewerJudgeObj = { "ajax_nonce": "67b79ae5c5", "ajax_url": "https:\/\/mvpthemes.com\/zoxnews\/wp-admin\/admin-ajax.php", "action": "rwp_ajax_action_like" };
+    var reviewerQueryURs = { "ajax_nonce": "5025fd3318", "ajax_url": "https:\/\/mvpthemes.com\/zoxnews\/wp-admin\/admin-ajax.php", "action": "rwp_reviews_box_query_users_reviews" };
+/* ]]> */
+</script> -->
+<script type='text/javascript' src="{% static 'frontend/assets/js/reviewer-reviews-boxes.js' %}"
+    id='reviewer-reviews-boxes-script-js'></script>
+<script type='text/javascript' id='reviewer-widget-users-reviews-script-js-extra'>
+    /* <![CDATA[ */
+    var rwpConstants = { "debugVue": "" };
+    var reviewerQueryAllURs = { "ajax_nonce": "892d44fd2c", "ajax_url": "https:\/\/mvpthemes.com\/zoxnews\/wp-admin\/admin-ajax.php", "action": "rwp_reviews_box_query_all_users_reviews" };
+/* ]]> */
+</script>
+<script type='text/javascript' src="{% static 'frontend/assets/js/reviewer-widget-users-reviews.js' %}"
+    id='reviewer-widget-users-reviews-script-js'></script>
+<!-- <script type='text/javascript'
+    src='https://mvpthemes.com/zoxnews/wp-content/themes/zox-news/js/mvpcustom.js'
+    id='mvp-custom-js'></script> -->
+<script type='text/javascript' id='mvp-custom-js-after'>
+
+    jQuery(document).ready(function ($) {
+        var leaderHeight = $("#mvp-leader-wrap").outerHeight();
+        var logoHeight = $("#mvp-main-nav-top").outerHeight();
+        var botHeight = $("#mvp-main-nav-bot").outerHeight();
+        var navHeight = $("#mvp-main-head-wrap").outerHeight();
+        var headerHeight = navHeight + leaderHeight;
+        var aboveNav = leaderHeight + logoHeight;
+        var totalHeight = logoHeight + botHeight;
+        var previousScroll = 0;
+        $(window).scroll(function (event) {
+            var scroll = $(this).scrollTop();
+            if (typeof leaderHeight !== "undefined") {
+                if ($(window).scrollTop() > aboveNav) {
+                    $("#mvp-main-nav-top").addClass("mvp-nav-small");
+                    $("#mvp-main-nav-bot").css("margin-top", logoHeight);
+                } else {
+                    $("#mvp-main-nav-top").removeClass("mvp-nav-small");
+                    $("#mvp-main-nav-bot").css("margin-top", "0");
+                }
+                if ($(window).scrollTop() > headerHeight) {
+                    $("#mvp-main-nav-top").addClass("mvp-fixed");
+                    $("#mvp-main-nav-bot").addClass("mvp-fixed1");
+                    $("#mvp-main-body-wrap").css("margin-top", totalHeight);
+                    $("#mvp-main-nav-top").addClass("mvp-fixed-shadow");
+                    $(".mvp-fly-top").addClass("mvp-to-top");
+                    if (scroll < previousScroll) {
+                        $("#mvp-main-nav-bot").addClass("mvp-fixed2");
+                        $("#mvp-main-nav-top").removeClass("mvp-fixed-shadow");
+                    } else {
+                        $("#mvp-main-nav-bot").removeClass("mvp-fixed2");
+                        $("#mvp-main-nav-top").addClass("mvp-fixed-shadow");
+                    }
+                } else {
+                    $("#mvp-main-nav-top").removeClass("mvp-fixed");
+                    $("#mvp-main-nav-bot").removeClass("mvp-fixed1");
+                    $("#mvp-main-nav-bot").removeClass("mvp-fixed2");
+                    $("#mvp-main-body-wrap").css("margin-top", "0");
+                    $("#mvp-main-nav-top").removeClass("mvp-fixed-shadow");
+                    $(".mvp-fly-top").removeClass("mvp-to-top");
+                }
+            } else {
+                if ($(window).scrollTop() > logoHeight) {
+                    $("#mvp-main-nav-top").addClass("mvp-nav-small");
+                    $("#mvp-main-nav-bot").css("margin-top", logoHeight);
+                } else {
+                    $("#mvp-main-nav-top").removeClass("mvp-nav-small");
+                    $("#mvp-main-nav-bot").css("margin-top", "0");
+                }
+                if ($(window).scrollTop() > navHeight) {
+                    $("#mvp-main-nav-top").addClass("mvp-fixed");
+                    $("#mvp-main-nav-bot").addClass("mvp-fixed1");
+                    $("#mvp-main-body-wrap").css("margin-top", totalHeight);
+                    $("#mvp-main-nav-top").addClass("mvp-fixed-shadow");
+                    $(".mvp-fly-top").addClass("mvp-to-top");
+                    if (scroll < previousScroll) {
+                        $("#mvp-main-nav-bot").addClass("mvp-fixed2");
+                        $("#mvp-main-nav-top").removeClass("mvp-fixed-shadow");
+                    } else {
+                        $("#mvp-main-nav-bot").removeClass("mvp-fixed2");
+                        $("#mvp-main-nav-top").addClass("mvp-fixed-shadow");
+                    }
+                } else {
+                    $("#mvp-main-nav-top").removeClass("mvp-fixed");
+                    $("#mvp-main-nav-bot").removeClass("mvp-fixed1");
+                    $("#mvp-main-nav-bot").removeClass("mvp-fixed2");
+                    $("#mvp-main-body-wrap").css("margin-top", "0");
+                    $("#mvp-main-nav-top").removeClass("mvp-fixed-shadow");
+                    $(".mvp-fly-top").removeClass("mvp-to-top");
+                }
+            }
+            previousScroll = scroll;
+        });
+
+        $(".mvp-alp-side-in").niceScroll({ cursorcolor: "#ccc", cursorwidth: 5, cursorborder: 0, zindex: 999999 });
+
+    });
+
+
+    jQuery(document).ready(function ($) {
+        // Mobile Social Buttons More
+        $(".mvp-soc-mob-right").on("click", function () {
+            $("#mvp-soc-mob-wrap").toggleClass("mvp-soc-mob-more");
+        });
+    });
+
+
+    jQuery(document).ready(function ($) {
+        // Continue Reading Button
+        $(".mvp-cont-read-but").on("click", function () {
+            $("#mvp-content-body-top").css("max-height", "none");
+            $("#mvp-content-body-top").css("overflow", "visible");
+            $(".mvp-cont-read-but-wrap").hide();
+        });
+    });
+
+
+    jQuery(document).ready(function ($) {
+        var leaderHeight = $("#mvp-leader-wrap").outerHeight();
+        $("#mvp-site-main").css("margin-top", leaderHeight);
+
+        $(window).resize(function () {
+            var leaderHeight = $("#mvp-leader-wrap").outerHeight();
+            $("#mvp-site-main").css("margin-top", leaderHeight);
+        });
+
+    });
+
+
+    jQuery(document).ready(function ($) {
+        $(".menu-item-has-children a").click(function (event) {
+            event.stopPropagation();
+
+        });
+
+        $(".menu-item-has-children").click(function () {
+            $(this).addClass("toggled");
+            if ($(".menu-item-has-children").hasClass("toggled")) {
+                $(this).children("ul").toggle();
+                $(".mvp-fly-nav-menu").getNiceScroll().resize();
+            }
+            $(this).toggleClass("tog-minus");
+            return false;
+        });
+
+        // Main Menu Scroll
+        $(".mvp-fly-nav-menu").niceScroll({ cursorcolor: "#888", cursorwidth: 7, cursorborder: 0, zindex: 999999 });
+    });
+
+
+    jQuery(document).ready(function ($) {
+        $(".infinite-content").infinitescroll({
+            navSelector: ".mvp-nav-links",
+            nextSelector: ".mvp-nav-links a:first",
+            itemSelector: ".infinite-post",
+            errorCallback: function () { $(".mvp-inf-more-but").css("display", "none") }
+        });
+        $(window).unbind(".infscr");
+        $(".mvp-inf-more-but").click(function () {
+            $(".infinite-content").infinitescroll("retrieve");
+            return false;
+        });
+        if ($(".mvp-nav-links a").length) {
+            $(".mvp-inf-more-but").css("display", "inline-block");
+        } else {
+            $(".mvp-inf-more-but").css("display", "none");
+        }
+    });
+
+</script>
+<script type='text/javascript' src="{% static 'frontend/assets/js/scripts.js' %}" id='zoxnews-js'></script>
+<script type='text/javascript' src="{% static 'frontend/assets/js/retina.js' %}" id='retina-js'></script>
+
+<!-- <script type='text/javascript'
+    src='https://mvpthemes.com/zoxnews/wp-content/themes/zox-news/js/jquery.infinitescroll.min.js'
+    id='infinitescroll-js'></script> -->
+<!-- <script type='text/javascript' src='https://mvpthemes.com/zoxnews/wp-includes/js/comment-reply.min.js'
+    id='comment-reply-js'></script>
+<script type='text/javascript' src='https://mvpthemes.com/zoxnews/wp-includes/js/wp-embed.min.js'
+    id='wp-embed-js'></script> -->
 </body>
 </html>

@@ -1,0 +1,27 @@
+<a href="${info[i]['link']}" rel="nofollow">
+    <div class="mvp-widget-feat1-bot-story left relative">
+        <div class="mvp-widget-feat1-bot-img left relative">
+            <img width="400" height="240"
+                        src="${info[i]['img']}"
+                        class="attachment-mvp-mid-thumb size-mvp-mid-thumb wp-post-image"
+                        alt="${info[i]['title']}" loading="lazy"
+                        srcset="${info[i]['img']} 400w, ${info[i]['img']} 600w, ${info[i]['img']} 300w, ${info[i]['img']} 768w, ${info[i]['img']} 590w, ${info[i]['img']} 1000w"
+                        sizes="(max-width: 400px) 100vw, 400px" />
+            <div class="mvp-vid-box-wrap mvp-vid-box-mid">
+                <i class="fa fa-2 fa-camera" aria-hidden="true"></i>
+            </div>
+            <!--mvp-vid-box-wrap-->
+        </div>
+        <!--mvp-widget-feat1-bot-img-->
+        <div class="mvp-widget-feat1-bot-text left relative">
+            <div class="mvp-cat-date-wrap left relative">
+                <span class="mvp-cd-cat left relative"><a href="/category/${info[i]['category']}">${info[i]['category']}</a> </span>
+                <span class="mvp-cd-date left relative"> ${updateDate(info[i]['pub_date'])}</span>
+            </div>
+            <!--mvp-cat-date-wrap-->
+            <h2>${info[i]['title']}</h2>
+        </div>
+        <!--mvp-widget-feat1-bot-text-->
+    </div>
+    <!--mvp-widget-feat1-bot-story-->
+</a>
