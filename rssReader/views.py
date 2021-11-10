@@ -118,6 +118,9 @@ def getNewsCategory(request, random_number, category):
             break
         else:
             i += 1
+    if random_number > 5 and len(news) < 5:
+        news = News.objects.filter(category__iexact=category).order_by("-id")[:random_number]
+        
     for new in news:
         n = model_to_dict(new)
         li.append(n)

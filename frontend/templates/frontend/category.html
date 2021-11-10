@@ -1,236 +1,262 @@
 {% extends 'frontend/base.html' %}
-
 {% load static %}
 
 {% block title %} {{ main_item }} {% endblock %}
 
-{% block static %}
-
-
-<link rel="stylesheet" href="{% static 'frontend/style.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/fontawesome.min.css">
-<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets_two/css/bootstrap.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets_two/css/style.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets_two/vendor/owl-slider.css' %}"/>
-<link rel="stylesheet" type="text/css" href="{% static 'frontend/assets_two/vendor/custombox.min.css' %}"/>
-
-<link rel="shortcut icon" href="{% static 'frontend/assets_two/images/favicon.png' %}" />
-
-{% endblock %}
-
-
 {% block body %}
-<style>
-    
-.banner-container {
-    height: 3000px;
-}
-
-#sidead-banner {
-    margin : 10px 0;
-    position: sticky;
-    top: 60px;
-}
-
-@media (max-width: 900px) {
-.banner-container {
-    height: unset;
-}
-}
-</style>
-
-<div class="wrappage">
-    {% include 'frontend/header.html' %}
-    <div class="row" style="padding-top: 20px;    display: flex;
-    justify-content: center;">
-    {% if options.top_banner %}
-        {{ options.top_banner | safe  }}
-    {% else %}
-    <img src="{% static 'frontend/assets_two/images/top banner.jpg' %}" alt="">
-    {% endif %}
-    </div>
-
-    <div class="row" style="    display: flex;
-    justify-content: center;">
-    <div class="home2-head box slide-owl-mobile nav-ver5">
-
-    </div>
-    </div>
-
-    
-    <div class="banner" style="margin: 4px 85px;">
-        {% if options.bill_board %}
-                {{ options.bill_board | safe }}
-        {% else %}
-        <img src="{% static 'frontend/assets_two/images/billboard.jpg' %}" alt="">
-        {% endif %}
-    </div>
-
-    <div class="container">
-    <div class="row">
-        <div class="col-md-8">
-        <div class="technnology box space-30">
-               
-    </div>
-    <div class="mid_button">
-        <button id="more_btn" onclick="getByCategories()">Učitaj više</button>
-    </div>
-</div>
-<div class="col-md-4">
-    <aside class="widget">
-        <div class="banner">
-            {% if options.category_sideAD %}
-            {{ options.category_sideAD | safe }}
-            {% else %}
-            <img class="img-responsive" src="{% static 'frontend/assets_two/images/widget-banner.jpg' %}" alt="banner">
-            {% endif %}
-        </div>
-        <div class="banner-container">
-            <div class="banner" id="sidead-banner">
-                {% if options.sidebarAD %}
-                    {{ options.sidebarAD | safe }}
-                {% else %}
-                    <img class="img-responsive" src="{% static 'frontend/assets_two/images/300x600.png' %}" alt="sidebar-banner">
-                {% endif %}
+    <div id="mvp-fly-wrap">
+        <div id="mvp-fly-menu-top" class="left relative">
+            <div class="mvp-fly-top-out left relative">
+                <div class="mvp-fly-top-in">
+                    <div id="mvp-fly-logo" class="left relative">
+                        <a href="#"><img src="{% static 'frontend/assets/images/logo/PRVI-preloader-new.png' %}" alt="PRVI.HR"
+                                data-rjs="2" /></a>
+                    </div>
+                    <!--mvp-fly-logo-->
+                </div>
+                <!--mvp-fly-top-in-->
+                <div class="mvp-fly-but-wrap mvp-fly-but-menu mvp-fly-but-click">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <!--mvp-fly-but-wrap-->
             </div>
+            <!--mvp-fly-top-out-->
         </div>
-    </aside>
-</div>
-</div>
-</div>
-
-    {% include 'frontend/footer.html' %}
-
-</div>
-
-<script>
-    function updateDate(elem) {
-       elem = elem.replace("+0100", "")
-       elem = elem.replace("+0200", "") 
-       elem = elem.replace("+0000", "") 
-       elem = elem.replace("000Z", "") 
-       elem = elem.replace("Mon", "") 
-       elem = elem.replace("Tue", "") 
-       elem = elem.replace("Wed", "") 
-       elem = elem.replace("Thu", "") 
-       elem = elem.replace("Fri", "") 
-       elem = elem.replace("Sun", "") 
-       elem = elem.replace("Sat", "") 
-       elem = elem.replace("Jan", "1") 
-       elem = elem.replace("Feb", "2") 
-       elem = elem.replace("Apr", "3") 
-       elem = elem.replace("Mar", "4") 
-       elem = elem.replace("May", "5") 
-       elem = elem.replace("Jun", "6") 
-       elem = elem.replace("Jul", "7") 
-       elem = elem.replace("Aug", "8") 
-       elem = elem.replace("Sep", "9") 
-       elem = elem.replace("Oct", "10") 
-       elem = elem.replace("Nov", "11") 
-       elem = elem.replace("Dec", "12") 
-       elem = elem.replaceAll(" ", "/") 
-       elem = elem.replace("/01:", " 01:") 
-       elem = elem.replace("/02:", " 02:") 
-       elem = elem.replace("/03:", " 03:") 
-       elem = elem.replace("/04:", " 04:") 
-       elem = elem.replace("/05:", " 05:") 
-       elem = elem.replace("/06:", " 06:") 
-       elem = elem.replace("/07:", " 07:") 
-       elem = elem.replace("/08:", " 08:") 
-       elem = elem.replace("/09:", " 09:") 
-       elem = elem.replace("/10:", " 10:") 
-       elem = elem.replace("/11:", " 11:") 
-       elem = elem.replace("/12:", " 12:") 
-       elem = elem.replace("/13:", " 13:") 
-       elem = elem.replace("/14:", " 14:") 
-       elem = elem.replace("/15:", " 15:") 
-       elem = elem.replace("/16:", " 16:") 
-       elem = elem.replace("/17:", " 17:") 
-       elem = elem.replace("/18:", " 18:") 
-       elem = elem.replace("/19:", " 19:") 
-       elem = elem.replace("/20:", " 20:") 
-       elem = elem.replace("/21:", " 21:") 
-       elem = elem.replace("/22:", " 22:") 
-       elem = elem.replace("/23:", " 23:") 
-       elem = elem.replace("/24:", " 24:") 
-       elem = elem.slice(3, -1) 
-       
-       return elem
-    }
-
-
-    page_no = 1
-    category = '{{ main_item }}'
-    function getByCategories() {
-    fetch(`/rss/newsCategory/${category}`, {
-        method : "POST",
-        body : JSON.stringify({
-            "page_no" : page_no
-        })
-    })
-        .then(response => response.json())
-        .then(data => {
-            
-            if (!data['next']) {
-                document.querySelector("#more_btn").style.display = 'none';
-            }
-            
-            info = data['feed']
-            for ( var i = 0; i < info.length; i ++) { 
-              
-      
-            if (page_no == 1 && i < 3) {
-                
-                home_head = document.querySelector(".home2-head")
-                home_head.innerHTML += `
-                <div class="col-md-4 col-sm-4">
-            <div class="post-item ver1 cat-3 overlay">
-                <a rel="nofollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img id="img-head-news" class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                
-            </div>
-
-                <a rel="nofollow" class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
-                <small class="wrap" class="date"><a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</small>
-            </div>
-<!-- End item -->
+        <!--mvp-fly-menu-top-->
+        <div id="mvp-fly-menu-wrap">
+            {% include 'frontend/nav.html' %}
         </div>
-       
-            ` 
-            }
-            else { 
-                page_no += 1
-                home_head = document.querySelector(".technnology")
-              
-                home_head.innerHTML += `
-                <div class="post-item ver2 hg200">
-                        <a class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
-                        <div class="text">
-                            <h2><a href="${info[i]['link']}" title="title">${info[i]['title']}</a></h2>
-                            <div class="tag">
-                                <p class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</p>
-                                
+        <!--mvp-fly-menu-wrap-->
+   
+        <!--mvp-fly-soc-wrap-->
+    </div>
+    <!--mvp-fly-wrap-->
+    <div id="mvp-site" class="left relative">
+        <div id="mvp-search-wrap">
+            <div id="mvp-search-box">
+                <form method="get" id="searchform" action="#">
+                    <input type="text" name="s" id="s" value="Search"
+                        onfocus='if (this.value == "Search") { this.value = ""; }'
+                        onblur='if (this.value == "") { this.value = "Search"; }' />
+                    <input type="hidden" id="searchsubmit" value="Search" />
+                </form>
+            </div>
+            <!--mvp-search-box-->
+            <div class="mvp-search-but-wrap mvp-search-click">
+                <span></span>
+                <span></span>
+            </div>
+            <!--mvp-search-but-wrap-->
+        </div>
+        <!--mvp-search-wrap-->
+        <div id="mvp-site-wall" class="left relative">
+            {% include 'frontend/top_ad.html' %}
+            <!--mvp-leader-wrap-->
+            <div id="mvp-site-main" class="left relative">
+                {% include 'frontend/header.html' %}
+                <!--mvp-main-head-wrap-->
+                <div id="mvp-main-body-wrap" class="left relative">
+                    <div class="mvp-main-box">
+                        <div class="my-container">
+                            {% include 'frontend/slider.html' %}
+                            <!--mvp-feat5-wrap-->
+                        </div>
+
+                        <section id="mvp_home_feat1_widget-4"
+                            class="mvp-widget-home left relative mvp_home_feat1_widget">
+                            <div class="mvp-main-box">
+                                <div class="mvp-widget-home-head">
+                                    <h4 class="mvp-widget-home-title"><span class="mvp-widget-home-title">{{ main_item }}</span>
+                                    </h4>
+                                </div>
+                                <div class="mvp-widget-feat1-wrap left relative">
+                                    <!--mvp-widget-feat1-cont-->
+                                    <div id="home2-head" class="mvp-widget-feat1-cont left relative my-flex">
+                                      
+                                    </div>
+                                    <!--mvp-widget-feat1-cont-->
+                                </div>
+                                <!--mvp-widget-feat1-wrap-->
+
                             </div>
-                            <a class="read-more" href="${info[i]['link']}" title="pročitaj više">pročitaj više</a>
+                        </section>
+                    </div>
+                    <section id="mvp_ad_widget-9" class="mvp-widget-home left relative mvp_ad_widget">
+                        <div class="mvp-main-box">
+                            <div class="mvp-widget-ad left relative">
+                                <span class="mvp-ad-label">Advertisement</span>
+                                {% if options.bill_board %}
+                                    {{ options.bill_board | safe }}
+                                {% else %}
+                                <a href="#">
+                                    <img class="mvp-leader1"
+                                        src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox-leader.png" /><img
+                                        class="mvp-leader2"
+                                        src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox728.png" /><img
+                                        class="mvp-leader3"
+                                        src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox360.png" /></a>
+                                {% endif %}
+                            </div>
+                            <!--mvp-widget-ad-->
+                        </div>
+                    </section>
+                    <!--mvp-home-widget-wrap-->
+                    <div class="mvp-main-blog-wrap left relative">
+                        <div class="mvp-main-box">
+                            <div class="mvp-main-blog-cont left relative">
+                                <div class="mvp-widget-home-head">
+                                    <h4 class="mvp-widget-home-title">
+                                        <span class="mvp-widget-home-title">Ostale {{ main_item }}</span>
+                                    </h4>
+                                </div>
+                                <!--mvp-widget-home-head-->
+                                <div class="mvp-main-blog-out left relative">
+                                    <div class="mvp-main-blog-in">
+                                        <div class="mvp-main-blog-body left relative">
+                                            <ul id="home-bottom" class="mvp-blog-story-list left relative infinite-content">
+                                                
+                                                
+                                            </ul>
+                                            <div class="mvp-inf-more-wrap left relative">
+                                                <a  id="more_btn" style="cursor: pointer;" class="mvp-inf-more-but"onclick="getByCategories()">Učitaj više</a>
+                                               
+                                                <!--mvp-nav-links-->
+                                            </div>
+                                            <!--mvp-inf-more-wrap-->
+                                        </div>
+                                        <!--mvp-main-blog-body-->
+                                    </div>
+                                    <!--mvp-main-blog-in-->
+                                    <div id="mvp-side-wrap" class="left relative theiaStickySidebar">
+                                        <section id="mvp_ad_widget-6" class="mvp-side-widget mvp_ad_widget">
+                                            <div class="mvp-widget-ad left relative">
+                                                <span class="mvp-ad-label">Advertisement</span>
+                                                {% if options.category_sideAD %}
+                                                    {{ options.category_sideAD | safe }}
+                                                {% else %}
+                                                <img
+                                                src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox300.png" />
+                                                {% endif %}
+                                            </div> <br>
+                                            <div class="mvp-widget-ad left relative" style="padding-top: 10px">
+                                                <span class="mvp-ad-label">Advertisement</span>
+                                                {% if options.sidebarAD %}
+                                                    {{ options.sidebarAD | safe }}
+                                                {% else %}
+                                                
+                                                <img src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox300.png" />
+                                                {% endif %}
+                                            </div>
+                                            <!--mvp-widget-ad-->
+                                        </section>
+                           
+                                    </div>
+                                    <!--mvp-side-wrap-->
+                                </div>
+                                <!--mvp-mmain-blog-out-->
+                            </div>
+                            <!--mvp-main-blog-cont-->
+                        </div>
+                        <!--mvp-main-box-->
+                    </div>
+                    <!--mvp-main-blog-wrap-->
+                </div>
+                <!--mvp-main-body-wrap-->
+             {% include 'frontend/footer.html' %}
+            </div>
+            <!--mvp-site-main-->
+        </div>
+        <!--mvp-site-wall-->
+    </div>
+    <!--mvp-site-->
+    <div class="mvp-fly-top back-to-top">
+        <i class="fa fa-angle-up fa-3"></i>
+    </div>
+    <!--mvp-fly-top-->
+    <div class="mvp-fly-fade mvp-fly-but-click">
+    </div>
+    <!--mvp-fly-fade-->
+    <div data-theiaStickySidebar-sidebarSelector='"#mvp-side-wrap,.mvp-post-soc-wrap,.mvp-flex-side-wrap,.mvp-alp-side"'
+        data-theiaStickySidebar-options='{"containerSelector":"","additionalMarginTop":120,"additionalMarginBottom":20,"updateSidebarHeight":false,"minWidth":1004,"sidebarBehavior":"modern","disableOnResponsiveLayouts":true}'>
+    </div>
+    <script type="text/javascript">
+        (function () {
+            var c = document.body.className;
+            c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+            document.body.className = c;
+        })();
+    </script>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <!-- Background of PhotoSwipe.
+		         It's a separate element as animating opacity is faster than rgba(). -->
+        <div class="pswp__bg"></div>
+
+        <!-- Slides wrapper with overflow:hidden. -->
+        <div class="pswp__scroll-wrap">
+
+            <!-- Container that holds slides.
+		            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+		            Don't modify these 3 pswp__item elements, data is added later on. -->
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+            <div class="pswp__ui pswp__ui--hidden">
+
+                <div class="pswp__top-bar">
+
+                    <!--  Controls are self-explanatory. Order can be changed. -->
+
+                    <div class="pswp__counter"></div>
+
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                    <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                    <!-- element will get class pswp__preloader-active when preloader is running -->
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
                         </div>
                     </div>
-            
-                `
-                }
-                }
-                page_no += 1
-        })
-    }
-    getByCategories()
+                </div>
+
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+<script>
+    category = '{{ main_item }}'
 </script>
-
-<script type="text/javascript" src="{% static 'frontend/assets_two/js/jquery-3.1.1.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'frontend/assets_two/js/bootstrap.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'frontend/assets_two/js/owl.carousel.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'frontend/assets_two/js/jquery.themepunch.revolution.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'frontend/assets_two/js/jquery.themepunch.plugins.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'frontend/assets_two/js/engo-plugins.js' %}"></script>
-<script type="text/javascript" src="{% static 'frontend/assets_two/js/custombox.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'frontend/assets_two/js/legacy.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'frontend/assets_two/js/store.js' %}"></script>
-
+<script src="{% static 'frontend/fetch-category.js' %}"></script>
 {% endblock %}

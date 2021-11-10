@@ -1,144 +1,299 @@
 {% load static %}
+<header id="mvp-main-head-wrap" class="left relative">
 
-
-
-<header style="z-index: 55;" id="header" class="header-v2">
-  
-    <div class="header-top">
-            <div class="container">
-            <div class="box float-left">
-                <p class="icon-menu-mobile"><i class="fas fa-bars" ></i></p>
-                <div class="logo"><a href="{% url 'index' %}" title="Uno">
-                <img id="head-img" src="{% static 'frontend/assets/images/PRVI-preloader.png' %}" alt="images">
-                </a></div>
-                <div class="logo-mobile"><a href="{% url 'index' %}" title="Xanadu"><img src="{% static 'frontend/assets/images/PRVI-preloader.png' %}" alt="Xanadu-Logo"></a></div>
-
-                <div class="box-right">
-                    <div class="social">
-                        <a href="#" title="title"><i class="fa fa-facebook"></i></a>
-                        <a href="#" title="title"><i class="fa fa-twitter"></i></a>
-                        <a href="#" title="title"><i class="fa fa-google-plus"></i></a>
-                        <a href="#" title="title"><i class="fa fa-rss"></i></a>
+    <nav id="mvp-main-nav-wrap" class="left relative">
+        <div id="mvp-main-nav-top" class="left relative">
+            <div class="mvp-main-box">
+                <div id="mvp-nav-top-wrap" class="left relative">
+                    <div class="mvp-nav-top-right-out left relative">
+                        <div class="mvp-nav-top-right-in">
+                            <div class="mvp-nav-top-cont left relative">
+                                <div class="mvp-nav-top-left-out relative">
+                                    <div class="mvp-nav-top-left">
+                                    
+                                        <!--mvp-nav-soc-wrap-->
+                                        <div class="mvp-fly-but-wrap mvp-fly-but-click left relative">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </div>
+                                        <!--mvp-fly-but-wrap-->
+                                    </div>
+                                    <!--mvp-nav-top-left-->
+                                    <div class="mvp-nav-top-left-in">
+                                        <div class="mvp-nav-top-mid left relative" itemscope
+                                            itemtype="http://schema.org/Organization">
+                                            <a class="mvp-nav-logo-reg" itemprop="url" href="#"><img
+                                                    itemprop="logo"
+                                                    src="{% static 'frontend/assets/images/logo/PRVI-preloader-new.png' %}"
+                                                    alt="PRVI.HR" data-rjs="2" /></a>
+                                            <a class="mvp-nav-logo-small" href="#"><img
+                                                    src="{% static 'frontend/assets/images/logo/PRVI-preloader-new.png' %}"
+                                                    alt="PRVI.HR" data-rjs="2" /></a>
+                                            <h2 class="mvp-logo-title">PRVI.HR</h2>
+                                        </div>
+                                        <!--mvp-nav-top-mid-->
+                                    </div>
+                                    <!--mvp-nav-top-left-in-->
+                                </div>
+                                <!--mvp-nav-top-left-out-->
+                            </div>
+                            <!--mvp-nav-top-cont-->
+                        </div>
+                        <!--mvp-nav-top-right-in-->
+                        <div class="mvp-nav-top-right">
+                      
+                            <!--mvp-woo-cart-wrap-->
+                            <span class="mvp-nav-search-but fa fa-search fa-2 mvp-search-click"></span>
+                        </div>
+                        <!--mvp-nav-top-right-->
                     </div>
-                    <div class="search dropdown" data-toggle="modal" data-target=".bs-example-modal-lg" style="display:none;">
-                        <i class="icon"></i>
-                    </div>
+                    <!--mvp-nav-top-right-out-->
                 </div>
-            </div>                
+                <!--mvp-nav-top-wrap-->
             </div>
-            <!-- End container -->
+            <!--mvp-main-box-->
         </div>
-        <!-- End header-top -->
-        <div class="container">
-        <nav class="mega-menu">
-        <!-- Brand and toggle get grouped for better mobile display -->
-          <ul class="nav navbar-nav" id="navbar">
-            <li class="level1 hover-menu" id="home-active" ><a  href="{% url 'index' %}" title="Home">Home</a>
-    
-            </li>
-            <li class="level1 hover-menu" id="vijesti-active">
-                <a href="{% url 'category' 'Vijesti' %}"  title="Vijesti">Vijesti</a>
-            </li>
-            <li class="level1 hover-menu" id="biznis-active">
-                <a href="{% url 'category' 'Biznis' %}"  title="Biznis">Biznis</a>
-            </li>
-            <li class="level1 hover-menu" id="lifestyle-active">
-                <a href="{% url 'category' 'Lifestyle' %}" title="Lifestyle">Lifestyle</a>
-            </li>
-            <li class="level1 hover-menu" id="auti-active">
-                <a href="{% url 'category' 'Auti' %}"  title="Auti">Auti</a>
-            </li>
-            <li class="level1 hover-menu" id="sports-active">
-                <a href="{% url 'category' 'sport' %}"  title="SPORTS">SPORTS</a>
-            </li>
-            <li class="level1 hover-menu" id="prvi-active">
-                <a href="{% url 'source' 'prvi' %}"  title="PRVI">PRVI</a>
-            </li>
-            
-            <li class="level1 hover-menu" id="more-active"> <a href="#" title="More">More</a>
-                <ul class="menu-level-1 list-menu">
-                    <li class="level2"><a href="{% url 'category' 'Vijesti' %}" title="Vijesti" target="_blank">Vijesti</a>
-                        <ul class="menu-level-2">
-                            <li class="level3"><a href="{% url 'category' 'Dalmacija' %}" title="Dalmacija" target="_blank">Dalmacija</a></li>
-                            <li class="level3"><a href="{% url 'category' 'Slavonija' %}" title="Slavonija" target="_blank">Slavonija</a></li>
-                            <li class="level3"><a href="{% url 'category' 'Istra i Kvarner' %}" title="Istra i Kvarner" target="_blank">Istra i Kvarner</a></li>
-                            <li class="level3"><a href="{% url 'category' 'Kontinentalna' %}" title="Kontinentalna" target="_blank">Kontinentalna</a></li>
-                            <li class="level3"><a href="{% url 'category' 'Lika i gorski kotar' %}" title="Lika i gorski kotar" target="_blank">Lika i gorski kotar</a></li>
-                            <li class="level3"><a href="{% url 'category' 'Zagreb' %}" title="Zagreb" target="_blank">Zagreb</a></li>
-                        </ul>
-                    </li>
-                    <li class="level2"><a href="{% url 'category' 'Lifestyle' %}" title="LifeStyle" target="_blank">LifeStyle</a>
-                        <ul class="menu-level-2">
-                            <li class="level3"><a href="{% url 'category' 'Moda i ljepota' %}" title="Moda i ljepota" target="_blank">Moda i ljepota</a></li>
-                            <li class="level3"><a href="{% url 'category' 'Zdravlje' %}" title="Zdravlje" target="_blank">Zdravlje</a></li>
-                            <li class="level3"><a href="{% url 'category' 'Mama' %}" title="Mama" target="_blank">Mama</a></li>
-                            <li class="level3"><a href="{% url 'category' 'Kuharica' %}" title="Kuharica" target="_blank">Kuharica</a></li>
-                            <li class="level3"><a href="{% url 'category' 'Kućni ljubimci' %}" title="Kućni ljubimci" target="_blank">Kućni ljubimci</a></li>
-                            <li class="level3"><a href="{% url 'category' 'Putovanja' %}" title="Putovanja" target="_blank">Putovanja</a></li>
-                            <li class="level3"><a href="{% url 'category' 'Dom i dizajn' %}" title="Dom i dizajn" target="_blank">Dom i dizajn</a></li>
-                        </ul>
-                    </li>
-                    <li class="level2"><a href="{% url 'category' 'TEHNOLOGIJA' %}" title="TEHNOLOGIJA" target="_blank">TEHNOLOGIJA</a>
-                        <ul class="menu-level-2">
-                            <li class="level3"><a href="{% url 'category' 'Znanost' %}" title="Znanost" target="_blank">Znanost</a></li>
-                            <li class="level3"><a href="{% url 'category' 'Igre' %}" title="Igre" target="_blank">Igre</a></li>
-                        </ul>
-                    </li>
-                    <li class="level2"><a href="{% url 'category' 'Sport' %}" title="Sport" target="_blank">Sport</a>
-                        <ul class="menu-level-2">
-                            <li class="level3"><a href="{% url 'category' 'Nogomet' %}" title="Nogomet" target="_blank">Nogomet</a></li>
-                            <li class="level3"><a href="{% url 'category' 'Košarka' %}" title="Košarka" target="_blank">Košarka</a></li>
-                            <li class="level3"><a href="{% url 'category' 'Tenis' %}" title="Tenis" target="_blank">Tenis</a></li>
-                        </ul>
-                    </li>
-                    <li class="level2"><a href="{% url 'category' 'Sex' %}" title="SEX" target="_blank">SEX</a></li>
-                    <li class="level2"><a href="{% url 'category' 'AUTI' %}" title="AUTI" target="_blank">AUTI</a></li>
-                    <li class="level2"><a href="{% url 'category' 'BIZNIS' %}" title="BIZNIS" target="_blank">BIZNIS</a></li>
-                </li>
-                <li class="level2"><a href="{% url 'category' 'SHOWBIZ' %}" title="SHOWBIZ" target="_blank">Showbiz</a>
-                    <ul class="menu-level-2">
-                        <li class="level3"><a href="{% url 'category' 'Film' %}" title="Film" target="_blank">Film</a></li>
-                        <li class="level3"><a href="{% url 'category' 'Glazba' %}" title="Košarka" target="_blank">Glazba</a></li>
-                        <li class="level3"><a href="{% url 'category' 'Kultura' %}" title="Kultura" target="_blank">Kultura</a></li>
-                    </ul>
-                </li>
-                
-                </ul>
-            </li>
+        <!--mvp-main-nav-top-->
+        <div id="mvp-main-nav-bot" class="left relative">
+            <div id="mvp-main-nav-bot-cont" class="left">
+                <div class="mvp-main-box">
+                    <div id="mvp-nav-bot-wrap" class="left">
+                        <div class="mvp-nav-bot-right-out left">
+                            <div class="mvp-nav-bot-right-in">
+                                <div class="mvp-nav-bot-cont left">
+                                    <div class="mvp-nav-bot-left-out">
+                                        <div class="mvp-nav-bot-left left relative">
+                                            <div class="mvp-fly-but-wrap mvp-fly-but-click left relative">
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                                <span></span>
+                                            </div>
+                                            <!--mvp-fly-but-wrap-->
+                                        </div>
+                                        <!--mvp-nav-bot-left-->
+                                        <div class="mvp-nav-bot-left-in">
+                                            <div class="mvp-nav-menu left">
+                                                <div class="menu-main-menu-container">
+                                                    <ul id="menu-main-menu-1" class="menu">
+                                                        <li
+                                                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-7">
+                                                            <a href="{% url 'index' %}">HOME</a>
 
-          </ul>
-        </nav>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-39">
+                                                            <a href="{% url 'category' 'Vijesti' %}">
+                                                                Vijesti</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-177 mvp-mega-dropdown">
+                                                            <a
+                                                                href="{% url 'category' 'Biznis' %}">Biznis</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-364 mvp-mega-dropdown">
+                                                            <a href="{% url 'category' 'Lifestyle' %}">Lifestyle
+                                                            </a>
+
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-175 mvp-mega-dropdown">
+                                                            <a href="{% url 'category' 'Sport' %}">SPORTS
+                                                            </a>
+
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-178 mvp-mega-dropdown">
+                                                            <a href="{% url 'category' 'Auti' %}">Auti</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-335 mvp-mega-dropdown">
+                                                            <a href="{% url 'source' 'PRVI' %}">PRVI</a>
+                                                        </li>
+                                                        <li
+                                                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-has-children menu-item-7">
+                                                            <a href="#">More</a>
+                                                            <ul class="sub-menu">
+                                                                <li
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-172">
+                                                                    <a
+                                                                        href="{% url 'category' 'Vijesti' %}">Vijesti</a>
+                                                                    <ul class="sub-menu">
+                                                                        <li
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-453">
+                                                                            <a
+                                                                                href="{% url 'category' 'Dalmacija' %}">Dalmacija</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1963">
+                                                                            <a
+                                                                                href="{% url 'category' 'Slavonija' %}">Slavonija</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-451">
+                                                                            <a
+                                                                                href="{% url 'category' 'Istra i Kvarner' %}">Istra
+                                                                                i Kvarner</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-450">
+                                                                            <a
+                                                                                href="{% url 'category' 'Kontinentalna' %}">Kontinentalna</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1901 current_page_item menu-item-1903">
+                                                                            <a href="{% url 'category' 'Lika i gorski kotar' %}"
+                                                                                aria-current="page">Lika i
+                                                                                gorski kotar</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1923">
+                                                                            <a
+                                                                                href="{% url 'category' 'Zagreb' %}">Zagreb</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-170">
+                                                                    <a href="{% url 'category' 'Sport' %}">Sport</a>
+                                                                    <ul class="sub-menu">
+                                                                        <li
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296">
+                                                                            <a href="{% url 'category' 'Nogomet' %}">Nogomet</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-298">
+                                                                            <a href="{% url 'category' 'Košarka' %}">Košarka</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-297">
+                                                                            <a href="{% url 'category' 'Tenis' %}">Tenis</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-169">
+                                                                    <a
+                                                                        href="{% url 'category' 'Lifestyle' %}">LifeStyle</a>
+                                                                    <ul class="sub-menu">
+                                                                        <li
+                                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-408">
+                                                                            <a
+                                                                                href="{% url 'category' 'Moda i ljepota' %}">Moda
+                                                                                i ljepota</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-409">
+                                                                            <a
+                                                                                href="{% url 'category' 'Zdravlje' %}">Zdravlje</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-410">
+                                                                            <a
+                                                                                href="{% url 'category' 'Mama' %}">Mama</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-411">
+                                                                            <a
+                                                                                href="{% url 'category' 'Kuharica' %}">Kuharica</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-412">
+                                                                            <a
+                                                                                href="{% url 'category' 'Kućni ljubimci' %}">Kućni ljubimci</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-413">
+                                                                            <a
+                                                                                href="{% url 'category' 'Putovanja' %}">Putovanja</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-414">
+                                                                            <a
+                                                                                href="{% url 'category' 'Dom i dizajn' %}">Dom i dizajn</a>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1893">
+                                                                    <a href="{% url 'category' 'Sex' %}">SEX</a>
+                                                                </li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1894">
+                                                                    <a href="{% url 'category' 'AUTI' %}">AUTI</a>
+                                                                </li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-427">
+                                                                    <a href="{% url 'category' 'Biznis' %}">BIZNIS</a>
+                                                                </li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1898">
+                                                                    <a href="{% url 'category' 'SHOWBIZ' %}">SHOWBIZ</a>
+                                                                    <ul class="sub-menu">
+                                                                        <li
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296">
+                                                                            <a href="{% url 'category' 'Film' %}">Film</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-298">
+                                                                            <a href="{% url 'category' 'Glazba' %}">Glazba</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-297">
+                                                                            <a href="{% url 'category' 'Kultura' %}">Kultura</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li
+                                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-170">
+                                                                    <a href="{% url 'category' 'TEHNOLOGIJA' %}">TEHNOLOGIJA</a>
+                                                                    <ul class="sub-menu">
+                                                                        <li
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296">
+                                                                            <a href="{% url 'category' 'Znanost' %}">Znanost</a>
+                                                                        </li>
+                                                                        <li
+                                                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-298">
+                                                                            <a href="{% url 'category' 'Igre' %}">Igre</a>
+                                                                        </li>
+
+                                                                </li>
+                                                                
+                                                                
+
+                                                            </ul>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!--mvp-nav-menu-->
+                                        </div>
+                                        <!--mvp-nav-bot-left-in-->
+                                    </div>
+                                    <!--mvp-nav-bot-left-out-->
+                                </div>
+                                <!--mvp-nav-bot-cont-->
+                            </div>
+                            <!--mvp-nav-bot-right-in-->
+                            <div class="mvp-nav-bot-right left relative">
+                                <span class="mvp-nav-search-but fa fa-search fa-2 mvp-search-click"></span>
+                            </div>
+                            <!--mvp-nav-bot-right-->
+                        </div>
+                        <!--mvp-nav-bot-right-out-->
+                    </div>
+                    <!--mvp-nav-bot-wrap-->
+                </div>
+                <!--mvp-main-nav-bot-cont-->
+            </div>
+            <!--mvp-main-box-->
         </div>
-        <!-- End megamenu -->
+        <!--mvp-main-nav-bot-->
+    </nav>
+    <!--mvp-main-nav-wrap-->
 </header>
-
-<script>
-    path = window.location.pathname
-    console.log(path)
-    if (path == "/") {
-        console.log("tet")
-        document.querySelector("#home-active").classList.add("active")
-    }
-    else if(path == "/category/Vijesti") {
-        document.querySelector("#vijesti-active").classList.add("active")
-    }
-    else if(path == "/category/Biznis") {
-        document.querySelector("#biznis-active").classList.add("active")
-    }
-    else if(path == "/category/Lifestyle") {
-        document.querySelector("#lifestyle-active").classList.add("active")
-    }
-    else if(path == "/category/Auti") {
-        document.querySelector("#auti-active").classList.add("active")
-    }
-    else if(path == "/category/sport") {
-        document.querySelector("#sports-active").classList.add("active")
-    }
-    else if(path == "/source/prvi") {
-        document.querySelector("#prvi-active").classList.add("active")
-    }
-    else {
-        document.querySelector("#more-active").classList.add("active")
-
-    }
-</script>

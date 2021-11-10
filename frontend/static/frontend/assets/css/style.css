@@ -2507,7 +2507,7 @@ ul.mvp-feat1-list-buts li.active span.mvp-feat1-list-but {
 	}
 
 .mvp-feat5-side-list .mvp-feat1-list-img img {
-	opacity: .4;
+	opacity: 1;
 	}
 
 .mvp-feat5-side-list .mvp-feat1-list-cont:hover .mvp-feat1-list-img img {
@@ -2519,7 +2519,6 @@ ul.mvp-feat1-list-buts li.active span.mvp-feat1-list-but {
 	}
 
 .mvp-feat5-side-list .mvp-feat1-list-img:after {
-	content: counter(mvp-trend);
 	color: #fff;
 	font-size: 30px;
 	font-weight: 700;

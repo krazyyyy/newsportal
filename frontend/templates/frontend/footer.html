@@ -1,82 +1,45 @@
 {% load static %}
 
-<   <footer id="mvp-foot-wrap" class="left relative">
-                    <div id="mvp-foot-top" class="left relative">
-                        <div class="mvp-main-box">
-                            <div id="mvp-foot-logo" class="left relative">
-                                <a href="#"><img src="assets/images/logo/PRVI-logo.png" alt="Zox News"
-                                        data-rjs="2" /></a>
-                            </div>
-                            <!--mvp-foot-logo-->
-                            <div id="mvp-foot-soc" class="left relative">
-                                <ul class="mvp-foot-soc-list left relative">
-                                    <li><a href="#" target="_blank" class="fab fa-facebook-f"></a></li>
-                                    <li><a href="#" target="_blank" class="fab fa-twitter"></a></li>
-                                    <li><a href="#" target="_blank" class="fab fa-pinterest-p"></a></li>
-                                    <li><a href="#" target="_blank" class="fab fa-instagram"></a></li>
-                                    <!-- <li><a href="#" target="_blank"
-                                            class="fab fa-tiktok"></a></li> -->
-                                    <li><a href="#" target="_blank" class="fab fa-youtube"></a></li>
-                                    <li><a href="#" target="_blank" class="fab fa-linkedin"></a></li>
-                                    <li><a href="#" target="_blank" class="fab fa-tumblr"></a></li>
-                                </ul>
-                            </div>
-                            <!--mvp-foot-soc-->
-                            <div id="mvp-foot-menu-wrap" class="left relative">
-                                <div id="mvp-foot-menu" class="left relative">
-                                    <div class="menu-footer-menu-container">
-                                        <ul id="menu-footer-menu" class="menu">
-                                            <li id="menu-item-184"
-                                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-184">
-                                                <a href="#">News</a>
-                                            </li>
-                                            <li id="menu-item-188"
-                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-188">
-                                                <a href="#">BUSINESS</a>
-                                            </li>
-                                            <li id="menu-item-186"
-                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-186">
-                                                <a href="#">LIFESTYLE</a>
-                                            </li>
-                                            <li id="menu-item-189"
-                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-189">
-                                                <a href="#">Sports</a>
-                                            </li>
-                                            <li id="menu-item-187"
-                                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-187">
-                                                <a href="#">CARS</a>
-                                            </li>
-                                            <li id="menu-item-283"
-                                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-283">
-                                                <a href="#">First</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!--mvp-foot-menu-->
-                            </div>
-                            <!--mvp-foot-menu-wrap-->
-                        </div>
-                        <!--mvp-main-box-->
+<footer id="mvp-foot-wrap" class="left relative">
+    <div id="mvp-foot-top" class="left relative">
+        <div class="mvp-main-box">
+            <div id="mvp-foot-logo" class="left relative">
+                <a href="#"><img src="{% static 'frontend/assets/images/logo/PRVI-logo.png' %}"
+                        alt="PRVI.HR" data-rjs="2" /></a>
+            </div>
+            <!--mvp-foot-logo-->
+      
+            <!--mvp-foot-soc-->
+            <div id="mvp-foot-menu-wrap" class="left relative">
+                <div id="mvp-foot-menu" class="left relative">
+                    <div class="menu-footer-menu-container">
+                        <ul id="menu-footer-menu" class="menu">
+                            <li id="menu-item-184"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-184">
+                                <a href="{% url 'category' 'Vijesti' %}" title="Vijesti">Vijesti</a>
+                            </li>
+                            <li id="menu-item-188"
+                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-188">
+                                <a href="{% url 'category' 'Biznis' %}" title="Biznis">Biznis</a>
+                            </li>
+                            <li id="menu-item-186"
+                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-186">
+                                <a href="{% url 'category' 'Sport' %}" title="Sport">Sport</a>
+                            </li>
+                            <li id="menu-item-189"
+                                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-189">
+                                <a href="{% url 'category' 'Lifestyle' %}" title="Lifestyle">Lifestyle</a>
+                            </li>
+                        </ul>
                     </div>
-                    <!--mvp-foot-top-->
-                    
-                    <!--mvp-foot-bot-->
-                </footer>
-  <script>
-      function getCount(category, div_id) {
-   
-          fetch(`/rss/count/${category}`)
-          .then(response => response.json())
-          .then(data => {
-               document.querySelector(`${div_id}`).innerHTML = (data['total'])
-            })
+                </div>
+                <!--mvp-foot-menu-->
+            </div>
+            <!--mvp-foot-menu-wrap-->
+        </div>
+        <!--mvp-main-box-->
+    </div>
+    <!--mvp-foot-top-->
 
-      }
-    getCount("Biznis", "#biznis_count")
-    getCount("Lifestyle", "#lifestyle_count")
-    getCount("Vijesti", "#vijesti_count")
-    getCount("Sport", "#sport_count")
-    getCount("Tehnologija", "#Tehnologija_count")
-  </script>
-  
+    <!--mvp-foot-bot-->
+</footer>
