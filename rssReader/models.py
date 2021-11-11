@@ -41,7 +41,7 @@ class ADsCode(models.Model):
     biznisSideAD = models.TextField(null=True, blank=True, help_text="Home Page Biznis Side News, Size: 300x250")
     techSideAD = models.TextField(null=True, blank=True, help_text="Home Page Tech Side News, Size: 300x250")
     
-    biznisSideBar = models.TextField(null=True, blank=True, help_text="Home Page Ostale Biznis Side Bar, Size: 300x600")
+    vijestiSideBar = models.TextField(null=True, blank=True, help_text="Home Page Ostale Vijesti Side Bar, Size: 300x600")
     sportSideBar = models.TextField(null=True, blank=True, help_text="Home Page Ostale Sport Side Bar, Size: 300x600")
     
     category_sideAD = models.TextField(null=True, blank=True,  help_text="Category Side AD, Size: 300x250")

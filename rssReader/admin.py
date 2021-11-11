@@ -24,9 +24,11 @@ class FeedAdmin(admin.ModelAdmin):
         insert_list = []
         soup = BeautifulSoup(url.content, 'xml')
         entries = soup.find_all('item')
+       
         for i in entries:
             try:
                 data = dict()
+
                 chk = News.objects.filter(link__iexact=i.link.text)
                 try:
                     img = i.enclosure['url'] 
@@ -42,9 +44,15 @@ class FeedAdmin(admin.ModelAdmin):
                                 sp = BeautifulSoup(t, 'html5lib')
                                 img = (sp.find("img")['src'])
                             except:
-                                t = (i.find('content').text)
-                                sp = BeautifulSoup(t, 'html5lib')
-                                img = (sp.find("img")['src'])
+                                try:
+                                    t = (i.find('content:encoded').text)
+                                    sp = BeautifulSoup(t, 'html5lib')
+                                    print(sp)
+                                    img = (sp.find("img")['src'])
+                                except:
+                                    t = (i.find('content').text)
+                                    sp = BeautifulSoup(t, 'html5lib')
+                                    img = (sp.find("img")['src'])
                 try:
                     category = i.category.text
                 except:
