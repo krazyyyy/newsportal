@@ -29,16 +29,26 @@ class PRVINews(models.Model):
         return f"{self.title}"
 
 class ADsCode(models.Model):
-    top_banner = models.TextField(null=True, blank=True)
-    bill_board = models.TextField(null=True, blank=True)
-    category_one = models.TextField(null=True, blank=True)
-    category_two = models.TextField(null=True, blank=True)
-    category_three = models.TextField(null=True, blank=True)
-    home_sideAD = models.TextField(null=True, blank=True)
-    category_sideAD = models.TextField(null=True, blank=True)
-    source_sideAD = models.TextField(null=True, blank=True)
+    top_banner = models.TextField(null=True, blank=True,  help_text="Scroll Top Banner")
+    
+    bill_board = models.TextField(null=True, blank=True,  help_text="Between Top and Biznis")
+    megaBillboard = models.TextField(null=True, blank=True, help_text="Between TEHNOLOGIJA and Sports")
+    
+    category_one = models.TextField(null=True, blank=True,  help_text="above Ostale Biznis Size : 728x90")
+    category_two = models.TextField(null=True, blank=True,  help_text="above Ostale Sport Size : 728x90")
+    
+    topSideAD = models.TextField(null=True, blank=True, help_text="Home Page Top Section Side News, Size: 300x250")
+    biznisSideAD = models.TextField(null=True, blank=True, help_text="Home Page Biznis Side News, Size: 300x250")
+    techSideAD = models.TextField(null=True, blank=True, help_text="Home Page Tech Side News, Size: 300x250")
+    
+    biznisSideBar = models.TextField(null=True, blank=True, help_text="Home Page Ostale Biznis Side Bar, Size: 300x600")
+    sportSideBar = models.TextField(null=True, blank=True, help_text="Home Page Ostale Sport Side Bar, Size: 300x600")
+    
+    category_sideAD = models.TextField(null=True, blank=True,  help_text="Category Side AD, Size: 300x250")
+    source_sideAD = models.TextField(null=True, blank=True, help_text="Source Side AD, Size: 300x250")
+    
+    sidebarAD = models.TextField(null=True, blank=True, help_text="Category & Source Page Side Bar, Size: 300x600")
     access_name = models.CharField(max_length=32, default="admin")
-    sidebarAD = models.TextField(null=True, blank=True)
 
 
     def __str__(self):

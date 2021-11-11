@@ -48,7 +48,7 @@
         elem = elem.replace("/22:", " 22:") 
         elem = elem.replace("/23:", " 23:") 
         elem = elem.replace("/24:", " 24:") 
-        elem = elem.slice(3, -1) 
+        elem = elem.slice(2, -1) 
         
         return elem
      }

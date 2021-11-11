@@ -149,7 +149,7 @@
             }
         })
 
-    fetch(`rss/getNewsCategory/7/biznis`)
+    fetch(`rss/getNewsCategory/6/biznis`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']
@@ -379,7 +379,7 @@
                 }
             }
         })
-    fetch(`rss/getNewsCategory/12/vijesti`)
+    fetch(`rss/getNewsCategory/13/vijesti`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']
@@ -583,14 +583,14 @@
 
 
 
-    fetch(`rss/getNewsCategory/32/Vijesti`)
+    fetch(`rss/getNewsCategory/33/Vijesti`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']
             footer_news = document.querySelector("#footer-news-vijesti")
             footer_news_two = document.querySelector("#footer-news-vijesti-two")
-            for (var i = 12; i < info.length; i++) {
-                if (i < 24) {
+            for (var i = 13; i < info.length; i++) {
+                if (i < 25) {
                 footer_news.innerHTML += `
             <li class="mvp-blog-story-wrap left relative infinite-post">
                 <a href="${info[i]['link']}" rel="bookmark">
@@ -762,7 +762,7 @@
 
 
 
-    fetch(`/rss/randomNews/6`)
+    fetch(`/rss/randomNews/7`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']

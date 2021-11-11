@@ -481,13 +481,23 @@
             .mvp-feat5-side-list .mvp-feat1-list-img:after {
                 font-family: 'Oswald', sans-serif;
             }
-    
-    
+            
+            
     
             .mvp-nav-links {
                 display: none;
             }
     
+            @media screen and (max-width: 900px) {
+                #sport-head , #sport-bottom {
+                    flex-wrap: wrap;
+                }
+            }
+            @media screen and (max-width: 467px) {
+                .slider {
+                    display : none;
+                }
+            }
     
             @media screen and (max-width: 479px) {
                 .single #mvp-content-body-top {
@@ -549,9 +559,8 @@
             }
     
             .mvp-feat5-small-wrap {
-                height: 991px;
                 overflow-x: hidden;
-                overflow-y: scroll;
+                overflow-y: hidden;
                 padding-right: 5px;
             }
     
@@ -585,6 +594,210 @@
             .mvp-main-blog-out {
                 padding-bottom: 50px;
             }
+            .awe-body-loading {
+  overflow: hidden;
+}
+.progress {
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.awe-page-loading {
+  position: fixed;
+  z-index: 9999999;
+  background: #fff;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.awe-loading-wrapper {
+  text-align: center;
+  width: 150px;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -70px;
+}
+
+.awe-loading-wrapper .awe-loading-icon {
+  font-size: 75px;
+  line-height: 1;
+  margin-bottom: 10px;
+  -webkit-animation-name: aweIcon;
+  animation-name: aweIcon;
+  -webkit-animation-duration: 4s;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.awe-loading-wrapper .awe-loading-icon img {
+  width: 100%;
+}
+
+.awe-loading-wrapper .awe-loading-icon .icon {
+  cursor: default;
+}
+
+.awe-loading-wrapper .progress {
+  background: #eee;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 0;
+  height: 2px;
+}
+
+.awe-loading-wrapper .progress .progress-bar {
+  background: #db2e1c;
+  box-shadow: none;
+  width: 100%;
+  -webkit-animation-name: aweProgress;
+  animation-name: aweProgress;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+}
+
+.progress-bar {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #db2e1c;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width 0.6s ease;
+  -o-transition: width 0.6s ease;
+  transition: width 0.6s ease;
+}
+
+.progress-striped .progress-bar,
+.progress-bar-striped {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+
+
+@-webkit-keyframes aweIcon {
+  0% {
+    color: #333;
+  }
+  50% {
+    color: #666;
+  }
+  100% {
+    color: #000;
+  }
+}
+
+@-moz-keyframes aweIcon {
+  0% {
+    color: #333;
+  }
+  50% {
+    color: #666;
+  }
+  100% {
+    color: #000;
+  }
+}
+
+@keyframes aweIcon {
+  0% {
+    color: #333;
+  }
+  50% {
+    color: #666;
+  }
+  100% {
+    color: #000;
+  }
+}
+
+@-webkit-keyframes aweProgress {
+  0% {
+    width: 0%;
+  }
+  15% {
+    width: 15%;
+  }
+  25% {
+    width: 35%;
+  }
+  35% {
+    width: 50%;
+  }
+  50% {
+    width: 75%;
+  }
+  65% {
+    width: 85%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-moz-keyframes aweProgress {
+  0% {
+    width: 0%;
+  }
+  15% {
+    width: 15%;
+  }
+  25% {
+    width: 35%;
+  }
+  35% {
+    width: 50%;
+  }
+  50% {
+    width: 75%;
+  }
+  65% {
+    width: 85%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+
+@keyframes aweProgress {
+  0% {
+    width: 0%;
+  }
+  15% {
+    width: 15%;
+  }
+  25% {
+    width: 35%;
+  }
+  35% {
+    width: 50%;
+  }
+  50% {
+    width: 75%;
+  }
+  65% {
+    width: 85%;
+  }
+  100% {
+    width: 100%;
+  }
+}
         </style>
     <link rel='stylesheet' id='mvp-reset-css' href="{% static 'frontend/assets/css/reset.css' %}" type='text/css'
         media='all' type='text/css' media='all' />
@@ -607,10 +820,20 @@
         body.custom-background {
             background-color: #dddddd;
         }
+        
     </style>
 </head>
 <body   class="page-template page-template-template-home5 page-template-template-home5-php page page-id-1901 custom-background wp-embed-responsive theme-zox-news woocommerce-no-js">
-   
+    <div class="awe-page-loading" style="display: block;">
+        <div class="awe-loading-wrapper">
+        <div class="awe-loading-icon">
+        <img src="/static/frontend/assets/images/PRVI-preloader.png" alt="images">
+    </div>
+    <div class="progress">
+    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    </div>
+    </div>
     {% block body %}
 
     {% endblock %}
@@ -807,6 +1030,12 @@
 
 </script>
 <script>
+    $(window).on("orientationchange load resize", function() {
+ 
+        $('.awe-page-loading').delay(1000).fadeOut('400', function() {
+            $(this).fadeOut()
+        });
+    });
     window.onload = function () {
         $('.slider').slick({
             autoplay: true,

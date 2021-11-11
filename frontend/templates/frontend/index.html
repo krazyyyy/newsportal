@@ -333,9 +333,24 @@
                                     <span class="mvp-widget-home-title">Ostale Vijesti</span>
                                 </h4>
                             </div>
+                           
                             <!--mvp-widget-home-head-->
                             <div class="mvp-main-blog-out left relative">
                                 <div class="mvp-main-blog-in">
+                                    <div class="mvp-widget-ad left relative">
+                                        <span class="mvp-ad-label">Advertisement</span>
+                                        {% if options.category_one %}
+                                            {{ options.category_one | safe }}
+                                        {% else %}
+                                        <a href="#">
+                                            <img class="mvp-leader1"
+                                                src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox-leader.png" /><img
+                                                class="mvp-leader2"
+                                                src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox728.png" /><img
+                                                class="mvp-leader3"
+                                                src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox360.png" /></a>
+                                        {% endif %}
+                                    </div>
                                     <div class="mvp-main-blog-body left relative">
                                         <ul id="footer-news-vijesti" class="mvp-blog-story-list left relative infinite-content">
 
@@ -392,9 +407,26 @@
                                     <span class="mvp-widget-home-title">Ostale Sport</span>
                                 </h4>
                             </div>
+                            
                             <!--mvp-widget-home-head-->
                             <div class="mvp-main-blog-out left relative">
+                            
+
                                 <div class="mvp-main-blog-in">
+                                    <div class="mvp-widget-ad left relative">
+                                        <span class="mvp-ad-label">Advertisement</span>
+                                        {% if options.category_two %}
+                                            {{ options.category_two | safe }}
+                                        {% else %}
+                                        <a href="#">
+                                            <img class="mvp-leader1"
+                                                src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox-leader.png" /><img
+                                                class="mvp-leader2"
+                                                src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox728.png" /><img
+                                                class="mvp-leader3"
+                                                src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox360.png" /></a>
+                                        {% endif %}
+                                    </div>
                                     <div class="mvp-main-blog-body left relative">
                                         <ul id="footer-news-sport" class="mvp-blog-story-list left relative infinite-content">
 
