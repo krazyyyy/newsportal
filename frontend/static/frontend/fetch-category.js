@@ -4,6 +4,7 @@
        elem = elem.replace("+0200", "") 
        elem = elem.replace("+0000", "") 
        elem = elem.replace("000Z", "") 
+       elem = elem.replace("T17", "") 
        elem = elem.replace("Mon", "") 
        elem = elem.replace("Tue", "") 
        elem = elem.replace("Wed", "") 

@@ -3,6 +3,7 @@
         elem = elem.replace("+0200", "")
         elem = elem.replace("+0000", "")
         elem = elem.replace("000Z", "")
+        elem = elem.replace("T17", "")
         elem = elem.replace("Mon", "")
         elem = elem.replace("Tue", "")
         elem = elem.replace("Wed", "")
@@ -762,25 +763,27 @@
 
 
 
-    fetch(`/rss/randomNews/7`)
+    fetch(`/rss/latest/60`)
         .then(response => response.json())
         .then(data => {
             info = data['feed']
             lat_one = document.querySelector("#random-one-head")
             lat_two = document.querySelector("#random-two-head")
             for (var i = 0; i < info.length; i++) {
-                if (i < 1) {
+                if (i > 52 && i < 54) {
                     lat_one.innerHTML += `
-                    <a href="${info[i]['link']}" rel="nofollow">
+                    
                         <div class="mvp-feat5-small-main left relative">
                             <div class="mvp-feat5-small-main-img left relative">
+                            <a href="${info[i]['link']}" rel="nofollow">
                                 <img width="400" height="240"
                                     src="${info[i]['img']}"
                                     class="attachment-mvp-mid-thumb size-mvp-mid-thumb wp-post-image"
                                     alt="${info[i]['title']}" loading="lazy"
                                     srcset="${info[i]['img']} 400w, ${info[i]['img']} 600w, ${info[i]['img']} 300w, ${info[i]['img']} 768w, ${info[i]['img']} 590w, ${info[i]['img']} 1000w"
                                     sizes="(max-width: 400px) 100vw, 400px" />
-                            </div>
+                                </a>
+                                    </div>
                             <!--mvp-feat5-small-main-img-->
                             <div class="mvp-feat5-small-main-text left relative">
                                 <div class="mvp-cat-date-wrap left relative">
@@ -790,28 +793,31 @@
 
                                 </div>
                                 <!--mvp-cat-date-wrap-->
+                                <a href="${info[i]['link']}" rel="nofollow">
                                 <h2>${info[i]['title']}
-                                </h2>
+                                </h2> </a>
                                 
                             </div>
                             <!--mvp-feat5-small-main-text-->
                         </div>
                         <!--mvp-feat5-small-main-->
-                                </a>
+                               
                     `
-                } else {
+                } else if (i > 54) {
                     lat_two.innerHTML += `
-                    <a href="${info[i]['link']}" rel="nofollow">
+                    
                         <div class="mvp-feat1-list-cont left relative">
                             <div class="mvp-feat1-list-out relative">
                                 <div class="mvp-feat1-list-img left relative">
-                                    <img width="80" height="80"
+                                <a href="${info[i]['link']}" rel="nofollow">    
+                                <img width="80" height="80"
                                         src="${info[i]['img']}"
                                         class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
                                         alt="${info[i]['title']}" loading="lazy"
                                         srcset="${info[i]['img']} 80w, ${info[i]['img']} 300w, ${info[i]['img']} 100w, ${info[i]['img']} 150w"
                                         sizes="(max-width: 80px) 100vw, 80px" />
-                                </div>
+                                </a>
+                                        </div>
                                 <!--mvp-feat1-list-img-->
                                 <div class="mvp-feat1-list-in">
                                     <div class="mvp-feat1-list-text">
@@ -821,8 +827,8 @@
                                             <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                                         </div>
                                         <!--mvp-cat-date-wrap-->
-                                        <h2>${info[i]['title']}
-                                        </h2>
+                                        <a href="${info[i]['link']}" rel="nofollow"> <h2>${info[i]['title']}
+                                        </h2></a>
                                     </div>
                                     <!--mvp-feat1-list-text-->
                                 </div>
@@ -831,7 +837,7 @@
                             <!--mvp-feat1-list-out-->
                         </div>
                         <!--mvp-feat1-list-cont-->
-                    </a>
+                 
                     `
                 }
             }
