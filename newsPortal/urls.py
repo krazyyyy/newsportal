@@ -1,5 +1,4 @@
 """newsPortal URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
@@ -15,19 +14,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls import  url
-from django.conf import settings
-from django.conf.urls.static import static
-from django.views.static import serve
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('frontend.urls')),
     path('rss/', include('rssReader.urls'))
-    #   url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
-    # url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT, 'show_indexes': True}),
 ]
-
-
-handler404 = 'frontend.views.view_404' 
