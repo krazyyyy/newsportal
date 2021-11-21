@@ -14,7 +14,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="prvi.hr - sve vijesti na jednom mjestu! Vaš prvi korak u online svijet sada je lakši nego ikada prije!">
+    {% block metades %}
+    {% endblock %}
     <meta property="og:locale" content="hr_HR">
     <meta property="og:type" content="website">
     <meta property="og:title" content="PRVI.HR">
@@ -23,7 +24,7 @@
     <meta property="og:site_name" content="prvi.hr">
     <meta property="og:image" content="{% static 'frontend/assets/favicon/favicon-32x32.png' %}">
     <title>PRVI.HR - {% block title %} {% endblock %}</title>
-    <!-- <meta http-equiv="refresh" content="180"> -->
+    <meta http-equiv="refresh" content="300">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />

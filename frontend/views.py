@@ -21,6 +21,13 @@ def prvi(request, pk):
         "news" : news
     })
 
+def redirectPage(request, pk, name):
+    news = News.objects.get(id=pk)
+    return render(request, 'frontend/redirect.html', {
+        "news" : news
+    })
+
+
 from django.shortcuts import redirect
 
 def view_404(request, exception=None):
