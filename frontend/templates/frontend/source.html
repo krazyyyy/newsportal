@@ -328,7 +328,7 @@
              info = data['feed']
              for ( var i = 0; i < info.length; i ++) { 
                 if ("link" in info[i]) {
-                    link = info[i]['link']
+                    link = `/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}`
                     rel = `rel="nofollow"`
                 }
                 else {

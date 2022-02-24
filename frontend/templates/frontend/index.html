@@ -644,7 +644,7 @@
            
                     <div class="mvp-widget-dark-feat left relative">
                         <div class="mvp-widget-dark-feat-img left relative">
-                        <a href="${info[i]['link']}" rel="nofolkow">
+                        <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}">
                             <img width="1000" height="600"
                                 src="${info[i]['img']}"
                                 class="mvp-reg-img lazy wp-post-image" alt="${info[i]['title']}" loading="lazy"
@@ -669,7 +669,7 @@
                                     <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                             </div>
                             <!--mvp-cat-date-wrap-->
-                             <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank"><h2>${info[i]['title']}</h2></a>
+                             <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank"><h2>${info[i]['title']}</h2></a>
                         </div>
                         <!--mvp-widget-dark-feat-text-->
                     </div>
@@ -682,7 +682,7 @@
                 <div class="mvp-widget-dark-sub left relative">
                     <div class="mvp-widget-dark-sub-out right relative">
                         <div class="mvp-widget-dark-sub-img left relative">
-                        <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">
+                        <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">
                             <img width="400" height="240"
                                 src="${info[i]['img']}"
                                 class="mvp-reg-img lazy wp-post-image" alt="${info[i]['title']}"
@@ -711,7 +711,7 @@
                                         <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                                 </div>
                                 <!--mvp-cat-date-wrap-->
-                                 <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank"><h2>${info[i]['title']}</h2></a>
+                                 <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank"><h2>${info[i]['title']}</h2></a>
                             </div>
                             <!--mvp-widget-dark-sub-text-->
                         </div>
@@ -738,7 +738,7 @@
                     bz_one.innerHTML += `
                    <div class="mvp-widget-feat2-left-cont left relative">
                         <div class="mvp-feat1-feat-img left relative">
-                        <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">
+                        <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">
                             <img width="560" height="600"
                                 src="${info[i]['img']}"
                                 class="attachment-mvp-port-thumb size-mvp-port-thumb wp-post-image"
@@ -757,7 +757,7 @@
                                 <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                             </div>
                             <!--mvp-cat-date-wrap-->
-                            <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">
+                            <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">
                             <h2>${info[i]['title']}</h2></a>
                         </div>
                         <!--mvp-feat1-feat-text-->
@@ -770,7 +770,7 @@
               
                     <div class="mvp-widget-feat2-right-cont left relative">
                         <div class="mvp-widget-feat2-right-img left relative">
-                        <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">
+                        <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">
                             <img width="400" height="240"
                                 src="${info[i]['img']}"
                                 class="mvp-reg-img lazy wp-post-image" alt="${info[i]['title']}"
@@ -793,7 +793,7 @@
                                 <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                             </div>
                             <!--mvp-cat-date-wrap-->
-                             <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank"><h2>${info[i]['title']}</h2></a>
+                             <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank"><h2>${info[i]['title']}</h2></a>
                         </div>
                         <!--mvp-widget-feat2-right-text-->
                     </div>
@@ -806,7 +806,7 @@
                     <div class="mvp-feat1-list-cont left relative">
                         <div class="mvp-feat1-list-out relative">
                             <div class="mvp-feat1-list-img left relative">
-                            <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">
+                            <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">
                                 <img width="80" height="80"
                                     src="${info[i]['img']}"
                                     class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
@@ -824,7 +824,7 @@
                                         <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                                     </div>
                                     <!--mvp-cat-date-wrap-->
-                                     <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank"><h2>${info[i]['title']}</h2></a>
+                                     <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank"><h2>${info[i]['title']}</h2></a>
                                 </div>
                                 <!--mvp-feat1-list-text-->
                             </div>
@@ -853,7 +853,7 @@
             
                         <div class="mvp-widget-feat2-left-cont left relative">
                             <div class="mvp-feat1-feat-img left relative">
-                            <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">
+                            <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">
                                 <img width="560" height="600"
                                     src="${info[i]['img']}"
                                     class="attachment-mvp-port-thumb size-mvp-port-thumb wp-post-image"
@@ -868,7 +868,7 @@
                                         <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                                 </div>
                                 <!--mvp-cat-date-wrap-->
-                                 <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank"><h2>${info[i]['title']}</h2></a>
+                                 <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank"><h2>${info[i]['title']}</h2></a>
                                 
                             </div>
                             <!--mvp-feat1-feat-text-->
@@ -881,7 +881,7 @@
                
                             <div class="mvp-widget-feat2-right-cont left relative">
                                 <div class="mvp-widget-feat2-right-img left relative">
-                                <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">
+                                <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">
                                     <img width="400" height="240"
                                         src="${info[i]['img']}"
                                         class="mvp-reg-img lazy wp-post-image" alt="${info[i]['title']}"
@@ -908,7 +908,7 @@
                                             <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                                     </div>
                                     <!--mvp-cat-date-wrap-->
-                                    <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">
+                                    <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">
                                     <h2>${info[i]['title']}
                                     </h2>
                                     </a>
@@ -924,7 +924,7 @@
                         <div class="mvp-feat1-list-cont left relative">
                             <div class="mvp-feat1-list-out relative">
                                 <div class="mvp-feat1-list-img left relative">
-                                <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">
+                                <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">
                                     <img width="80" height="80"
                                         src="${info[i]['img']}"
                                         class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
@@ -942,7 +942,7 @@
                                             <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                                         </div>
                                         <!--mvp-cat-date-wrap-->
-                                         <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank"><h2>${info[i]['title']}</h2></a>
+                                         <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank"><h2>${info[i]['title']}</h2></a>
                                     </div>
                                     <!--mvp-feat1-list-text-->
                                 </div>
@@ -990,7 +990,7 @@
                                     <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                                 </div>
                                 <!--mvp-cat-date-wrap-->
-                                 <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank"><h2>${info[i]['title']}</h2></a>
+                                 <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank"><h2>${info[i]['title']}</h2></a>
                                  
                                 
                             </div>
@@ -1004,7 +1004,7 @@
                         <div class="mvp-feat5-mid-sub-story left relative">
                             <div class="mvp-feat5-mid-sub-out right relative">
                                 <div class="mvp-feat5-mid-sub-img left relative">
-                                <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">
+                                <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">
                                     <img width="400" height="240"
                                         src="${info[i]['img']}"
                                         class="mvp-reg-img wp-post-image" alt="${info[i]['title']}"
@@ -1028,7 +1028,7 @@
                                             <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                                         </div>
                                         <!--mvp-cat-date-wrap-->
-                                        <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank"><h2>${info[i]['title']}</h2></a>
+                                        <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank"><h2>${info[i]['title']}</h2></a>
                                     </div>
                                     <!--mvp-feat5-mid-sub-text-->
                                 </div>
@@ -1046,7 +1046,7 @@
                     <div class="mvp-feat1-list-cont left relative">
                         <div class="mvp-feat1-list-out relative">
                             <div class="mvp-feat1-list-img left relative">
-                            <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">
+                            <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">
                                 <img width="80" height="80"
                                     src="${info[i]['img']}"
                                     class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
@@ -1064,7 +1064,7 @@
                                         <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                                     </div>
                                     <!--mvp-cat-date-wrap-->
-                                     <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank"><h2>${info[i]['title']}</h2></a>
+                                     <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank"><h2>${info[i]['title']}</h2></a>
                                 </div>
                                 <!--mvp-feat1-list-text-->
                             </div>
@@ -1093,7 +1093,7 @@
                     sport_head.innerHTML += `
                 
                         <div class="mvp-widget-feat1-top-story left relative">
-                        <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">    
+                        <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">    
                             <div class="mvp-widget-feat1-top-img left relative">
                             <img width="590" height="354"
                                 src="${info[i]['img']}"
@@ -1114,7 +1114,7 @@
                                     <span class="mvp-cd-date left relative"> ${updateDate(info[i]['pub_date'])}</span>
                                 </div>
                                 <!--mvp-cat-date-wrap-->
-                                 <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank"><h2>${info[i]['title']}</h2></a>
+                                 <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank"><h2>${info[i]['title']}</h2></a>
                             </div>
                             <!--mvp-widget-feat1-top-text-->
                         </div>
@@ -1126,7 +1126,7 @@
                     sport_bottom.innerHTML += `
                     <div class="mvp-widget-feat1-bot-story left relative">
                         <div class="mvp-widget-feat1-bot-img left relative">
-                        <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">
+                        <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">
                     
                         <img width="400" height="240"
                             src="${info[i]['img']}"
@@ -1148,7 +1148,7 @@
                                 <span class="mvp-cd-date left relative"> ${updateDate(info[i]['pub_date'])}</span>
                             </div>
                             <!--mvp-cat-date-wrap-->
-                             <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank"><h2>${info[i]['title']}</h2></a>
+                             <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank"><h2>${info[i]['title']}</h2></a>
                         </div>
                         <!--mvp-widget-feat1-bot-text-->
                     </div>
@@ -1170,7 +1170,7 @@
                 if (i < 25) {
                 footer_news.innerHTML += `
             <li class="mvp-blog-story-wrap left relative infinite-post">
-                <a href="${info[i]['link']}" rel="bookmark">
+                <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" rel="bookmark">
                     <div class="mvp-blog-story-out relative">
                         <div class="mvp-blog-story-img left relative">
                             <img width="400" height="240"
@@ -1196,7 +1196,7 @@
                                         <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                                 </div>
                                 <!--mvp-cat-date-wrap-->
-                                 <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank"><h2>${info[i]['title']}</h2></a>
+                                 <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank"><h2>${info[i]['title']}</h2></a>
                                  </div>
                             <!--mvp-blog-story-text-->
                         </div>
@@ -1233,7 +1233,7 @@
                                 <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                             </div>
                             <!--mvp-cat-date-wrap-->
-                            <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">
+                            <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">
                                 <h2>${info[i]['title']}</h2>
                             </a>
                         </div>
@@ -1258,7 +1258,7 @@
                 if (i < 17) {
                 footer_news.innerHTML += `
             <li class="mvp-blog-story-wrap left relative infinite-post">
-                <a href="${info[i]['link']}" rel="bookmark">
+                <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" rel="bookmark">
                     <div class="mvp-blog-story-out relative">
                         <div class="mvp-blog-story-img left relative">
                             <img width="400" height="240"
@@ -1284,7 +1284,7 @@
                                         <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                                 </div>
                                 <!--mvp-cat-date-wrap-->
-                                 <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank"><h2>${info[i]['title']}</h2></a>
+                                 <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank"><h2>${info[i]['title']}</h2></a>
                                  </div>
                             <!--mvp-blog-story-text-->
                         </div>
@@ -1321,7 +1321,7 @@
                                 <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                             </div>
                             <!--mvp-cat-date-wrap-->
-                            <a href="/news/${info[i]['id']}/${info[i]['title']}" target="blank">
+                            <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" target="blank">
                                 <h2>${info[i]['title']}</h2>
                             </a>
                         </div>
@@ -1351,7 +1351,7 @@
                     
                         <div class="mvp-feat5-small-main left relative">
                             <div class="mvp-feat5-small-main-img left relative">
-                            <a href="/news/${info[i]['id']}/${info[i]['title']}">
+                            <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}">
                                 <img width="400" height="240"
                                     src="${info[i]['img']}"
                                     class="attachment-mvp-mid-thumb size-mvp-mid-thumb wp-post-image"
@@ -1369,7 +1369,7 @@
 
                                 </div>
                                 <!--mvp-cat-date-wrap-->
-                                <a href="/news/${info[i]['id']}/${info[i]['title']}" >
+                                <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" >
                                 <h2>${info[i]['title']}
                                 </h2> </a>
                                 
@@ -1385,7 +1385,7 @@
                         <div class="mvp-feat1-list-cont left relative">
                             <div class="mvp-feat1-list-out relative">
                                 <div class="mvp-feat1-list-img left relative">
-                                <a href="/news/${info[i]['id']}/${info[i]['title']}" >    
+                                <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" >    
                                 <img width="80" height="80"
                                         src="${info[i]['img']}"
                                         class="attachment-mvp-small-thumb size-mvp-small-thumb wp-post-image"
@@ -1403,7 +1403,7 @@
                                             <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                                         </div>
                                         <!--mvp-cat-date-wrap-->
-                                        <a href="/news/${info[i]['id']}/${info[i]['title']}"> <h2>${info[i]['title']}
+                                        <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}"> <h2>${info[i]['title']}
                                         </h2></a>
                                     </div>
                                     <!--mvp-feat1-list-text-->
@@ -1430,11 +1430,11 @@
                     home_head.innerHTML += `
             <div class="col-md-6 col-sm-6 space-30">
                         <div class="post-item ver4 overlay-v2 cat-4" style="height: 210px; overflow: hidden;">
-                            <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                            <a  class="images" href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                          
                         </div>
                         <div>
-                            <a rel="nowfollow" class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
+                            <a  class="wrap dsg" href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}"><h4>${info[i]['title']}</h4></a>
                             <small class="wrap" class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])} </small>
                         </div>
                         <!-- End item -->
@@ -1456,11 +1456,11 @@
                     home_head.innerHTML += `
             <div class="col-md-6 col-sm-6 space-30">
                         <div class="post-item ver4 overlay-v2 cat-4" style="height: 210px; overflow: hidden;">
-                            <a rel="nowfollow" class="images" href="${info[i]['link']}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
+                            <a  class="images" href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" title="${info[i]['title']}" alt="${info[i]['title']}"><img class='img-responsive' src="${info[i]['img']}" alt="${info[i]['title']}"></a>
                          
                         </div>
                         <div>
-                            <a rel="nowfollow" class="wrap dsg" href="${info[i]['link']}"><h4>${info[i]['title']}</h4></a>
+                            <a " class="wrap dsg" href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}"><h4>${info[i]['title']}</h4></a>
                             <small class="wrap" class="date"> <a id="no-style-link" href="/source/${info[i]['source']}"> ${info[i]['source']} </a> | <a id="no-style-link" href="/category/${info[i]['category']}"> ${info[i]['category']} </a> |  ${updateDate(info[i]['pub_date'])}</small>
                         </div>
                         <!-- End item -->

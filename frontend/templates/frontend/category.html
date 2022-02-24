@@ -335,7 +335,7 @@
                 home_head = document.querySelector("#home2-head")
                 home_head.innerHTML += `
                 <div class="mvp-widget-feat1-bot-story left relative">
-                <a href="${info[i]['link']}" rel="nofollow">
+                <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" >
                     <div class="mvp-widget-feat1-bot-img left relative">
                         <img width="400" height="240"
                             src="${info[i]['img']}"
@@ -359,7 +359,7 @@
                 <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                     </div>
                     <!--mvp-cat-date-wrap-->
-                    <a href="${info[i]['link']}" rel="nofollow">
+                    <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" >
                         <h2>${info[i]['title']}</h2>
                     </a>
                 </div>
@@ -375,7 +375,7 @@
                 home_head.innerHTML += `
                 <li class="mvp-blog-story-wrap left relative infinite-post">
                     <div class="mvp-blog-story-out relative">
-                        <a href="${info[i]['link']}" rel="nofollow">
+                        <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" >
                             <div class="mvp-blog-story-img left relative">
                                 <img width="400" height="240"
                                     src="${info[i]['img']}"
@@ -402,7 +402,7 @@
                                     <span class="mvp-cd-date left relative">${updateDate(info[i]['pub_date'])}</span>
                                 </div>
                                 <!--mvp-cat-date-wrap-->
-                                <a href="${info[i]['link']}" rel="nofollow">
+                                <a href="/news/${info[i]['id']}/${info[i]['title'].replaceAll(" ", "-")}" >
                                     <h2>${info[i]['title']}</h2>
                                 
                                 </a>

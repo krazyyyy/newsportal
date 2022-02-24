@@ -19,12 +19,31 @@ from django.conf.urls import  url
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve
+from django.contrib.sitemaps import GenericSitemap 
+from django.contrib.sitemaps.views import sitemap 
+from django.core.paginator import Paginator
+from django.urls import reverse
+
+from rssReader.models import News
+from django.contrib.sitemaps import views as sitemaps_views
+from django.conf.urls import url
+
+
+info_dict = {
+    "queryset" : News.objects.all(),
+}
+
+
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('frontend.urls')),
-    path('rss/', include('rssReader.urls'))
+    path('rss/', include('rssReader.urls')),
+     path('site_map.xml', sitemap, # new
+    {'sitemaps': {'news': GenericSitemap(info_dict, priority=0.6)}},
+        name='django.contrib.sitemaps.views.sitemap'),
     #   url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
     # url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT, 'show_indexes': True}),
 ]

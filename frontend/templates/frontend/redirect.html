@@ -1,23 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ news.title }}</title>
-</head>
-<body>
-    <div class="center">
-        <h1> You Will Be Redirected To {{ news.title }}</h1>
-        <a href="{{ news.link }}" rel="nofollow" id="redirect"></a>
-    </div>
+{% extends 'frontend/base.html' %}
+{% load static %}
 
-<script>
-    function redirect() {
-    document.querySelector("#redirect").click()
+{% block title %} {{ news.title }} {% endblock %}
+
+{% block metades %}
+<meta name="description"
+    content="prvi.hr - {{ news.title }} | sve vijesti na jednom mjestu! Vaš prvi korak u online svijet sada je lakši nego ikada prije!">
+{% endblock %}
+
+{% block body %}
+<style>
+    .mvp-main-box {
+        align-items: center;
+        display: flex;
+        text-align: center;
+        font-size: 32px;
     }
-    window.setTimeout('redirect()', 7000);
-</script>
 
-</body>
-</html>
+    #mvp-main-body-wrap {
+        height: 100vh;
+    }
+
+</style>
+<div id="mvp-fly-wrap">
+    <div id="mvp-fly-menu-top" class="left relative">
+        <div class="mvp-fly-top-out left relative">
+            <div class="mvp-fly-top-in">
+                <div id="mvp-fly-logo" class="left relative">
+                    <a href="#"><img src="{% static 'frontend/assets/images/logo/PRVI-preloader-new.png' %}"
+                            alt="PRVI.HR" data-rjs="2" /></a>
+                </div>
+                <!--mvp-fly-logo-->
+            </div>
+            <!--mvp-fly-top-in-->
+            <div class="mvp-fly-but-wrap mvp-fly-but-menu mvp-fly-but-click">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!--mvp-fly-but-wrap-->
+        </div>
+        <!--mvp-fly-top-out-->
+    </div>
+    <!--mvp-fly-menu-top-->
+    <div id="mvp-fly-menu-wrap">
+        {% include 'frontend/nav.html' %}
+    </div>
+    <!--mvp-fly-menu-wrap-->
+
+    <!--mvp-fly-soc-wrap-->
+</div>
+<!--mvp-fly-wrap-->
+<div id="mvp-site" class="left relative">
+    <div id="mvp-search-wrap">
+        <div id="mvp-search-box">
+            <form method="get" id="searchform" action="#">
+                <input type="text" name="s" id="s" value="Search"
+                    onfocus='if (this.value == "Search") { this.value = ""; }'
+                    onblur='if (this.value == "") { this.value = "Search"; }' />
+                <input type="hidden" id="searchsubmit" value="Search" />
+            </form>
+        </div>
+        <!--mvp-search-box-->
+        <div class="mvp-search-but-wrap mvp-search-click">
+            <span></span>
+            <span></span>
+        </div>
+        <!--mvp-search-but-wrap-->
+    </div>
+    <!--mvp-search-wrap-->
+    <div id="mvp-site-wall" class="left relative">
+        {% include 'frontend/top_ad.html' %}
+        <!--mvp-leader-wrap-->
+        <div id="mvp-site-main" class="left relative">
+            {% include 'frontend/header.html' %}
+            <!--mvp-main-head-wrap-->
+            <div id="mvp-main-body-wrap" class="left relative">
+                <div class="mvp-main-box">
+                    <div class="my-container">
+            <div class="center">
+                <h1> Prvi.hr vam omogućuje pregled najnovijih vijesti.
+                    kako biste pročitali željeni članak učinite to </h1>
+                <a href="{{ news.link }}" rel="nofollow" id="redirect">KLIKOM OVDJE</a>
+            </div>
+            <div class="mvp-widget-ad left relative" style="margin-top: 150px;">
+                <span class="mvp-ad-label">Advertisement</span>
+                {% if options.category_sideAD %}
+                    {{ options.category_sideAD | safe }}
+                {% else %}
+                <a href="#">
+                    <img class="mvp-leader1"
+                        src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox-leader.png" /><img
+                        class="mvp-leader2"
+                        src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox728.png" /><img
+                        class="mvp-leader3"
+                        src="https://www.mvpthemes.com/zoxnews/wp-content/uploads/2017/07/zox360.png" /></a>
+                {% endif %}
+            </div>
+            </div>
+            </div>
+            </div>
+  
+        </div>
+        <!--mvp-site-main-->
+    </div>
+    
+    {% include 'frontend/footer.html' %}
+</div>
+<!--mvp-site-main-->
+</div>
+<!--mvp-site-wall-->
+</div>
+<!--mvp-site-->
+<div class="mvp-fly-top back-to-top">
+    <i class="fa fa-angle-up fa-3"></i>
+</div>
+<!--mvp-fly-top-->
+<div class="mvp-fly-fade mvp-fly-but-click">
+</div>
+<!--mvp-fly-fade-->
+<div data-theiaStickySidebar-sidebarSelector='"#mvp-side-wrap,.mvp-post-soc-wrap,.mvp-flex-side-wrap,.mvp-alp-side"'
+    data-theiaStickySidebar-options='{"containerSelector":"","additionalMarginTop":120,"additionalMarginBottom":20,"updateSidebarHeight":false,"minWidth":1004,"sidebarBehavior":"modern","disableOnResponsiveLayouts":true}'>
+</div>
+
+{% endblock %}

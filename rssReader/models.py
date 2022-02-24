@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from ckeditor.fields import RichTextField
-
+from django.urls import reverse
 
 
 # Create your models here.
@@ -62,6 +62,9 @@ class News(models.Model):
     pub_date = models.CharField(max_length=228, null=True, blank=True)
     source = models.CharField(max_length=228, null=True, blank=True)
     time = models.DateTimeField(auto_now_add=True)
+
+    def get_absolute_url(self):
+        return reverse('redirectPage', kwargs={'pk':self.id, 'name' : self.title.replace(" ", "-").replace("/", "-")})
 
 class footerHTML(models.Model):
     section_one = RichTextField(null=True, blank=True)
